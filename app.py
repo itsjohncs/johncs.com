@@ -1,16 +1,20 @@
-from phial import page, register_static_page, RenderedPage, Document, process
+import phial
+
 from docutils.core import publish_parts
 from collections import namedtuple
 import pystache
 import os
 
-register_static_page("styles.css")
+# This will have phial copy over our stylesheet, it won't touch the file.
+phial.register_static_page("styles.css")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
 posts = []
 
 def render_rst(text):
+    """Renders some restructured text and returns generated HTML."""
+
     docutils_settings = {
         # I don't want <h1> tags in the post
         "initial_header_level": 2,
@@ -23,9 +27,9 @@ def render_rst(text):
 
     return post_body
 
-@page(files = "posts/*.rst")
+@phial.page(files = "posts/*.rst")
 def post_page(source):
-    template = Document("posts/template.htm")
+    template = phial.Document("posts/template.htm")
 
     # Figure out where we want the filename to be on the site (just replace
     # .rst with .htm).
@@ -45,11 +49,11 @@ def post_page(source):
     body = renderer.render(template.body, source.frontmatter,
         {"body": post_body})
 
-    return RenderedPage(body = body, path = output_file_path)
+    return phial.RenderedPage(body = body, path = output_file_path)
 
-@page(path = "index.htm")
+@phial.page("index.htm")
 def main_page():
-    template = Document("index.htm")
+    template = phial.Document("index.htm")
 
     # The posts we're going to show on the front page
     displayed_posts = list(reversed(posts))
@@ -64,12 +68,5 @@ def main_page():
     # path already in the decorator.
     return body
 
-
-
 if __name__ == "__main__":
-    process()
-
-# @page(path = "index.htm")
-# def main_page():
-#     # Grab the index template and parse out the frontmatter
-#     source = Document("index.htm")
+    phial.process()
