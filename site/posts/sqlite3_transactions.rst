@@ -32,7 +32,7 @@ The `sqlite3.Connection.commit() <http://docs.python.org/2/library/sqlite3.html#
 How the Connection Object Detects Transactions
 ----------------------------------------------
 
-When the modules check to see if a transaction is in progress, it inspects the Connection's ``inTransaction`` data member (which is not available from Python). This is fine and well if you are only using automatic transaction, but the module can get confused if you ever execute a ``BEGIN`` statement yourself: If the version of SQLite CPython was linked with is older than 3.2.2, [#transaction_check]_ and you've started a transaction manually by executing a ``BEGIN`` statement yourself, the ``inTransaction`` data member may have an incorrect value.
+When the module checks to see if a transaction is in progress, it inspects the Connection's ``inTransaction`` data member (which is not available from Python). This is fine and well if you're only using automatic transactions, but the module can get confused if you ever execute a ``BEGIN`` statement yourself: If the version of SQLite CPython was linked with is older than 3.2.2, [#transaction_check]_ and you've started a transaction manually by executing a ``BEGIN`` statement yourself, the ``inTransaction`` data member may have an incorrect value.
 
 As a rule of thumb, I would advise never executing a ``BEGIN`` statement manually unless you never use the ``sqlite3.Connection.commit()`` function and you've set the ``isolation_level`` to ``None``.
 
