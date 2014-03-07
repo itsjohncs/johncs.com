@@ -155,3 +155,11 @@ a.pure-button-primary, button.pure-button-primary {
 #post-page h2 {
     font-weight: 600;
 }
+
+#post-page table.footnote:first-of-type {
+    margin-top: 2em;
+}
+
+#post-page table.footnote {
+    font-size: 80%;
+}
