@@ -156,6 +156,10 @@ a.pure-button-primary, button.pure-button-primary {
     font-weight: 600;
 }
 
+#post-page #post-body img {
+    max-width: 100%;
+}
+
 #post-page table.footnote:first-of-type {
     margin-top: 2em;
 }

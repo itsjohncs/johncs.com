@@ -7,6 +7,7 @@ import os
 
 # This will have phial copy over our stylesheet, it won't touch the file.
 phial.register_asset("styles.css")
+phial.register_asset_glob("images/*")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
@@ -56,7 +57,7 @@ def main_page():
     template = phial.Document("index.htm")
 
     # The posts we're going to show on the front page
-    displayed_posts = list(reversed(posts))
+    displayed_posts = list(posts)
     for i in displayed_posts:
         i["description"] = render_rst(i["description"])
 
