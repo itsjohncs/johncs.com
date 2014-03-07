@@ -83,6 +83,14 @@ a.pure-button-primary, button.pure-button-primary {
     font-size: 54pt;
 }
 
+#main-page h2 > a {
+    color: inherit;
+}
+
+#main-page h2 > a:hover {
+    color: inherit;
+}
+
 #main-page h1, #main-page h2 {
     margin: 0;
 }
