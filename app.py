@@ -6,7 +6,7 @@ import pystache
 import os
 
 # This will have phial copy over our stylesheet, it won't touch the file.
-phial.register_static_page("styles.css")
+phial.register_asset("styles.css")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
@@ -42,14 +42,14 @@ def post_page(source):
     posts.append(source.frontmatter)
 
     # Use docutils to render the restructured text
-    post_body = render_rst(source.body)
+    post_body = render_rst(source.content)
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    body = renderer.render(template.body, source.frontmatter,
+    content = renderer.render(template.content, source.frontmatter,
         {"body": post_body})
 
-    return phial.RenderedPage(body = body, path = output_file_path)
+    return phial.RenderedPage(content = content, path = output_file_path)
 
 @phial.page("index.htm")
 def main_page():
@@ -62,11 +62,11 @@ def main_page():
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    body = renderer.render(template.body, {"posts": displayed_posts})
+    content = renderer.render(template.content, {"posts": displayed_posts})
 
     # We can just return the resulting string to phial since we told it the
     # path already in the decorator.
-    return body
+    return content
 
 if __name__ == "__main__":
     phial.process()
