@@ -6,8 +6,7 @@ import pystache
 import os
 
 # This will have phial copy over our stylesheet, it won't touch the file.
-phial.register_asset("styles.css")
-phial.register_asset_glob("images/*")
+phial.register_simple_assets("styles.css", "images/*")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
@@ -28,7 +27,7 @@ def render_rst(text):
 
     return post_body
 
-@phial.page(files = "posts/*.rst")
+@phial.page("posts/{name}.htm", files = "posts/*.rst")
 def post_page(source):
     template = phial.Document("posts/template.htm")
 
@@ -50,7 +49,7 @@ def post_page(source):
     content = renderer.render(template.content, source.frontmatter,
         {"body": post_body})
 
-    return phial.RenderedPage(content = content, path = output_file_path)
+    return content
 
 @phial.page("index.htm")
 def main_page():
