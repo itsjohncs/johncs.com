@@ -184,7 +184,10 @@ a.pure-button-primary, button.pure-button-primary {
     font-size: 80%;
 }
 
-#post-page pre {
+#post-page tt, #post-page pre {
     font-family: "Inconsolata", monospace;
+}
+
+#post-page pre {
     padding-left: 1em;
 }
