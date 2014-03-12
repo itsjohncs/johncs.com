@@ -183,3 +183,8 @@ a.pure-button-primary, button.pure-button-primary {
 #post-page table.footnote {
     font-size: 80%;
 }
+
+#post-page pre {
+    font-family: "Inconsolata", monospace;
+    padding-left: 1em;
+}

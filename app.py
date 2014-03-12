@@ -6,7 +6,7 @@ import pystache
 import os
 
 # This will have phial copy over our static files.
-phial.register_simple_assets("styles.css", "images/*")
+phial.register_simple_assets("*.css", "images/*")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
@@ -20,7 +20,9 @@ def render_rst(text):
         "initial_header_level": 2,
 
         # I don't want the docutils class added to every element
-        "strip_classes": "docutils"
+        "strip_classes": "docutils",
+
+        "syntax_highlight": "short"
     }
     post_body = publish_parts(text, writer_name = "html",
         settings_overrides = docutils_settings)["html_body"]
