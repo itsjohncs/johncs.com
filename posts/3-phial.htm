@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John CS - Phial: A framework for building static sites</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=latin" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pygments.css">
+</head>
+<body id="post-page">
+    <header id="top-header">
+        <div id="post-title">
+            <a id="site-title" href="/">John CS</a> &rarr; Phial: A framework for building static sites
+        </div>
+        <div id="post-metadata" class="faded">
+            Posted March 12, 2014
+        </div>
+    </header>
+    <div id="post-body">
+        <div class="document">
+<p>I have a few static websites under my care currently. I manage one with <a class="reference external" href="http://jekyllrb.com">Jekyll</a>, another without an SSG (just raw HTML files), and another (this blog) with a new tool I created named <a class="reference external" href="https://github.com/brownhead/phial">Phial</a>.</p>
+<div class="section" id="another-ssg">
+<h2>Another SSG?</h2>
+<p>Like many others, I was wooed by the glory of <a class="reference external" href="http://jekyllrb.com">Jekyll</a> when it arrived. It was the first SSG I had run across and it sounded perfect compared to hosting a heavy backend to serve a simple website. However, after using Jekyll to deploy a few websites, I don't want to continue using it.</p>
+<p>I want to build my static sites in a way that is similar to how I build my dynamic sites. I don't want to have a tool magically plug everything into the right spot and generate the site for me. <strong>I want to build the tool</strong>. Given the <a class="reference external" href="http://staticsitegenerators.net/">amazingly large number of SSG's out there</a>, I don't think I'm alone.</p>
+<p>So I set out to create a framework that would allow you to make such a tool.</p>
+</div>
+<div class="section" id="philosophy">
+<h2>Philosophy</h2>
+<p>I want creating a site with Phial to feel very much like creating a site with <a class="reference external" href="http://flask.pocoo.org/">Flask</a>. I have been largely succesful in this endeavor. Take a look at the Flask's &quot;Hello World!&quot; application available on their home page:</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span>=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">&#64;app.route</span><span class="p">(</span><span>&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span>&quot;Hello World!&quot;</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span>==</span> <span>&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span>.</span><span class="n">run</span><span class="p">()</span>
+</pre>
+<p>The corresponding application with Phial looks like:</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">phial</span> <span class="kn">import</span> <span class="n">page</span>
+
+<span class="nd">&#64;page</span><span class="p">(</span><span>&quot;index.htm&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span>&quot;Hello World!&quot;</span>
+</pre>
+<p>The desire to keep things as simple and straightforward as possible helped me design Phial, and I'm pretty happy with the result. More examples and such can be found on <a class="reference external" href="https://github.com/brownhead/phial">Phial's GitHub page</a> if you're interested.</p>
+</div>
+<div class="section" id="state-of-phial">
+<h2>State of Phial</h2>
+<p>Right now, I'm very happy with Phial and how it is performing. I'm planning on converting all of the static sites currently under my control. After I'm personally as happy as can be with its performance (to the extent that one can be happy with their own software) I will start writing extensive documentation and examples. After which I will start trying to spread the glory of Phial to everyone.</p>
+</div>
+</div>
+
+    </div>
+</body>
+</html>

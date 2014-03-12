@@ -78,6 +78,22 @@ a.pure-button-primary, button.pure-button-primary {
     line-height: 2;
 }
 
+#main-page #badge {
+    margin-bottom: 2em;
+}
+
+#main-page #badge > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#main-page #selfie {
+    margin-right: 2em;
+    border-radius: 5em;
+    -webkit-border-radius: 5em;
+    -moz-border-radius: 5em;
+}
+
 #main-page h1 {
     font-weight: 800;
     font-size: 54pt;
@@ -166,4 +182,9 @@ a.pure-button-primary, button.pure-button-primary {
 
 #post-page table.footnote {
     font-size: 80%;
+}
+
+#post-page pre {
+    font-family: "Inconsolata", monospace;
+    padding-left: 1em;
 }
