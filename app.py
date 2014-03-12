@@ -5,7 +5,7 @@ from collections import namedtuple
 import pystache
 import os
 
-# This will have phial copy over our stylesheet, it won't touch the file.
+# This will have phial copy over our static files.
 phial.register_simple_assets("styles.css", "images/*")
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
@@ -64,8 +64,6 @@ def main_page():
     renderer = pystache.Renderer()
     content = renderer.render(template.content, {"posts": displayed_posts})
 
-    # We can just return the resulting string to phial since we told it the
-    # path already in the decorator.
     return content
 
 if __name__ == "__main__":
