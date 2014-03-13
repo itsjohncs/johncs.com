@@ -4,7 +4,7 @@ description: >
     I have a few static websites currently under my care. I manage one with `Jekyll <http://jekyllrb.com>`_, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named `Phial <https://github.com/brownhead/phial>`_.
 ...
 
-I have a few static websites under currently my care. I manage one with `Jekyll <http://jekyllrb.com>`_, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named `Phial <https://github.com/brownhead/phial>`_.
+I have a few static websites currently under my care. I manage one with `Jekyll <http://jekyllrb.com>`_, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named `Phial <https://github.com/brownhead/phial>`_.
 
 Why Not Just Use...
 -------------------
