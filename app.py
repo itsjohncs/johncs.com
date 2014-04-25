@@ -4,6 +4,7 @@ from docutils.core import publish_parts
 from collections import namedtuple
 import pystache
 import os
+import datetime
 
 # This will have phial copy over our static files.
 phial.register_simple_assets("*.css", "images/*")
@@ -57,8 +58,11 @@ def post_page(source):
 def main_page():
     template = phial.Document("index.htm")
 
+    sorted_posts = sorted(posts, reverse = True,
+        key = lambda x: datetime.datetime.strptime(x["date"], "%B %d, %Y"))
+
     # The posts we're going to show on the front page
-    displayed_posts = list(posts)
+    displayed_posts = list(sorted_posts)
     for i in displayed_posts:
         i["description"] = render_rst(i["description"])
 
