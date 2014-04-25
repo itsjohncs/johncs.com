@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John CS - The Python Import System</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=latin" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pygments.css">
+</head>
+<body id="post-page">
+    <header id="top-header">
+        <div id="post-title">
+            <a id="site-title" href="/">John CS</a> &rarr; The Python Import System
+        </div>
+        <div id="post-metadata" class="faded">
+            Posted March 31, 2014
+        </div>
+    </header>
+    <div id="post-body">
+        <div class="document">
+<p>I made a presentation at Khan Academy on a few good things to know about Python's import system. Here's a writeup of that presentation (this is written mostly as a reference, sorry for the dryness).</p>
+<p>The slides are available <a class="reference external" href="https://docs.google.com/presentation/d/18JO4L9HRY9UJypAW49vj4QnCgl_MoseKxPpE9PKlrg4/edit?usp=sharing">here</a>.</p>
+<div class="section" id="vocab-review-package-vs-module">
+<h2>Vocab Review: Package vs Module</h2>
+<p>A Python module is a single file that you can import, a Python package is a collection of modules and packages (<a class="reference external" href="http://stackoverflow.com/a/7948504">SO answer</a>).</p>
+<p>For example, if we made a file named <tt class="docutils literal">foo.py</tt> and then executed <tt class="docutils literal">import foo</tt>, we would be importing a module.</p>
+<p>Now if we were to make a directory named <tt class="docutils literal">bar/</tt> and place two files, one named <tt class="docutils literal">__init__.py</tt> and the other named <tt class="docutils literal">foo.py</tt>, in that directory, we could then execute <tt class="docutils literal">import bar.foo</tt> and we would be importing the module <tt class="docutils literal">foo</tt> from the <tt class="docutils literal">bar</tt> package. The <tt class="docutils literal">__init__.py</tt> is important here only because it tells Python that <tt class="docutils literal">bar</tt> is a package and not just some random directory.</p>
+</div>
+<div class="section" id="note-packages-can-be-zip-archives">
+<h2>Note: Packages can be Zip Archives</h2>
+<p>Instead of containing a package within a directory, you can also store them in zip archives thanks to the <a class="reference external" href="https://docs.python.org/2/library/zipimport.html">zipimport</a> standard libary shipped with Python since version 2.3. This is very common if you install packages as <a class="reference external" href="http://stackoverflow.com/a/2051195">eggs</a>, which are actually just fancy zip archives.</p>
+</div>
+<div class="section" id="sys-path">
+<h2><tt class="docutils literal">sys.path</tt></h2>
+<p><tt class="docutils literal">sys.path</tt> is a list of locations Python will look for packages in when you use <tt class="docutils literal">import</tt> or <tt class="docutils literal">from</tt>. The list will be scanned front-to-back, and the first module it finds with the name you're looking for will be used (which can be problematic sometimes).</p>
+<p>When you modify the <tt class="docutils literal">PYTHONPATH</tt> environmental variable, you're indirectly adding to <tt class="docutils literal">sys.path</tt> (it's hard for you to know ahead of time where in the list your paths will be placed though).</p>
+</div>
+<div class="section" id="the-site-packages-directory">
+<h2>The site-packages Directory</h2>
+<p>The <tt class="docutils literal"><span class="pre">site-packages/</span></tt> directory is where your third-party Python packages and modules are likely to live. <tt class="docutils literal">pip</tt> and <tt class="docutils literal">easy_install</tt> installs things into this directory, and <tt class="docutils literal">virtualenv</tt> creates a new <tt class="docutils literal"><span class="pre">site-packages</span></tt> directory as one of its primary methods of seperating the packages in the virtual environment from the packages on the rest of your system.</p>
+<p>The location of this directory varies from system to system (and of course is changed when you're in a virtual environment), but it's nearly always called <tt class="docutils literal"><span class="pre">site-packages/</span></tt> so whenever I'm helping someone with import-related problems I usually just do a find on this name to get my bearings. I might also use the <tt class="docutils literal">__file__</tt> attribute (<a class="reference external" href="http://stackoverflow.com/a/9271479">info on this attribute</a>) of an imported module to find it as well.</p>
+<p>The <a class="reference external" href="https://docs.python.org/2/library/site.html">site</a> standard module takes care of adding your <tt class="docutils literal"><span class="pre">site-packages</span></tt> directory to your path. The module also descends into it and handles any <tt class="docutils literal">.pth</tt> files within.</p>
+</div>
+<div class="section" id="pth-files">
+<h2><tt class="docutils literal">.pth</tt> files</h2>
+<p>These files are read by the <tt class="docutils literal">site</tt> module and the paths contained within are added to <tt class="docutils literal">sys.path</tt>. If you visit your own <tt class="docutils literal"><span class="pre">site-packages</span></tt> directory on your installation you're sure to see many of these such files.</p>
+<p><tt class="docutils literal">.pth</tt> files are very handy, and you should definitely consider using them instead of modifying your <tt class="docutils literal">PYTHONPATH</tt> if you'd like the change to be permanent.</p>
+<p>You can also add arbitrary Python into these files by prefixing an <tt class="docutils literal">import</tt> statement to the line. This feature doesn't seem to be documented but is leveraged by a few libraries such as <tt class="docutils literal"><span class="pre">easy-install</span></tt>.</p>
+</div>
+<div class="section" id="extending-the-import-system">
+<h2>Extending the Import System</h2>
+<p>If your needs are complex, you might want to take advantage of the hooks added by <a class="reference external" href="http://legacy.python.org/dev/peps/pep-0302/">PEP 302</a> to extend the import system. You can also extend or reimplement the <tt class="docutils literal">site</tt> module yourself (I did this while creating <a class="reference external" href="https://github.com/brownhead/superzippy">Super Zippy</a>). Finally, you can do super crazy things like overriding <tt class="docutils literal">__import__</tt>. If you want to do it you can probably get Python to let you do it.</p>
+</div>
+</div>
+
+    </div>
+</body>
+</html>
