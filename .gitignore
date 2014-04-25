@@ -49,3 +49,6 @@ docs/_build/
 # Virtual Environments
 venv*/
 env/
+
+# Phial Output
+output/
