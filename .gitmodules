@@ -1,0 +1,4 @@
+[submodule "output"]
+	path = output
+	url = git@github.com:brownhead/johncs.com.git
+	branch = gh-pages
