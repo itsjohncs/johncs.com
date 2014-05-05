@@ -31,7 +31,7 @@ I've also been forced to remove the functionality from a number of the keys beca
 Switching Between Keyboards
 ---------------------------
 
-I've seen a number of ErgoDox owners complain that they haven't been able to switch back and forth between traditionally laid out keyboards and the ErgoDox. This was something that almost prevented me from buying the parts in the first place. But I'm happy to report that I haven't had any troubles at all. I can type at a consistent 100+ words per minute on both (as measured by `10FastFingers <http://10fastfingers.com>`_ without having to warm up. So don't think you'll have to throw out all of your other keyboards after you get your own ErgoDox.
+I've seen a number of ErgoDox owners complain that they haven't been able to switch back and forth between traditionally laid out keyboards and the ErgoDox. This was something that almost prevented me from buying the parts in the first place. But I'm happy to report that I haven't had any troubles at all. I can type at a consistent 100+ words per minute on both (as measured by `10FastFingers <http://10fastfingers.com>`_) without having to warm up. So don't think you'll have to throw out all of your other keyboards after you get your own ErgoDox.
 
 Should You Buy One?
 -------------------
