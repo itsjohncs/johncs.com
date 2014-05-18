@@ -65,6 +65,11 @@ a.pure-button-primary, button.pure-button-primary {
     opacity: .7;
 }
 
+.align-center {
+    display: block;
+    margin: 0 auto;
+}
+
 /*                             o8o
  *                              `"'
  * ooo. .oo.  .oo.    .oooo.   oooo  ooo. .oo.

@@ -1,0 +1,40 @@
+title: "Intelligently Shortening Text"
+date: May 18, 2014
+description: >
+    I designed an algorithm to intelligently shorten the highlighting text for Khan Academy's search results.
+...
+
+Our search page at Khan Academy displays highlighting information to provide context for our results. Our full-text search engine gives us the highlighting text, but it doesn't provide a way to reliably control the length of the text. The end result can be undesirable...
+
+.. image:: /images/highlighting_before.png
+    :alt: A screenshot of Khan Academy's search results.
+    :align: center
+    :width: 75%
+
+Shrinking it in such a way that the result is "good" is difficult though. I was able to do it with a moderately straightforward algorithm to produce:
+
+.. image:: /images/highlighting_after.png
+    :alt: A screenshot of Khan Academy's search results with my algorithm
+    	applied.
+    :align: center
+    :width: 75%
+
+To get a grasp of the problem, take a look at the following text:
+
+.. code-block:: html
+
+    From this experiment we can make a key observation: The values in each
+    of the slices are equal to the the label on the slice, plus or minus
+    some <span class="highlighted">multiple</span> of C. This means the
+    difference between any two values in a slice is some
+    <span class="highlighted">multiple</span> of C.
+
+If our target/optimal length is 125 characters, but we're willing to handle between 80 and 150 characters if necessary, what is the best result we could give? I'd say the second part of the first sentence, after the colon, because it's closest to the target length, it has a highlighted term in it, and it's an entire thought.
+
+A way we can figure this out is by creating a list of "stop points" in the text. We want these stop points to be the beginning of a clause, but we can approximate this by declaring that stop points are the first alphanumeric character after a non-alphanumeric character and some whitespace. So in the string "Our puppies are super smart -- seriously. They can fly planes!", the stop points would be the "s" in seriously, and the "T" in they. Additionally, we consider the beginning and end of a string to be stop points.
+
+Each stop point represents a possible start/end point for our result. So we'll look at the string "Our puppies are super smart --", and the string "They can fly planes!", and the string "Our puppies are super smart -- seriously.". Not all stop points are created equal however (as you may have noticed). We'd prefer to stop at the end of a sentence then in the middle of one for example. To represent this notion, we have the idea of "preferred" stop points. A preferred stop point is one with a capital letter (so the stop point at "They" is preferred, while the stop point at "seriously" is not).
+
+We then look at all combinations of two stop points and look at the strings between them. These are our possible results. Every string that is outside of our min and max lengths is thrown out. Similarly, any string that does not include a highlighted term is thrown out. Finally, we take all of the strings that remain and rank them based on the preferred-ness of the stop points at each end of the string, and then on the proximity of the string's length to the target length. The string that is ranked highest wins.
+
+There is also some handling for edge cases when the above algorithm can't work smoothly for whatever reason (ex: no combination in the target length or no highlighted terms in the source).
