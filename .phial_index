@@ -2,9 +2,12 @@ posts/1-sqlite3_transactions.htm
 posts/2-ergodox.htm
 posts/3-phial.htm
 posts/4-python-import.htm
+posts/5-highlighting.htm
 index.htm
+images/highlighting_after.png
+images/ergodox_layout_layer2.png
+pygments.css
+images/self.jpg
+images/highlighting_before.png
 images/ergodox_both_hands.jpg
 styles.css
-pygments.css
-images/ergodox_layout_layer2.png
-images/self.jpg
