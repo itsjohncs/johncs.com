@@ -162,6 +162,11 @@ a.pure-button-primary, button.pure-button-primary {
     max-width: 50em;
 }
 
+#disqus_thread {
+    max-width: 50em;
+    margin: 0 auto;
+}
+
 #post-page #top-header {
     margin-top: 2em;
     text-align: center;
