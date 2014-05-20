@@ -131,6 +131,12 @@ a.pure-button-primary, button.pure-button-primary {
      * super wide paragraphs are considered a little harder to read.
      * Not a lot of good empirical evidence to support this though.*/
     max-width: 50em;
+
+    padding-top: 2em;
+    margin-top: 1.5em;
+    padding-bottom: 1em;
+
+    border-top: 1px dashed #CCC;
 }
 
 #main-page .post-title {
