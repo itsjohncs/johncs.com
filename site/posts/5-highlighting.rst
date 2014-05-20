@@ -1,7 +1,7 @@
 title: "Intelligently Shortening Text"
 date: May 18, 2014
 description: >
-    I designed an algorithm to intelligently shorten the highlighting text for Khan Academy's search results.
+    I designed an algorithm to intelligently shorten the highlighting text (which shows context for each search result) on Khan Academy's search page.
 ...
 
 .. role:: red-bold

@@ -24,9 +24,13 @@ When I hold down a special key the whole keyboard changes. My left hand's home r
 Problems
 --------
 
-I'm not loving the Cherry MX Clear key switches I installed though. They're very stiff and can make my little fingers pretty tired, especially when typing quickly. Further, I've noticed some of my modifier keys (most notably control) aren't registering when they're pressed. Because of this, a few times a day when I go to copy and paste something I find that I didn't actually copy anything. Further, I borrowed the tools I used to assemble the keyboard so if I want to debug anything I either need to borrow a multimeter again (and then potentially the rest of the equipment) or buy my own gear.
+I'm not loving the Cherry MX Clear key switches I installed though. They're very stiff and can make my little fingers pretty tired, especially when typing quickly.
 
-I've also been forced to remove the functionality from a number of the keys because they were too difficult to reach. Most notably the four smaller keys in both thumbwells (a couple of them are the much-neglected GUI keys). Given that my nickname could be `monster hands <http://archer.wikia.com/wiki/Lana_Kane>`_ I don't know who is actually comfortable reaching for those.
+I've noticed some of my modifier keys (most notably control) aren't registering when they're pressed. Because of this, a few times a day when I go to copy and paste something I find that I didn't actually copy anything.
+
+I borrowed the tools I used to assemble the keyboard so if I want to debug anything I either need to borrow a multimeter again (and then potentially the rest of the equipment) or buy my own gear.
+
+I've been forced to remove the functionality from a number of the keys because they were too difficult to reach. Most notably the four smaller keys in both thumbwells (a couple of them are the much-neglected GUI keys). Given that my nickname could be `monster hands <http://archer.wikia.com/wiki/Lana_Kane>`_ I don't know who is actually comfortable reaching for those.
 
 Switching Between Keyboards
 ---------------------------
@@ -36,4 +40,4 @@ I've seen a number of ErgoDox owners complain that they haven't been able to swi
 Should You Buy One?
 -------------------
 
-Yes (assuming you have the time and money to spare). It's the best thing I've ever typed on, despite its problems. I also know my ErgoDox will only improve as I tinker with it, and I couldn't say that about any other keyboard I've owned.
+Probably (assuming you have the time and money to spare). It's the best thing I've ever typed on, despite its problems. I also know my ErgoDox will only improve as I tinker with it, and I couldn't say that about any other keyboard I've owned.
