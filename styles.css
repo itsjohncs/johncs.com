@@ -201,3 +201,8 @@ a.pure-button-primary, button.pure-button-primary {
 #post-page pre {
     padding-left: 1em;
 }
+
+#post-page .red-bold {
+    color: red;
+    font-weight: bold;
+}

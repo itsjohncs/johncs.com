@@ -22,23 +22,67 @@
     </header>
     <div id="post-body">
         <div class="document">
-<p>Our search page at Khan Academy displays highlighting information to provide context for our results. Our full-text search engine gives us the highlighting text, but it doesn't provide a way to reliably control the length of the text. The end result can be undesirable...</p>
+<p>Our search page at Khan Academy displays highlighting information to provide context for our results. Our full-text search engine gives us the highlighting text, but it doesn't provide a way to reliably control the length of the text. The end result can be undesirable. Check out this screenshot of our search page:</p>
 <img alt="A screenshot of Khan Academy's search results." class="align-center" src="/images/highlighting_before.png" style="width: 75%;" />
-<p>Shrinking it in such a way that the result is &quot;good&quot; is difficult though. I was able to do it with a moderately straightforward algorithm to produce:</p>
-<img alt="A screenshot of Khan Academy's search results with my algorithm applied." class="align-center" src="/images/highlighting_after.png" style="width: 75%;" />
-<p>To get a grasp of the problem, take a look at the following text:</p>
-<pre class="code html literal-block">
-From this experiment we can make a key observation: The values in each
-of the slices are equal to the the label on the slice, plus or minus
-some <span class="nt">&lt;span</span> <span class="na">class=</span><span>&quot;highlighted&quot;</span><span class="nt">&gt;</span>multiple<span class="nt">&lt;/span&gt;</span> of C. This means the
-difference between any two values in a slice is some
-<span class="nt">&lt;span</span> <span class="na">class=</span><span>&quot;highlighted&quot;</span><span class="nt">&gt;</span>multiple<span class="nt">&lt;/span&gt;</span> of C.
+<p>6 lines of text for a single result might be too much... Shrinking it in such a way that the highlighting is still useful is difficult though. To get a clearer idea of the problem, let's poke at some example text:</p>
+<pre class="literal-block">
+From this experiment we can make a key observation: The values in each of
+the slices are equal to the the label on the slice, plus or minus some
+<strong>multiple</strong> of C. This means the difference between any two values in a
+slice is some <strong>multiple</strong> of C.
 </pre>
-<p>If our target/optimal length is 125 characters, but we're willing to handle between 80 and 150 characters if necessary, what is the best result we could give? I'd say the second part of the first sentence, after the colon, because it's closest to the target length, it has a highlighted term in it, and it's an entire thought.</p>
-<p>A way we can figure this out is by creating a list of &quot;stop points&quot; in the text. We want these stop points to be the beginning of a clause, but we can approximate this by declaring that stop points are the first alphanumeric character after a non-alphanumeric character and some whitespace. So in the string &quot;Our puppies are super smart -- seriously. They can fly planes!&quot;, the stop points would be the &quot;s&quot; in seriously, and the &quot;T&quot; in they. Additionally, we consider the beginning and end of a string to be stop points.</p>
-<p>Each stop point represents a possible start/end point for our result. So we'll look at the string &quot;Our puppies are super smart --&quot;, and the string &quot;They can fly planes!&quot;, and the string &quot;Our puppies are super smart -- seriously.&quot;. Not all stop points are created equal however (as you may have noticed). We'd prefer to stop at the end of a sentence then in the middle of one for example. To represent this notion, we have the idea of &quot;preferred&quot; stop points. A preferred stop point is one with a capital letter (so the stop point at &quot;They&quot; is preferred, while the stop point at &quot;seriously&quot; is not).</p>
-<p>We then look at all combinations of two stop points and look at the strings between them. These are our possible results. Every string that is outside of our min and max lengths is thrown out. Similarly, any string that does not include a highlighted term is thrown out. Finally, we take all of the strings that remain and rank them based on the preferred-ness of the stop points at each end of the string, and then on the proximity of the string's length to the target length. The string that is ranked highest wins.</p>
-<p>There is also some handling for edge cases when the above algorithm can't work smoothly for whatever reason (ex: no combination in the target length or no highlighted terms in the source).</p>
+<p>This is too large for us to display directly to the user, but how could we shorten it?</p>
+<p>To start off, let's say that 125 characters is our &quot;optimal&quot; length (I chose that pretty arbitrarily). Let's also say that anything less than 80 characters is probably too short, and anything more than 150 is too long. With those numbers in mind, what do you think the optimal shortened version of the above text is?</p>
+<p>I'd say the second part of the first sentence, after the colon, because it's close to the target length, it has a highlighted term in it, and it's an entire thought.</p>
+<pre class="literal-block">
+The values in each of the slices are equal to the the label on the slice,
+plus or minus some <strong>multiple</strong> of C.
+</pre>
+<p>A way we could figure this out is by first creating a list of &quot;stop points&quot; in the text. We want these stop points to be the beginning of a clause, but since that's a hard thing to detect in code we can approximate it by declaring that stop points are the first alphanumeric character after a non-alphanumeric character and some whitespace. We'll also say that the beginning and end of the text are stop points.</p>
+<p>So if we annotated the stop points in our example text we'd get:</p>
+<pre class="literal-block">
+<span class="red-bold">|</span>From this experiment we can make a key observation: <span class="red-bold">|</span>The values in each
+of the slices are equal to the the label on the slice, <span class="red-bold">|</span>plus or minus some
+<strong>multiple</strong> of C. <span class="red-bold">|</span>This means the difference between any two values in a
+slice is some <strong>multiple</strong> of C.<span class="red-bold">|</span>
+</pre>
+<p>Each stop point represents a possible start or end point for our result. So our search space is just every combination of two stop points. Some strings we will look at include:</p>
+<ul class="simple">
+<li><tt class="docutils literal">From this experiment we can make a key observation:</tt></li>
+<li><tt class="docutils literal">The values in each of the slices are equal to the label on the slice,</tt></li>
+<li><span class="raw-html"><tt>The values in each of the slices are equal to the label on the slice, plus or minus some <b>multiple</b> of C.</tt></span></li>
+</ul>
+<p>The total number of strings we'll look at can be calculated by evaluating <tt class="docutils literal">X choose 2</tt> (where <tt class="docutils literal">X</tt> is the number of stop points). So in our case, we have <tt class="docutils literal">5 choose 2</tt> which is 10.</p>
+<p>Not all stop points are created equal however (as you may have noticed). We'd prefer to stop at the end of a sentence than in the middle of one for example. To represent this notion, we have the idea of &quot;preferred&quot; stop points. Since it's also difficult to detect the ends of sentences, we'll say a preferred stop point is one with a capital letter following it. The beginning and end of the text are also preferred.</p>
+<p>So if we annotated only the preferred stop points in our example text we'd get:</p>
+<pre class="literal-block">
+<span class="red-bold">|</span>From this experiment we can make a key observation: <span class="red-bold">|</span>The values in each
+of the slices are equal to the the label on the slice, plus or minus some
+<strong>multiple</strong> of C. <span class="red-bold">|</span>This means the difference between any two values in a
+slice is some <strong>multiple</strong> of C.<span class="red-bold">|</span>
+</pre>
+<p>Now that we have our vocab in place, we can find our answer. To do so, we'll look at each string in our search space and throw out every string that is outside of our min and max lengths (which we set at 80 and 150 earlier). This leaves us with:</p>
+<ul class="simple">
+<li><tt class="docutils literal">From this experiment we can make a key observation: The values in each of the slices are equal to the the label on the slice,</tt></li>
+<li><span class="raw-html"><tt>The values in each of the slices are equal to the the label on the slice, plus or minus some <b>multiple</b> of C.</tt></span></li>
+<li><span class="raw-html"><tt>This means the difference between any two values in a slice is some <b>multiple</b> of C.</tt></span></li>
+<li><span class="raw-html"><tt>plus or minus some <b>multiple</b> of C. This means the difference between any two values in a slice is some <b>multiple</b> of C.</tt></span></li>
+</ul>
+<p>Next, we can throw out any string that doesn't include a highlighted term leaving us with:</p>
+<ul class="simple">
+<li><span class="raw-html"><tt>The values in each of the slices are equal to the the label on the slice, plus or minus some <b>multiple</b> of C.</tt></span></li>
+<li><span class="raw-html"><tt>This means the difference between any two values in a slice is some <b>multiple</b> of C.</tt></span></li>
+<li><span class="raw-html"><tt>plus or minus some <b>multiple</b> of C. This means the difference between any two values in a slice is some <b>multiple</b> of C.</tt></span></li>
+</ul>
+<p>Finally, we take all of the strings that remain and rank them. We'll rank first on the preferred-ness of the stop points at each end of the result, and then on the proximity of the string's length to the target length.</p>
+<p>Regarding the preferred-ness, we'll say that a result with two preferred stop points ranks highest, a result with a single preferred stop point at the beginning is ranked second highest, a result with a single preferred stop point at the end is ranked third highest, and a result with no preferred stop points is ranked fourth highest (aka last).</p>
+<p>The first two results have preferred stop points at both ends, so the only thing differentiating them are the lengths, which are 107 and 82 respectively. Since 107 is closest to out target of 125, our final result is:</p>
+<pre class="literal-block">
+The values in each of the slices are equal to the the label on the slice,
+plus or minus some <strong>multiple</strong> of C.
+</pre>
+<p>This algorithm will break down under certain situations (ex: all the possible results are too short), but the edge cases end up being simple to handle. The same screenshot that we started with, when this algorithm is applied, becomes:</p>
+<img alt="A screenshot of Khan Academy's search results." class="align-center" src="/images/highlighting_after.png" style="width: 75%;" />
 </div>
 
     </div>
