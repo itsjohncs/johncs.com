@@ -44,13 +44,6 @@ a:hover {
     border-bottom: none;
 }
 
-/* This adds a margin to the bottom of every post and top-level element
- * which helps provide a consistent level of spacing. The bottom and
- * top margins of the page are handled by the body rules. */
-body > *:not(:last-child), .top-level {
-    padding-bottom: 3em;
-}
-
 a.pure-button-primary, button.pure-button-primary {
     /* The default color that Pure.css uses is a little too harsh imo
      * so this is a much more faded blue. */
@@ -132,10 +125,8 @@ a.pure-button-primary, button.pure-button-primary {
      * Not a lot of good empirical evidence to support this though.*/
     max-width: 50em;
 
-    padding-top: 2em;
+    padding-top: 1.5em;
     margin-top: 1.5em;
-    padding-bottom: 1em;
-
     border-top: 1px dashed #CCC;
 }
 
