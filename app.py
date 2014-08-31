@@ -45,7 +45,7 @@ def post_page(source):
     posts.append(source.frontmatter)
 
     # Use docutils to render the restructured text
-    post_body = render_rst(source.content)
+    post_body = render_rst(source.content.read())
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
