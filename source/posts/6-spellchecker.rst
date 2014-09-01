@@ -4,13 +4,28 @@ description: >
     How I wrote a performant spell checker entirely in Python.
 ...
 
-I wanted `Khan Academy's search page <https://www.khanacademy.org/search>`_ to be able to automatically correct simple typos (ex: *factorinn* to *factoring*). Not wanting to embark on something epic without some data to back me up, I did some quick research. I found that 28% of the least frequent 16,000 queries and 18% of the most frequent 16,000 queries to our search page had typos that we could fix. So it seemed like this feature would benefit a fair number of users.
+Not too long ago, searching for *polinomials* on `Khan Academy's search page <https://www.khanacademy.org/search>`_ would yield no results. This seemed like a pretty big problem, and some quick research showed that somewhere between 18% and 28% of queries made to our search page had typos like this.[#reach_research]_ I really wanted something like Google's "Showing results for..." feature to take care of this sort of situation.
 
-Doing it ended up being pretty tricky though. We use Amazon CloudSearch to do the heavy lifting for us, and it doesn't have support for any kind of spell checking. Therefore if we wanted to do this, we'd have to either implement our own solution within the Google App Engine sandbox, or ship off to some external service.
+.. image:: /images/showing_results_for.png
+    :alt: Google's "Showing results for..." feature.
 
-Rolling our own spellchecker seemed like a pretty awful idea, so I thought long and hard about how we could best use an external service. Nothing I tried ended up being very reasonable though. Getting locked into a spell checking solution that wasn't very flexible wasn't very apepaling either, since I had big plans for it.
+I knew I wouldn't be able to implement anything as awesome as Google's autocorrect, but I could definitely take care of straightforward spelling mistakes. So I set out to set up a spell checker. Keep in mind Khan Academy runs almost entirely on Google App Engine's Python platform.
 
-Google App Engine has support for Java, Go, and PHP, which all had considerably more performant setups than Python. We don't use seperate modules very much in our webapp though, and there'd be a lot of overhead to get it going. So in order to get something up and going that would serve our needs without draining a ton of time, I made the decision to implement it in Python.
+The first thing I did was see if there was some library or tool that we could use to do the hard parts of autocorrection. `Whoosh <https://pypi.python.org/pypi/Whoosh/>`_ has a pure-Python spell checker implementation inside of it, but its word graphs take up a large amount of memory. Since we wanted to have our already-memory-strained frontend instances do the spell checking, this wasn't a great option.
+
+PyEnchant was off the table as well because it needed some C libraries to be installed, which GAE's sandbox wouldn't allow. An external service didn't seem very attractive either because of the round trip time and the pain of maintaining another service.
+
+With the easy options off the table, the best choice looked like rolling our own pure-Python spell checker. To get things up and going quickly, I decided to use a simple brute force algorithm like the one Peter Norvig describes in `his awesome blog post <http://norvig.com/spell-correct.html>`_, and see where that took me.
+
+The first problem I ran into is that storing our dictionary of words in a Python dictionary consumes ~30 MB of space. This is pretty unpleasant, and would only get worse as I added support for other languages. `Python's array module <https://docs.python.org/2/library/array.html>`_ has come to my rescue before in situations like this, and it came through for me again.
+
+The idea is to store a hash of each word in a sorted array (using the ``hash()`` built-in which is super fast), and then use the `bisect module <https://docs.python.org/2/library/bisect.html>`_ to do a very fast binary search on the array.
+
+I hashed each word with Python's super fast ``hash()`` built-in and stuck them all in a big sorted array. Then whenever I wanted to do a lookup I could use the `bisect module <https://docs.python.org/2/library/bisect.html>`_ to do a very fast binary search on the array. This set up was significantly slower than using a native Python dictionary (which are hash tables), but did have the benefit of being extremely memory efficient (2 MB instead of 30 MB) and straightforward to implement and understand.
+
+ So instead, I tried storing our dictionary using `Python's array.array container <https://docs.python.org/2/library/array.html>`_. Because of the nature of the algorithm, I could get away with storing a sorte
+
+
 
 With that in mind
 
@@ -19,3 +34,5 @@ All the major search engines will figure out what you mean when you make a typo 
 I wanted the search page at Khan Academy to be able to check users' queries for spelling errors.
 
 The search page at Khan Academy will check your query for spelling errors (ex: try `searching for *factor quadrattics* <https://www.khanacademy.org/search?page_search_query=factor+quadrattics>`_).
+
+.. [#reach_research] I found that the 28% of the least frequent 16,000 queries and 18% of the most frequent 16,000 queries had typos within edit distance 2 of a known common word. I defined "common word" by training my little sample program based on `Peter Norvig's awesome sample code <http://norvig.com/spell-correct.html>`_ with some dictionaries and all of Khan Academy's content.
