@@ -2,3 +2,6 @@
 	path = output
 	url = git@github.com:brownhead/johncs.com.git
 	branch = gh-pages
+[submodule "phial"]
+	path = phial
+	url = git@github.com:brownhead/phial.git
