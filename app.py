@@ -6,8 +6,10 @@ import pystache
 import os
 import datetime
 
-# This will have phial copy over our static files.
-phial.register_simple_assets("*.css", "images/*")
+@phial.pipeline(["*.css", "images/*"], binary_mode=True)
+def simple_assets(source):
+    # Just copy them over without modification
+    return source
 
 # I'm going to collect the posts so I can put them on the front page. I'm just
 # going to store the frontmatter of each post cause that's all I need.
@@ -30,33 +32,30 @@ def render_rst(text):
 
     return post_body
 
-@phial.page("posts/{name}.htm", files = "posts/*.rst")
-def post_page(source):
-    template = phial.Document("posts/template.htm")
 
-    # Figure out where we want the filename to be on the site (just replace
-    # .rst with .htm).
-    output_file_name = os.path.basename(source.file_path)[:-3] + "htm"
-    output_file_path = "posts/{}".format(output_file_name)
+@phial.page("posts/{}.htm", foreach="posts/*.rst")
+def post_page(target, item):
+    template = phial.open_file("posts/template.htm")
+
+    frontmatter, content = phial.parse_frontmatter(item)
 
     # Save the frontmatter of the post so we can use it on the main page, also
     # make note of where we're going to put it in the site.
-    source.frontmatter["link"] = output_file_path
-    posts.append(source.frontmatter)
+    posts.append(dict(link=target, **(frontmatter or {})))
 
     # Use docutils to render the restructured text
-    post_body = render_rst(source.content.read())
+    post_body = render_rst(content.read())
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    content = renderer.render(template.content, source.frontmatter,
+    content = renderer.render(template.read(), frontmatter,
         {"body": post_body})
 
     return content
 
 @phial.page("index.htm")
 def main_page():
-    template = phial.Document("index.htm")
+    template = phial.open_file("index.htm")
 
     sorted_posts = sorted(posts, reverse = True,
         key = lambda x: datetime.datetime.strptime(x["date"], "%B %d, %Y"))
@@ -68,7 +67,7 @@ def main_page():
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    content = renderer.render(template.content, {"posts": displayed_posts})
+    content = renderer.render(template.read(), {"posts": displayed_posts})
 
     return content
 
