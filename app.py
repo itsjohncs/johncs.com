@@ -33,8 +33,11 @@ def render_rst(text):
     return post_body
 
 
-@phial.page("posts/{}.htm", foreach="posts/*.rst")
+@phial.page("posts/{}.htm", foreach=["posts/*.rst", "drafts/*.rst"])
 def post_page(target, item):
+    if not os.environ.get("DRAFTING") and item.startswith("drafts/"):
+        return None
+
     template = phial.open_file("posts/template.htm")
 
     frontmatter, content = phial.parse_frontmatter(item)
