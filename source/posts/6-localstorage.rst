@@ -1,4 +1,4 @@
-title: Local storage today.
+title: Local Storage Today
 date: December 22, 2014
 description: >
     An audit of recent local storage implementations in Firefox, WebKit, and Chromium.
