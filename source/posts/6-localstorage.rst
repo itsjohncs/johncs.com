@@ -1,12 +1,18 @@
-I'd like to write to ``localStorage`` often. I'd also like to write to it synchronously in response to click events.
+title: Local storage today.
+date: December 22, 2014
+description: >
+    An audit of recent localstorage implementations in Firefox, WebKit, and Chromium.
+...
 
-Colloquial wisdom says this is a bad idea and will give me Angry Users Syndrome very quickly. Bad ideas are fun though, so let's see how much of a bad idea it is.
+I'd like to write to ``localStorage`` often. I'd also like to write to it synchronously in response to user interaction.
 
-TL;DR: It's not a bad idea for (at least) the latest Firefox, WebKit, and Chromium. `localStorage.setItem` and `localStorage.getItem` access fast in-memory data structures and updating the disk is done asynchronously in the background.
+Past wisdom says this is a bad idea and will give me Angry Users Syndrome very quickly. Bad ideas are fun though, so let's see how much of a bad idea it is.
 
-To get an idea of what we're looking at, let's take a quick dip into Firefox's source code. Starting from the top of the C++ implementation of ``localstorage.setItem`` which is at ``DOMStorage::SetItem`` in ``dom/storage/DOMStorage.cpp``. There's nothing interesting in there, but one layer deeper at ``DOMStorageCache::SetItem`` in ``dom/storage/DOMStorageCache.cpp`` and we get something interesting.
+TL;DR: It's not a bad idea for (at least) the latest Firefox, WebKit, and Chromium browsers. ``localStorage.setItem`` and ``localStorage.getItem`` access fast in-memory data structures and updating the disk is done asynchronously in the background.
 
-Below is the entirety of the function with my own annotations. Sorry in advance for shoving a bunch of C++ at you...
+To get an idea of what we're looking at, let's take a quick dip into Firefox's source code (`you can follow along on GitHub <https://github.com/mozilla/gecko-dev>`_). I'm starting from the top of the C++ implementation of ``localstorage.setItem`` which is at ``DOMStorage::SetItem`` in ``dom/storage/DOMStorage.cpp``. There's nothing interesting in that function, but one layer deeper at ``DOMStorageCache::SetItem`` in ``dom/storage/DOMStorageCache.cpp`` we get something interesting.
+
+Below is the entirety of the function with my own comments. Sorry in advance for shoving a bunch of C++ at you…
 
 .. code-block:: cpp
 
@@ -63,9 +69,9 @@ The corresponding ``localStorage.getItem`` implementation is even simpler and ju
 
 So to summarize: whenever we access ``localStorage`` we're accessing a hash table and we're not going to block on the disk, unless we haven't finished the initial preload.
 
-As long as I keep the initial preload in mind, my idea is looking Not So Bad. But there's quite a few browsers out there…
+This is nice news and I like this, but there's quite a few browsers out there. Let's take a look at Chromium next (`follow along on Google Code <https://chromium.googlesource.com/chromium/src.git/+/master>`_).
 
-Let's take a look at Chromium next. ``WebStorageAreaImpl::setItem`` at ``src/content/renderer/dom_storage/webstoragearea_impl.cc`` is the top of the C++ implementation, but again it doesn't have anything interesting. We need to dig down to ``DOMStorageCachedArea::SetItem`` in ``src/content/renderer/dom_storage/dom_storage_cached_area.cc`` in order to see something cool. Here it is in all its glory.
+``WebStorageAreaImpl::setItem`` at ``src/content/renderer/dom_storage/webstoragearea_impl.cc`` is the top of the C++ implementation, but again it doesn't have anything interesting. We need to dig down to ``DOMStorageCachedArea::SetItem`` in ``src/content/renderer/dom_storage/dom_storage_cached_area.cc`` in order to see something cool (comments by me again):
 
 .. code-block:: cpp
 
@@ -101,8 +107,8 @@ The corresponding ``localStorage.getItem`` implementation just accesses the ``st
 
 To summarize: Chromium behaves the same as Firefox except that it does not seem to preload the cache until you hit local storage for the first time.
 
-WebKit seems like a good next target. ``Storage::setItem`` in ``Source/WebCore/storage/Storage.cpp`` is the top of the implementation, and it does have something interesting for once. We can see that `private browsing mode kills localStorage <http://stackoverflow.com/a/14555361/3920202>`_. Burying deeper down though we see a similar story at ``StorageAreaMap::setItem`` in ``Source/WebKit2/WebProcess/Storage/StorageAreaMap.cpp``.
+WebKit seems like a good next target (`github <https://github.com/WebKit/webkit>`_). ``Storage::setItem`` in ``Source/WebCore/storage/Storage.cpp`` is the top of the implementation, and it does have something interesting for once. We can see that `private browsing mode kills localStorage <http://stackoverflow.com/a/14555361/3920202>`_. Burying deeper down though we see a similar story at ``StorageAreaMap::setItem`` in ``Source/WebKit2/WebProcess/Storage/StorageAreaMap.cpp``.
 
 I'm not going to paste the code here because it's basically the same as the above two. There's the wait on the preload, then an access to an in-memory data structure (a hash table this time), and then an asynchronous call to update the disk.
 
-It would be a good idea to go back through the git history of the three repositories I've been looking at to see when they became super fast, but I think this quick audit is enough to show that we can expect ``localStorage`` to be extremely easy to deal with in the not-so-distant-future (if it's not already the case).
+It would be a good idea to go back through the git history of the three repositories I've been looking at to see when they became super fast. I'd also like to do some testing to Internet Explorer to try and figure out if its implementation is also fast. I'll leave that to another post though.
