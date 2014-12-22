@@ -1,4 +1,4 @@
-.PHONY: serve serve-prod env deps prod
+.PHONY: serve serve-prod env deps prod publish
 
 PHIAL = PYTHONPATH=./phial python -m phial.__main__
 
@@ -8,8 +8,25 @@ serve:
 serve-prod:
 	$(PHIAL) --testing app.py
 
-prod:
+publish:
+	# Make sure everything is up to date
+	cd output/ && \
+		git fetch origin && \
+		git checkout gh-pages && \
+		git reset --hard origin/gh-pages
+
+	# Build the site
 	$(PHIAL) app.py
+
+	# Publish
+	cd output/ && \
+		git add -A && \
+		git commit -m "publish" && \
+		git push origin gh-pages
+
+	# Update the submodule
+	git add output
+	git commit -m 'output substate'
 
 env:
 	virtualenv --prompt '(phial)' env
