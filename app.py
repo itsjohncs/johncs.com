@@ -33,46 +33,46 @@ def render_rst(text):
     return post_body
 
 
-@phial.page("posts/{}.htm", foreach=["posts/*.rst", "drafts/*.rst"])
-def post_page(target, item):
-    if not os.environ.get("DRAFTING") and item.startswith("drafts/"):
+@phial.page(["posts/*.rst", "drafts/*.rst"])
+def post_page(source_file):
+    if not os.environ.get("DRAFTING") and source_file.name.startswith("drafts/"):
         return None
 
-    template = phial.open_file("posts/template.htm")
+    template = phial.open_file("posts/template.htm").read()
 
-    frontmatter, content = phial.parse_frontmatter(item)
-
-    # Save the frontmatter of the post so we can use it on the main page, also
-    # make note of where we're going to put it in the site.
-    posts.append(dict(link=target, **(frontmatter or {})))
+    frontmatter, content = phial.parse_frontmatter(source_file)
 
     # Use docutils to render the restructured text
     post_body = render_rst(content.read())
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    content = renderer.render(template.read(), frontmatter,
-        {"body": post_body})
+    content = renderer.render(template, frontmatter, {"body": post_body})
 
-    return content
+    return phial.file(
+        name=phial.swap_extension(source_file.name, ".htm"),
+        content=content,
+        metadata=frontmatter or {})
 
-@phial.page("index.htm")
+@phial.page(depends_on=post_page)
 def main_page():
     template = phial.open_file("index.htm")
 
-    sorted_posts = sorted(posts, reverse = True,
-        key = lambda x: datetime.datetime.strptime(x["date"], "%B %d, %Y"))
+    date_from_file = lambda f: datetime.datetime.strptime(f.metadata["date"], "%B %d, %Y")
+    sorted_posts = sorted(phial.get_task(post_page).files, reverse=True, key=date_from_file)
 
     # The posts we're going to show on the front page
-    displayed_posts = list(sorted_posts)
-    for i in displayed_posts:
-        i["description"] = render_rst(i["description"])
+    posts_metadata = [i.metadata for i in sorted_posts]
+    for metadata, post in zip(posts_metadata, sorted_posts):
+        metadata["description"] = render_rst(metadata["description"])
+        metadata["link"] = post.name
+
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    content = renderer.render(template.read(), {"posts": displayed_posts})
+    content = renderer.render(template.read(), {"posts": posts_metadata})
 
-    return content
+    return phial.file(name="index.htm", content=content)
 
 if __name__ == "__main__":
     phial.process()
