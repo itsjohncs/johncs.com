@@ -11,10 +11,6 @@ def simple_assets(source):
     # Just copy them over without modification
     return source
 
-# I'm going to collect the posts so I can put them on the front page. I'm just
-# going to store the frontmatter of each post cause that's all I need.
-posts = []
-
 def render_rst(text):
     """Renders some restructured text and returns generated HTML."""
 
