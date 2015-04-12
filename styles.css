@@ -167,6 +167,7 @@ a.pure-button-primary, button.pure-button-primary {
 #post-page #top-header {
     margin-top: 2em;
     text-align: center;
+    margin-bottom: 4em;
 }
 
 #post-page #post-title {
@@ -181,8 +182,8 @@ a.pure-button-primary, button.pure-button-primary {
 
 #post-page #post-body img {
     max-width: 100%;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 #post-page table.footnote:first-of-type {
