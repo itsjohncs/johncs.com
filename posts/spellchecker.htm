@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John CS - Typos in search queries at Khan Academy</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=latin" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pygments.css">
+</head>
+<body id="post-page">
+    <header id="top-header">
+        <div id="post-title">
+            <a id="site-title" href="/">John CS</a> &rarr; Typos in search queries at Khan Academy
+        </div>
+        <div id="post-metadata" class="faded">
+            Posted April 11, 2015
+        </div>
+    </header>
+    <div id="post-body">
+        <div class="document">
+<p>One year ago, searching for <em>polinomials</em> on <a class="reference external" href="https://www.khanacademy.org/search">Khan Academy's search page</a> would give you no results. If you typed the same thing into Google you'd be efficiently and politely corrected.</p>
+<img alt="Google's &quot;Showing results for...&quot; feature." class="align-center" src="/images/showing_results_for.png" style="width: 75%;" />
+<p>I didn't have any illusions of making a solution as good as Google's, but I figured I could improve things for a significant number of users anyways <a class="footnote-reference" href="#reach-research" id="id1">[1]</a>.</p>
+<p>The first thing I did was see if there was some library or tool that we could use to do some simple spellchecking. Khan Academy runs on Google App Engine's Python platform, so I needed a pure-Python library (<a class="reference external" href="https://cloud.google.com/appengine/docs/python/#Python_Pure_Python">installing CPython extensions is not allowed</a>).</p>
+<p><a class="reference external" href="https://pypi.python.org/pypi/Whoosh/">Whoosh</a> was a good candidate, but it wasn't as memory efficient as I wanted <a class="footnote-reference" href="#whoosh-memory" id="id2">[2]</a>. Integrating Whoosh with Google App Engine also looked error-prone. After looking around some more and not finding anything super useable, I decided to try something crazy.</p>
+<p>I decided to build my own pure-Python spell checker.</p>
+<img alt="Wait, what?" class="align-center" src="/images/wat.png" />
+<p>I was expecting my mentor and others to balk at the idea (I was an intern during this time). But all I received were encouraging nods, so off I went.</p>
+<p>To get things up and going quickly, I chose to follow a simple brute force algorithm like the one Peter Norvig describes in <a class="reference external" href="http://norvig.com/spell-correct.html">his awesome blog post</a>. Soon I had something running that worked well and was super fast. There was a problem though.</p>
+<p>Storing our English words in a Python <tt class="docutils literal">dict</tt> consumed about 18 MB of space <a class="footnote-reference" href="#benchmarking" id="id3">[3]</a>. Since my hope was that this code could run on all our frontend instances and work for all languages, our infrastructure team and I weren't super excited by this.</p>
+<img alt="Oh hell no." class="align-center" src="/images/oh-hell-no.gif" />
+<p>To reduce memory I first tried using <a class="reference external" href="https://docs.python.org/2/library/array.html">Python's array module</a> to build my own immutable hash table. This did indeed bring our memory usage down but made spellchecking take several seconds per query.</p>
+<p>The loss of speed came from doing way more things in Python code instead of CPython's super-fast hash table implementation. So I had to give up on my plans for an awesome <a class="reference external" href="http://stevehanov.ca/blog/index.php?id=120">succinct trie</a> implementation and instead went hunting through the standard library to find the best native solution available.</p>
+<p>Thus I arrived at the binary search implementation in the <a class="reference external" href="https://docs.python.org/2/library/bisect.html">bisect module</a> of Python's standard library.</p>
+<p>The idea is simple. Store a hash of each word in a sorted array (creating hashes with the quick <tt class="docutils literal">hash()</tt> built-in), and then do binary search on that array.</p>
+<p>This ends up being fast enough for all queries and consumes less then 2 MB to store the sorted array. Best of all, it works.</p>
+<img alt="Screenshot of the spell checker working on Khan Academy" class="align-center" src="/images/khan-academy-correction.png" style="width: 75%;" />
+<table class="docutils footnote" frame="void" id="reach-research" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>I found that the 28% of the least frequent 16,000 queries and 18% of the most frequent 16,000 queries had typos within edit distance 2 of a known common word. I defined &quot;common word&quot; by creating a single dictionary from some freely licensed english dictionaries and all of Khan Academy's content. This was part of my preliminary research and was done to check that a autocorrecter was a useful feature.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="whoosh-memory" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>I came to this conclusion by auditing the code, which is (of course) not nearly as accurate as actually running benchmarks. If you're familiar with Whoosh and think I came to the wrong conclusion, please let me know.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="benchmarking" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>Once I got something working at all, I invested time into making a script that would give me metrics on our speed, memory usage, and accuracy. <a class="reference external" href="https://github.com/pympler/pympler">Pympler</a> was used to get the size of the dictionary implementations as well as the max memory usage when running the algorithm.</td></tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        // Disqus
+        var disqus_shortname = 'johncscom';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        // GA
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51104787-1', 'johncs.com');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
