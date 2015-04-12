@@ -29,7 +29,7 @@
 <p><a class="reference external" href="https://pypi.python.org/pypi/Whoosh/">Whoosh</a> was a good candidate, but it wasn't as memory efficient as I wanted <a class="footnote-reference" href="#whoosh-memory" id="id2">[2]</a>. Integrating Whoosh with Google App Engine also looked error-prone. After looking around some more and not finding anything super useable, I decided to try something crazy.</p>
 <p>I decided to build my own pure-Python spell checker.</p>
 <img alt="Wait, what?" class="align-center" src="/images/wat.png" />
-<p>I was expecting my mentor and others to balk at the idea (I was an intern during this time). But all I received were encouraging nods, so off I went.</p>
+<p>I was expecting my mentor and others to balk at the idea (<a class="reference external" href="https://www.khanacademy.org/careers/interns">I was an intern during this time</a>). But all I received were encouraging nods, so off I went.</p>
 <p>To get things up and going quickly, I chose to follow a simple brute force algorithm like the one Peter Norvig describes in <a class="reference external" href="http://norvig.com/spell-correct.html">his awesome blog post</a>. Soon I had something running that worked well and was super fast. There was a problem though.</p>
 <p>Storing our English words in a Python <tt class="docutils literal">dict</tt> consumed about 18 MB of space <a class="footnote-reference" href="#benchmarking" id="id3">[3]</a>. Since my hope was that this code could run on all our frontend instances and work for all languages, our infrastructure team and I weren't super excited by this.</p>
 <img alt="Oh hell no." class="align-center" src="/images/oh-hell-no.gif" />
