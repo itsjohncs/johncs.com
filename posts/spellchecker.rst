@@ -39,9 +39,9 @@ The loss of speed came from doing way more things in Python code instead of CPyt
 
 Thus I arrived at the binary search implementation in the `bisect module <https://docs.python.org/2/library/bisect.html>`_ of Python's standard library.
 
-The idea is simple. Store a hash of each word in a sorted array (creating hases with the ``hash()`` built-in which is super fast), and then do binary search on that array.
+The idea is simple. Store a hash of each word in a sorted array (creating hashes with the quick ``hash()`` built-in), and then do binary search on that array.
 
-This ends up being fast enough and consumes less then 2 MB to store the sorted array. Best of all, it works.
+This ends up being fast enough for all queries and consumes less then 2 MB to store the sorted array. Best of all, it works.
 
 .. image:: /images/khan-academy-correction.png
 	:alt: Screenshot of the spell checker working on Khan Academy
