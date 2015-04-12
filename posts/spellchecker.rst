@@ -35,7 +35,7 @@ Storing our English words in a Python ``dict`` consumed about 18 MB of space [#b
 
 To reduce memory I first tried using `Python's array module <https://docs.python.org/2/library/array.html>`_ to build my own immutable hash table. This did indeed bring our memory usage down but made spellchecking take several seconds per query.
 
-The loss of speed came from doing way more things in Python code instead of CPython's super-fast ``dict`` implementation. So I had to give up on my plans for an awesome `succinct trie <http://stevehanov.ca/blog/index.php?id=120>`_ implementation and instead go hunting through the standard library to find the best native solution available.
+I found that the loss of speed came from doing way more things in Python code instead of CPython's super-fast ``dict`` implementation. This ruled out improving the performance through clever data structures. So I had to give up on my plans for an awesome `succinct trie <http://stevehanov.ca/blog/index.php?id=120>`_ implementation and instead go hunting through the standard library to find the best native solution available.
 
 Thus I arrived at the binary search implementation in the `bisect module <https://docs.python.org/2/library/bisect.html>`_ of Python's standard library.
 
