@@ -23,7 +23,7 @@ I decided to build my own pure-Python spell checker.
 	:alt: Wait, what?
 	:align: center
 
-I was expecting my mentor and others to balk at the idea (I was an intern during this time). But all I received were encouraging nods, so off I went.
+I was expecting my mentor and others to balk at the idea (`I was an intern during this time <https://www.khanacademy.org/careers/interns>`_). But all I received were encouraging nods, so off I went.
 
 To get things up and going quickly, I chose to follow a simple brute force algorithm like the one Peter Norvig describes in `his awesome blog post <http://norvig.com/spell-correct.html>`_. Soon I had something running that worked well and was super fast. There was a problem though.
 
