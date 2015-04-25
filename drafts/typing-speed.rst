@@ -22,4 +22,4 @@ It felt a little like working on a big C++ application with a long build step. E
 
 I figured the change of style might improve my productivity. I've heard the best programmers spend most of their time thinking and only a tiny amount writing code.
 
-This seems like an adage that doesn't apply to many workflows though. I was working on a Python application in the style of `Test Driven Development <http://en.wikipedia.org/wiki/Test-driven_development>`_. This should have made development feel very quick and let me see my changes fail or succeed instantly. Instead it felt gruelingly slow.
+This seems like an adage that depends on your workflow though. I was working on a Python application in the style of `Test Driven Development <http://en.wikipedia.org/wiki/Test-driven_development>`_. This should have made development feel very quick and let me see my changes fail or succeed instantly. Instead it just felt gruelingly slow.
