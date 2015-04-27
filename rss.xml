@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>John CS</title>
+        <link>http://johncs.com</link>
+        <description>Blog of John Christopher Sullivan</description>
+        <item>
+            <title>Typos in search queries at Khan Academy</title>
+            <link>http://johncs.com/posts/spellchecker.htm</link>
+            <description>
+Another fun problem I got to solve while interning at Khan Academy: providing good search results for mispelled queries.
+
+</description>
+            <pubDate>Sat, 11 Apr 2015 0:00:01 GMT-8</pubDate>
+        </item>
+        <item>
+            <title>Local Storage Today</title>
+            <link>http://johncs.com/posts/6-localstorage.htm</link>
+            <description>
+An audit of recent local storage implementations in Firefox, WebKit, and Chromium.
+
+</description>
+            <pubDate>Mon, 22 Dec 2014 0:00:01 GMT-8</pubDate>
+        </item>
+        <item>
+            <title>Intelligently Shortening Text</title>
+            <link>http://johncs.com/posts/5-highlighting.htm</link>
+            <description>
+I designed an algorithm to intelligently shorten the highlighting text (which shows context for each search result) on Khan Academy's search page.
+
+</description>
+            <pubDate>Sun, 18 May 2014 0:00:01 GMT-8</pubDate>
+        </item>
+        <item>
+            <title>The Python Import System</title>
+            <link>http://johncs.com/posts/4-python-import.htm</link>
+            <description>
+I made a presentation at Khan Academy on a few good things to know about Python's import system. Here's a writeup of that presentation.
+
+</description>
+            <pubDate>Mon, 31 Mar 2014 0:00:01 GMT-8</pubDate>
+        </item>
+        <item>
+            <title>Phial: A framework for building static sites</title>
+            <link>http://johncs.com/posts/3-phial.htm</link>
+            <description>
+I have a few static websites currently under my care. I manage one with Jekyll, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named Phial.
+
+</description>
+            <pubDate>Wed, 12 Mar 2014 0:00:01 GMT-8</pubDate>
+        </item>
+        <item>
+            <title>Transactions with Python's sqlite3 Package</title>
+            <link>http://johncs.com/posts/1-sqlite3_transactions.htm</link>
+            <description>
+Python's sqlite3 package tries to take care of the tricky business of properly executing BEGIN and COMMIT statements. The rules of when and how this automatic transactioning is done has confounded a number of developers, many of whom have jumped ship and chosen to use the aspw package or similar. Well I've plumbed the depths of the CPython implementation and I'm happy to present the rules to you in a single, tidy blog post.
+
+</description>
+            <pubDate>Wed, 05 Mar 2014 0:00:01 GMT-8</pubDate>
+        </item>
+    </channel>
+</rss>
