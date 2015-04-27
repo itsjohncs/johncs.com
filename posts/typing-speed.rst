@@ -2,6 +2,7 @@ title: Switching keyboards
 date: April 19, 2015
 description: >
     When I switched from a standard keyboard to an ErgoDox I learned something about how I program.
+is_draft: true
 ...
 
 A year ago I switched to an `ErgoDox <http://ergodox.org/>`_, which has a slightly different layout from a traditional keyboard.

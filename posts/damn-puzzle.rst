@@ -2,6 +2,7 @@ title: Solving a wooden puzzle
 date: April 27, 2015
 description: >
     Last week a mysterious double-sided puzzle appeared next to the kitchen at `Khan Academy <https://www.khanacademy.org/>`_.
+is_draft: true
 ...
 
 Last week a mysterious double-sided puzzle appeared at `Khan Academy <https://www.khanacademy.org/>`_.

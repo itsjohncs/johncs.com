@@ -2,6 +2,7 @@ title: Sometimes I talk to myself on GitHub
 date: July 13, 2014
 description: >
     An evolution of the idea of keeping a "coding journal".
+is_draft: true
 ...
 
 `Sometimes <https://github.com/galah-group/galah/issues/393>`_ `I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_. I don't do this because talking to myself is super fun, that's just a plus. I do it as a way to communicate with others (including future me).

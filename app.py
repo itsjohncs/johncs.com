@@ -29,12 +29,11 @@ def render_rst(text):
     return post_body
 
 
-@phial.page(["posts/*.rst", "drafts/*.rst"])
+@phial.page(["posts/*.rst"])
 def post_page(source_file):
     template = phial.open_file("posts/template.htm").read()
 
     frontmatter, content = phial.parse_frontmatter(source_file)
-    frontmatter["is_draft"] = source_file.name.startswith("drafts/")
 
     # Use docutils to render the restructured text
     post_body = render_rst(content.read())
@@ -62,7 +61,7 @@ def main_page():
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    posts_metadata = [i.metadata for i in sorted_posts if not i.metadata["is_draft"]]
+    posts_metadata = [i.metadata for i in sorted_posts if not i.metadata.get("is_draft", False)]
     content = renderer.render(template.read(), {"posts": posts_metadata})
 
     return phial.file(name="index.htm", content=content)
