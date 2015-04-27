@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="/pygments.css">
 </head>
 <body id="post-page">
+    {{#is_draft}}
+    <a href="javascript: document.getElementById('draft-bar').remove()" id="draft-bar">
+        This is a draft, please don't share it (click to hide)
+    </a>
+    {{/is_draft}}
     <header id="top-header">
         <div id="post-title">
             <a id="site-title" href="/">John CS</a> &rarr; {{title}}

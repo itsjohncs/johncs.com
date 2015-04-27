@@ -146,6 +146,16 @@ a.pure-button-primary, button.pure-button-primary {
  *  888
  * o888o                                        */
 
+#draft-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background-color: #EEE;
+    padding: 1em;
+}
+
 #post-page #post-body {
     /* Center the post by setting the left and right margins to auto */
     margin: 0 auto;

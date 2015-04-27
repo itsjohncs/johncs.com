@@ -31,12 +31,10 @@ def render_rst(text):
 
 @phial.page(["posts/*.rst", "drafts/*.rst"])
 def post_page(source_file):
-    if not os.environ.get("DRAFTING") and source_file.name.startswith("drafts/"):
-        return None
-
     template = phial.open_file("posts/template.htm").read()
 
     frontmatter, content = phial.parse_frontmatter(source_file)
+    frontmatter["is_draft"] = source_file.name.startswith("drafts/")
 
     # Use docutils to render the restructured text
     post_body = render_rst(content.read())
@@ -57,15 +55,14 @@ def main_page():
     date_from_file = lambda f: datetime.datetime.strptime(f.metadata["date"], "%B %d, %Y")
     sorted_posts = sorted(phial.get_task(post_page).files, reverse=True, key=date_from_file)
 
-    # The posts we're going to show on the front page
-    posts_metadata = [i.metadata for i in sorted_posts]
-    for metadata, post in zip(posts_metadata, sorted_posts):
-        metadata["description"] = render_rst(metadata["description"])
-        metadata["link"] = post.name
-
+    # Clean up the metadata a little
+    for i in sorted_posts:
+        i.metadata["description"] = render_rst(i.metadata["description"])
+        i.metadata["link"] = i.name
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
+    posts_metadata = [i.metadata for i in sorted_posts if not i.metadata["is_draft"]]
     content = renderer.render(template.read(), {"posts": posts_metadata})
 
     return phial.file(name="index.htm", content=content)
