@@ -171,7 +171,7 @@ a.pure-button-primary, button.pure-button-primary {
 
 #disqus_thread {
     max-width: 50em;
-    margin: 0 auto;
+    margin: 5em auto 0 auto;
 }
 
 #post-page #top-header {

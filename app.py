@@ -5,11 +5,15 @@ from collections import namedtuple
 import pystache
 import os
 import datetime
+import copy
+from HTMLParser import HTMLParser
+
 
 @phial.pipeline(["*.css", "images/*"], binary_mode=True)
 def simple_assets(source):
     # Just copy them over without modification
     return source
+
 
 def render_rst(text):
     """Renders some restructured text and returns generated HTML."""
@@ -47,24 +51,65 @@ def post_page(source_file):
         content=content,
         metadata=frontmatter or {})
 
-@phial.page(depends_on=post_page)
-def main_page():
-    template = phial.open_file("index.htm")
+
+def render_index_page(template_path, metadata_transformer=None, extra_template_values=None):
+    """Renders an index-like page using the given template."""
+    template = phial.open_file(template_path)
 
     date_from_file = lambda f: datetime.datetime.strptime(f.metadata["date"], "%B %d, %Y")
     sorted_posts = sorted(phial.get_task(post_page).files, reverse=True, key=date_from_file)
 
-    # Clean up the metadata a little
-    for i in sorted_posts:
-        i.metadata["description"] = render_rst(i.metadata["description"])
-        i.metadata["link"] = i.name
+    # Get the metadata ready
+    posts_metadata = [copy.deepcopy(i.metadata) for i in sorted_posts]
+    for metadata, post in zip(posts_metadata, sorted_posts):
+        metadata["description"] = render_rst(metadata["description"])
+        metadata["link"] = post.name
+
+    if metadata_transformer:
+        posts_metadata = [metadata_transformer(i) for i in posts_metadata]
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    posts_metadata = [i.metadata for i in sorted_posts if not i.metadata.get("is_draft", False)]
-    content = renderer.render(template.read(), {"posts": posts_metadata})
+    content = renderer.render(
+        template.read(), 
+        {"posts": [i for i in posts_metadata if not i.get("is_draft", False)]},
+        extra_template_values or {})
 
-    return phial.file(name="index.htm", content=content)
+    return phial.file(name=template_path, content=content)
+
+
+@phial.page(depends_on=post_page)
+def main_page():
+    return render_index_page("index.htm")
+
+
+@phial.page(depends_on=post_page)
+def rss_feed():
+    class MLStripper(HTMLParser):
+        def __init__(self):
+            self.reset()
+            self.fed = []
+        def handle_data(self, d):
+            self.fed.append(d)
+        def get_data(self):
+            return ''.join(self.fed)
+
+    def strip_tags(html):
+        s = MLStripper()
+        s.feed(html)
+        return s.get_data()
+
+    def metadata_transformer(metadata):
+        metadata["description"] = strip_tags(metadata["description"])
+        
+        date = datetime.datetime.strptime(metadata["date"], "%B %d, %Y")
+        # Sat, 07 Sep 2002 0:00:01 GMT
+        metadata["date"] = date.strftime("%a, %d %b %Y 0:00:01 GMT-8")
+
+        return metadata
+
+    return render_index_page("rss.xml", metadata_transformer)
+
 
 if __name__ == "__main__":
     phial.process()
