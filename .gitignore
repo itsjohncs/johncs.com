@@ -52,4 +52,4 @@ env/
 
 # JS!
 bower_components/
-grunt.js
+node_modules/
