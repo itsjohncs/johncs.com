@@ -3,7 +3,7 @@
 PHIAL = PYTHONPATH=./phial python -m phial.__main__
 
 build: env deps
-	./build.py
+	gulp
 
 serve:
 	$(PHIAL) --testing app.py
