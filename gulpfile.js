@@ -7,6 +7,7 @@ var minifyCss = require("gulp-minify-css");
 var minifyHTML = require("gulp-minify-html");
 var imagemin = require("gulp-imagemin");
 var webserver = require("gulp-webserver");
+var minifyInline = require("gulp-minify-inline");
 
 gulp.task("phial", shell.task([
     "rm -rf /tmp/johncs-phial",
@@ -33,6 +34,7 @@ function inline_css(html_glob, page_css_glob, output_dir) {
                 }));
         }))
         .pipe(minifyHTML({comments: true, loose: true}))
+        .pipe(minifyInline({css: false}))
         .pipe(gulp.dest(output_dir));
 }
 
