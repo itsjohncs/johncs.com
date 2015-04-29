@@ -1,6 +1,9 @@
-.PHONY: serve serve-prod env deps prod publish
+.PHONY: serve env deps build
 
 PHIAL = PYTHONPATH=./phial python -m phial.__main__
+
+build: env deps
+	./build.py
 
 serve:
 	$(PHIAL) --testing app.py
@@ -8,5 +11,7 @@ serve:
 env:
 	virtualenv --prompt '(phial)' env
 
-deps:
+deps: env
 	env/bin/pip install --upgrade PyYAML pystache docutils pygments
+	bower install normalize.css
+	npm install gulp gulp-shell gulp-inject gulp-foreach gulp-concat gulp-minify-css gulp-minify-html gulp-imagemin gulp-webserver
