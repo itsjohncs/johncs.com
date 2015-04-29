@@ -9,7 +9,6 @@
 }
 
 #badge > * {
-    display: inline-block;
     vertical-align: middle;
 }
 
@@ -22,11 +21,36 @@
 }
 
 h1 {
+    display: inline;
     font-family: 'Arial Black', 'Arial Bold', sans-serif;;
     font-weight: bolder;
     font-size: 4.5em;
     word-spacing: normal;
     letter-spacing: 0.02em;
+}
+
+@media (max-width: 300px) {
+    #selfie {
+        width: 4em;
+        height: 4em;
+        border-radius: 2em;
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+    }
+
+    h1 { font-size: 1.5em; }
+}
+
+@media (max-width: 700px) {
+    #selfie {
+        width: 7em;
+        height: 7em;
+        border-radius: 3.5em;
+        -webkit-border-radius: 3.5em;
+        -moz-border-radius: 3.5em;
+    }
+
+    h1 { font-size: 3em; }
 }
 
 h2 > a {
