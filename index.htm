@@ -7,23 +7,22 @@
     <meta name="description" content="A blog by John Christopher Sullivan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800&subset=latin" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
-    <link rel="stylesheet" href="styles.css">
+    <!-- inject:head:css -->
+    <!-- endinject -->
 </head>
-<body id="main-page">
+<body>
     <header id="top-header">
         <div id="badge">
-            <img id="selfie" src="images/self.jpg" alt="self" />
+            <img role="presentation" id="selfie" src="images/self.jpg" alt="self" />
             <h1>John CS</h1>
         </div>
         <div id="blog-description">
-            Blog of John Christopher Sullivan (<a href="/rss.xml">RSS</a>, <a href="https://github.com/brownhead">GitHub</a>)
+            Blog of John Christopher Sullivan (<a href="/rss.xml">subscribe with RSS</a>)
         </div>
     </header>
     <div id="articles">
         {{#posts}}
-        <article class="post top-level">
+        <article class="post">
             <header>
                 <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>
                 <div class="post-metadata faded">Posted {{date}}</div>
@@ -31,8 +30,8 @@
             <div class="post-description">
                 {{{description}}}
             </div>
-            <div>
-                <a class="pure-button" href="{{link}}">Read It</a>
+            <div aria-hidden="true">
+                <a aria-hidden="true" tabindex="-1" class="read-it" href="{{link}}">Read It</a>
             </div>
         </article>
         {{/posts}}

@@ -9,10 +9,19 @@ import copy
 from HTMLParser import HTMLParser
 
 
-@phial.pipeline(["*.css", "images/*"], binary_mode=True)
-def simple_assets(source):
-    # Just copy them over without modification
-    return source
+class MLStripper(HTMLParser):
+    def __init__(self):
+        self.reset()
+        self.fed = []
+    def handle_data(self, d):
+        self.fed.append(d)
+    def get_data(self):
+        return ''.join(self.fed)
+
+def strip_tags(html):
+    s = MLStripper()
+    s.feed(html)
+    return s.get_data()
 
 
 def render_rst(text):
@@ -44,7 +53,13 @@ def post_page(source_file):
 
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
-    content = renderer.render(template, frontmatter, {"body": post_body})
+    content = renderer.render(
+        template,
+        frontmatter,
+        {
+            "body": post_body,
+            "stripped_description": strip_tags(render_rst(frontmatter["description"]))
+        })
 
     return phial.file(
         name=phial.swap_extension(source_file.name, ".htm"),
@@ -85,20 +100,6 @@ def main_page():
 
 @phial.page(depends_on=post_page)
 def rss_feed():
-    class MLStripper(HTMLParser):
-        def __init__(self):
-            self.reset()
-            self.fed = []
-        def handle_data(self, d):
-            self.fed.append(d)
-        def get_data(self):
-            return ''.join(self.fed)
-
-    def strip_tags(html):
-        s = MLStripper()
-        s.feed(html)
-        return s.get_data()
-
     def metadata_transformer(metadata):
         metadata["description"] = strip_tags(metadata["description"])
         

@@ -1,4 +1,4 @@
-title: "Phial: A framework for building static sites"
+title: "Phial - A framework for building static sites"
 date: March 12, 2014
 description: >
     I have a few static websites currently under my care. I manage one with `Jekyll <http://jekyllrb.com>`_, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named `Phial <https://github.com/brownhead/phial>`_.
