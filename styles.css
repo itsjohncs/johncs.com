@@ -18,6 +18,18 @@ body {
     padding: 2em 2em;
 }
 
+body {
+  font-size: 16px;
+}
+
+@media (min-width: 1500px) {
+    body { font-size: 19px; }
+}
+
+@media (max-width: 1000px) {
+  body { font-size: 15px; }
+}
+
 strong, b {
     /* I prefer semi-bold to a full bold */
     font-weight: 600;
@@ -78,6 +90,7 @@ a.pure-button-primary, button.pure-button-primary {
 
 #main-page #badge {
     margin-bottom: 2em;
+    word-spacing: 2em;
 }
 
 #main-page #badge > * {
@@ -86,7 +99,8 @@ a.pure-button-primary, button.pure-button-primary {
 }
 
 #main-page #selfie {
-    margin-right: 2em;
+    width: 10em;
+    height: 10em;
     border-radius: 5em;
     -webkit-border-radius: 5em;
     -moz-border-radius: 5em;
@@ -95,6 +109,7 @@ a.pure-button-primary, button.pure-button-primary {
 #main-page h1 {
     font-weight: 800;
     font-size: 4.5em;
+    word-spacing: normal;
 }
 
 #main-page h2 > a {
