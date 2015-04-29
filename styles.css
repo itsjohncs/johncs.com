@@ -94,7 +94,7 @@ a.pure-button-primary, button.pure-button-primary {
 
 #main-page h1 {
     font-weight: 800;
-    font-size: 54pt;
+    font-size: 4.5em;
 }
 
 #main-page h2 > a {
@@ -181,7 +181,7 @@ a.pure-button-primary, button.pure-button-primary {
 }
 
 #post-page #post-title {
-    font-size: 24pt;
+    font-size: 2em;
     font-weight: 600;
     line-height: 1.5;
 }
@@ -201,7 +201,7 @@ a.pure-button-primary, button.pure-button-primary {
 }
 
 #post-page table.footnote {
-    font-size: 80%;
+    font-size: .8em;
 }
 
 #post-page tt, #post-page pre {
