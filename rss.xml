@@ -41,7 +41,7 @@ I made a presentation at Khan Academy on a few good things to know about Python'
             <pubDate>Mon, 31 Mar 2014 0:00:01 GMT-8</pubDate>
         </item>
         <item>
-            <title>Phial: A framework for building static sites</title>
+            <title>Phial - A framework for building static sites</title>
             <link>http://johncs.com/posts/3-phial.htm</link>
             <description>
 I have a few static websites currently under my care. I manage one with Jekyll, another without a static site generator (just raw HTML files), and another (this blog) with a new tool I created named Phial.
