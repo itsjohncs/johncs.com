@@ -49,3 +49,7 @@ docs/_build/
 # Virtual Environments
 venv*/
 env/
+
+# JS!
+bower_components/
+grunt.js
