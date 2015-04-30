@@ -1,13 +1,14 @@
-var gulp = require("gulp");
-var shell = require("gulp-shell");
-var foreach = require("gulp-foreach");
-var inject = require("gulp-inject");
 var concat = require("gulp-concat");
+var foreach = require("gulp-foreach");
+var gulp = require("gulp");
+var imagemin = require("gulp-imagemin");
+var inject = require("gulp-inject");
 var minifyCss = require("gulp-minify-css");
 var minifyHTML = require("gulp-minify-html");
-var imagemin = require("gulp-imagemin");
-var webserver = require("gulp-webserver");
 var minifyInline = require("gulp-minify-inline");
+var shell = require("gulp-shell");
+var uncss = require('gulp-uncss');
+var webserver = require("gulp-webserver");
 
 gulp.task("phial", shell.task([
     "rm -rf /tmp/johncs-phial",
@@ -15,13 +16,16 @@ gulp.task("phial", shell.task([
 ]));
 
 function inline_css(html_glob, page_css_glob, output_dir) {
-    gulp.src(html_glob)
+    return gulp.src(html_glob)
         .pipe(foreach(function(stream, file){
             // Gather all of the CSS we want to inline in this post
             var css = (gulp
                 .src([page_css_glob, "bower_components/normalize.css", "styles/common.css",
                       "styles/pygments.css"])
                 .pipe(concat("all.css")))
+                .pipe(uncss({
+                    html: file.contents.toString("utf8")
+                }))
                 .pipe(minifyCss());
 
             return stream
@@ -45,7 +49,7 @@ gulp.task("processed-pages", ["phial"], function() {
 });
 
 gulp.task("images", function() {
-    gulp.src("images/*")
+    return gulp.src("images/*")
         .pipe(imagemin({optimizationLevel: 5, progressive: true}))
         .pipe(gulp.dest("output/images"))
 });
@@ -53,12 +57,12 @@ gulp.task("images", function() {
 gulp.task("default", ["processed-pages", "images"], function() {});
 
 gulp.task("serve", ["default"], function() {
-    gulp.src("output")
+    gulp.watch(["app.py", "index.htm", "rss.xml", "posts/*", "styles/*"], ["processed-pages"]);
+    gulp.watch("images/*", ["images"]);
+
+    return gulp.src("output")
         .pipe(webserver({
             livereload: true,
             open: "index.htm"
         }));
-
-    gulp.watch(["app.py", "index.htm", "rss.xml", "posts/*", "styles/*"], ["processed-pages"]);
-    gulp.watch("images/*", ["images"]);
 });
