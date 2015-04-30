@@ -73,6 +73,10 @@ pre {
     font-size: 1.25em;
 }
 
+#end-bits a {
+    white-space: nowrap;
+}
+
 #comments {
     text-align: center;
     color: #AAA;
