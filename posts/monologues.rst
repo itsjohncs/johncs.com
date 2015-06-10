@@ -1,17 +1,36 @@
-title: Sometimes I talk to myself on GitHub
-date: July 13, 2014
+title: I talk to myself on GitHub
+date: June 9, 2015
 description: >
-    An evolution of the idea of keeping a "coding journal".
+    A (natural?) evolution to the idea of keeping a "coding journal" that I've taken into my workflow.
 is_draft: true
 ...
 
-`Sometimes <https://github.com/galah-group/galah/issues/393>`_ `I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_. I don't do this because talking to myself is super fun, that's just a plus. I do it as a way to communicate with others (including future me).
+`I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_ `a <https://github.com/galah-group/galah/issues/393>`_ `lot <https://github.com/Khan/engblog/issues/21>`_. If I could share our internal issues at `Khan Academy <https://www.khanacademy.org>`_ you'd see a similar story there. I do this to serve a few ends:
 
-This work flow is like keeping a public coding journal. A `blog post <http://tburette.github.io/blog/2014/06/25/the-power-of-keeping-a-coding-journal/>`_ that got some attention awhile ago talks about how useful private coding journals are because they let you quickly context switch to projects you haven't touched in months. But if you go one step farther and make your journal public like I've done by spilling my thoughts into trackers, you get some extra wins:
+1. I want to share my progress on a task.
+2. I want people to give me input on the decisions I'm making.
+3. I want to easily pause a task and come back to it later.
+4. I want all the `rubber ducks <http://www.rubberduckdebugging.com/>`_.
 
-* Interested people can see your detailed progress on what you're doing.
-* Coworkers (and future you) can find out why you made certain decisions.
-* Mentors can know when you're going down a bad route and nudge you in a better direction.
-* All this communication happens asynchronously, without anyone being bothered.
+.. image:: /images/rubber-duck.jpg
+    :alt: A picture of a very large rubber duck in a river.
+    :width: 40%
+    :align: center
+    :class: rounded-40
 
-Many people (at least 8) have told me that this part of my work flow has been helpful to them.
+I initially started doing this (back in college) solely for the third benefit of being able to easily pause and resume tasks. I basically wanted a coding journal [#coding_journals]_, and it was only a matter of convenience that I used GitHub issues over some random file on my computer.
+
+Eventually, after several ever-so-slightly-awkward conversations where someone thanked me for talking to myself, I realized I'd stumbled on a pretty sweet communication tool. Since communication is generally hard, I was pumped to grow my tool-belt.
+
+.. image:: /images/xkcd-communication.png
+    :target: https://xkcd.com/1028/
+    :alt: An XKCD comic on communication. It's original title text: Anyone who says that they're great at communicating but 'people are bad at listening' is confused about how communication works.
+    :width: 80%
+    :align: center
+
+I've kept up the monologues ever since I started, and now at Khan Academy it nearly always comes up in my project retrospectives as being super useful [#project_retrospectives]_. It's definitely a vital part of my workflow now.
+
+Though I'm suspicious that my comments are slowly getting spammier (a recent one: "Hmm, I think I'll go get a sandwich and then try this again"), but so far nobody has minded :).
+
+.. [#coding_journals] A `blog post <http://tburette.github.io/blog/2014/06/25/the-power-of-keeping-a-coding-journal/>`_ written awhile ago talks about how useful coding journals generally are.
+.. [#project_retrospectives] At Khan Academy, after every project (which are always 2-4 weeks), everyone involved meets to give feedback to each other and discuss how things went.

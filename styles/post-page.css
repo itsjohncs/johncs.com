@@ -81,3 +81,7 @@ pre {
     text-align: center;
     color: #AAA;
 }
+
+.rounded-40 {
+    border-radius: 40px;
+}
