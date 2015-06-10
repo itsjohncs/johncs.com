@@ -1,8 +1,7 @@
 title: I talk to myself on GitHub
 date: June 9, 2015
 description: >
-    A (natural?) evolution to the idea of keeping a "coding journal" that I've taken into my workflow.
-is_draft: true
+    On why I talk to myself on GitHub so much.
 ...
 
 `I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_ `a <https://github.com/galah-group/galah/issues/393>`_ `lot <https://github.com/Khan/engblog/issues/21>`_. If I could share our internal issues at `Khan Academy <https://www.khanacademy.org>`_ you'd see a similar story there as well. I do this to serve a few ends:
@@ -34,3 +33,4 @@ I'm suspicious that my comments are slowly getting spammier (a recent one: "Hmm,
 
 .. [#coding_journals] A `blog post <http://tburette.github.io/blog/2014/06/25/the-power-of-keeping-a-coding-journal/>`_ written awhile ago talks about how useful coding journals generally are.
 .. [#project_retrospectives] At Khan Academy, after every project (which are always 2-4 weeks), everyone involved meets to give feedback to each other and discuss how things went.
+.. [#quack] Duck image is from `wikimedia <http://commons.wikimedia.org/wiki/File:Rubber_duckies_So_many_ducks.jpg>`_. See there for licensing and author information.
