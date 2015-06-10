@@ -1,5 +1,5 @@
 title: I talk to myself on GitHub
-date: June 9, 2015
+date: June 10, 2015
 description: >
     On why I talk to myself on GitHub so much.
 ...
