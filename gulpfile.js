@@ -7,7 +7,7 @@ var minifyCss = require("gulp-minify-css");
 var minifyHTML = require("gulp-minify-html");
 var minifyInline = require("gulp-minify-inline");
 var shell = require("gulp-shell");
-var uncss = require('gulp-uncss');
+// var uncss = require('gulp-uncss');
 var webserver = require("gulp-webserver");
 
 gulp.task("phial", shell.task([
@@ -23,9 +23,9 @@ function inline_css(html_glob, page_css_glob, output_dir) {
                 .src([page_css_glob, "bower_components/normalize.css", "styles/common.css",
                       "styles/pygments.css"])
                 .pipe(concat("all.css")))
-                .pipe(uncss({
-                    html: file.contents.toString("utf8")
-                }))
+                // .pipe(uncss({
+                //     html: file.contents.toString("utf8")
+                // }))
                 .pipe(minifyCss());
 
             return stream
