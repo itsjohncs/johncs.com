@@ -1,7 +1,7 @@
 title: I talk to myself on GitHub
 date: June 10, 2015
 description: >
-    On why I talk to myself on GitHub so much.
+    `I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_ `a <https://github.com/galah-group/galah/issues/393>`_ `lot <https://github.com/Khan/engblog/issues/21>`_. If I could share our internal issues at `Khan Academy <https://www.khanacademy.org>`_ you'd see a similar story there as well. I do this to serve a few ends.
 ...
 
 `I <https://github.com/brownhead/phial/issues/1>`_ `talk <https://github.com/brownhead/mangoengine/issues/7>`_ `to <https://github.com/brownhead/superzippy/issues/11>`_ `myself <https://github.com/brownhead/mangoengine/issues/2>`_ `on <https://github.com/galah-group/galah/issues/399>`_ `GitHub <https://github.com/acm-ucr/hub/issues/8>`_ `a <https://github.com/galah-group/galah/issues/393>`_ `lot <https://github.com/Khan/engblog/issues/21>`_. If I could share our internal issues at `Khan Academy <https://www.khanacademy.org>`_ you'd see a similar story there as well. I do this to serve a few ends:

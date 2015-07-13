@@ -1,7 +1,7 @@
 title: Transactions with Python's sqlite3 Package
 date: March 5, 2014
 description: >
-    Python's ``sqlite3`` package tries to take care of the tricky business of properly executing ``BEGIN`` and ``COMMIT`` statements. The rules of when and how this automatic transactioning is done has confounded a number of developers, many of whom have jumped ship and chosen to use the `aspw <https://github.com/rogerbinns/apsw>`_ package or similar. Well I've plumbed the depths of the CPython implementation and I'm happy to present the rules to you in a single, tidy blog post.
+    Python's ``sqlite3`` package tries to take care of the tricky business of properly executing ``BEGIN`` and ``COMMIT`` statements. The rules of when and how this automatic transactioning is done has confounded a number of developers, many of whom have jumped ship and chosen to use the `aspw <https://github.com/rogerbinns/apsw>`_ package or similar.
 ...
 
 Python's ``sqlite3`` package tries to take care of the tricky business of properly executing ``BEGIN`` and ``COMMIT`` statements. The rules of when and how this automatic transactioning is done has confounded a number of developers, many of whom have jumped ship and chosen to use the `aspw <https://github.com/rogerbinns/apsw>`_ package or similar.

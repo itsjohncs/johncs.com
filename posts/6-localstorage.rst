@@ -1,7 +1,7 @@
 title: Local Storage Today
 date: December 22, 2014
 description: >
-    An audit of recent local storage implementations in Firefox, WebKit, and Chromium.
+    I'd like to write to ``localStorage`` often. I'd also like to write to it synchronously in response to user interaction. Past wisdom says this is a bad idea and will give me Angry Users Syndrome very quickly.
 ...
 
 I'd like to write to ``localStorage`` often. I'd also like to write to it synchronously in response to user interaction.

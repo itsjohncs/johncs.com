@@ -10,28 +10,41 @@
     <!-- inject:head:css -->
     <!-- endinject -->
 </head>
-<body>
-    <header id="top-header">
-        <div id="badge">
-            <img role="presentation" id="selfie" src="images/self.jpg" alt="Picture of me" />
-            <h1>John&nbsp;CS</h1>
-        </div>
-        <div id="blog-description">
-            Blog of John Christopher Sullivan (<a href="/rss.xml">RSS</a>, <a href="https://twitter.com/itsjohncs">Twitter</a>)
-        </div>
-    </header>
-    <div id="articles">
+<body class="single-column-content">
+<pre class="ascii-banner">
+<span class="flame">                                                    (     
+                               )              (     )\ )  
+                 (          ( /(              )\   (()/(  
+                 )\    (    )\())   (       (((_)   /(_))
+                ((_)   )\  ((_)\    )\ )    )\___  (_))   </span>
+               _ | |  <span class="flame">((_)</span> | |<span class="flame">(_)</span>  _<span class="flame">(_/(</span>   <span class="flame">((</span>/ __| / __|  
+              | || | / _ \ | ' \  | ' \<span class="flame">))</span>   | (__  \__ \  
+               \__/  \___/ |_||_| |_||_|     \___| |___/  </pre>
+    <nav class="nav-bar">
+        Blog -
+        <a href="#">Projects</a> -
+        <a href="#">About</a> -
+        <a href="#">GitHub</a> -
+        <a href="#">Twitter</a>
+    </nav>
+    <div class="blog-info">
+        Updated fortnightly. Follow along with <a href="#">RSS</a> or <a href="#">Twitter</a>.
+    </div>
+    <h2><span aria-hidden="true">##</span> All Posts</h2>
+    <div class="all-posts">
         {{#posts}}
         <article class="post">
-            <header>
-                <h2 class="post-title"><a href="{{link}}">{{title}}</a></h2>
-                <div class="post-metadata faded">Posted {{date}}</div>
-            </header>
-            <div class="post-description">
-                {{{description}}}
+            <div class="post-heading">
+                <time class="post-date" datetime="2001-05-15 19:00"><span aria-hidden="true">[</span>{{date}}<span aria-hidden="true">]</span></time>
+                <a href="{{link}}" class="post-title">{{title}}</a>
             </div>
-            <div aria-hidden="true">
-                <a aria-hidden="true" tabindex="-1" class="read-it" href="{{link}}">Read It</a>
+            <div class="post-snippet-container">
+                <div class="quote-gutter" aria-hidden="true">
+                    >>>>>>>>>>>>>>>>>>>>
+                </div>
+                <div class="post-snippet">
+                    {{{description}}} <a href="{{link}}">(more)</a>
+                </div>
             </div>
         </article>
         {{/posts}}

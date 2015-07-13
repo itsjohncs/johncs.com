@@ -1,112 +1,59 @@
-#top-header {
-    text-align: center;
-    line-height: 2;
-}
+@import "common.less";
 
-#badge {
-    margin-bottom: 2em;
-    word-spacing: 2em;
-}
-
-#badge > * {
-    vertical-align: middle;
-}
-
-#selfie {
-    width: 10em;
-    height: 10em;
-    border-radius: 5em;
-    -webkit-border-radius: 5em;
-    -moz-border-radius: 5em;
-}
-
-h1 {
-    display: inline;
-    font-family: 'Arial Black', 'Arial Bold', sans-serif;;
-    font-weight: bolder;
-    font-size: 4.5em;
-    word-spacing: normal;
-    letter-spacing: 0.02em;
-}
-
-@media (max-width: 300px) {
-    #selfie {
-        width: 4em;
-        height: 4em;
-        border-radius: 2em;
-        -webkit-border-radius: 2em;
-        -moz-border-radius: 2em;
-    }
-
-    h1 { font-size: 1.5em; }
-}
-
-@media (max-width: 700px) {
-    #selfie {
-        width: 7em;
-        height: 7em;
-        border-radius: 3.5em;
-        -webkit-border-radius: 3.5em;
-        -moz-border-radius: 3.5em;
-    }
-
-    h1 { font-size: 3em; }
-}
-
-h2 > a {
-    color: inherit;
-}
-
-h2 > a:hover {
-    color: inherit;
-}
-
-h1, h2 {
+p {
     margin: 0;
 }
 
 h2 {
-    font-weight: normal;
-    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin: 0 0 @lineHeight 0;
+}
+
+.flame {
+    color: #dc322f;
+}
+
+.nav-bar {
+    margin-bottom: @lineHeight * 2;
+    text-align: center;
+}
+
+.blog-info {
+    margin-bottom: @lineHeight;
 }
 
 .post {
-    /* Center the post by setting the left and right margins to auto */
-    margin: 0 auto;
+    margin-bottom: @lineHeight;
 
-    /* This makes the text a little nicer to read */
-    line-height: 1.5;
+    .post-heading {
+        margin-bottom: @lineHeight;
 
-    /* This ensures that the posts won't get too wide because generally
-     * super wide paragraphs are considered a little harder to read.
-     * Not a lot of good empirical evidence to support this though.*/
-    max-width: 50em;
+        .post-date {
+            position: absolute;
+            font-weight: 300;
+            color: #6c71c4;
+        }
 
-    padding-top: 1.5em;
-    margin-top: 1.5em;
-    border-top: 1px dashed #CCC;
-}
+        .post-title {
+            display: block;
+            margin-left: 13ch;
+        }
+    }
 
-.post-title {
-    /* This brings the author part closer to the title. There is still
-     * space between the two according to the line-height though. */
-    margin-bottom: 0;
-}
+    .post-snippet-container {
+        position: relative;
+        overflow-y: hidden;
 
-.post-description p {
-    margin: 0;
-}
+        .quote-gutter {
+            word-wrap: break-word;
+            color: #859900;
+            width: 1ch;
+            position: absolute;
+            user-select: none;
+        }
 
-.post > * {
-    margin: 0 0 0.7em 0;
-}
-
-
-/* same as .post > *:last-child*/
-.read-it {
-    margin: 0.1em 0 0 0;
-    padding: .5em 1em;
-    background-color: #E6E6E6;
-    color: black;
-    display: inline-block;
+        .post-snippet {
+            margin-left: 2ch;
+        }
+    }
 }

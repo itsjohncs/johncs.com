@@ -1,7 +1,7 @@
 title: Typos in search queries at Khan Academy
 date: April 11, 2015
 description: >
-    Another fun problem I got to solve while `interning at Khan Academy <https://www.khanacademy.org/careers/interns>`_: providing good search results for mispelled queries.
+    One year ago, searching for *polinomials* on `Khan Academy's search page <https://www.khanacademy.org/search>`_ would give you no results. If you typed the same thing into Google you'd be efficiently and politely corrected.
 ...
 
 One year ago, searching for *polinomials* on `Khan Academy's search page <https://www.khanacademy.org/search>`_ would give you no results. If you typed the same thing into Google you'd be efficiently and politely corrected.

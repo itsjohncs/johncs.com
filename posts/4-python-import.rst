@@ -1,7 +1,7 @@
 title: "The Python Import System"
 date: March 31, 2014
 description: >
-    I made a presentation at Khan Academy on a few good things to know about Python's import system. Here's a writeup of that presentation.
+    I made a presentation at Khan Academy on a few good things to know about Python's import system. Here's a writeup of that presentation (this is written mostly as a reference, sorry for the dryness).
 ...
 
 I made a presentation at Khan Academy on a few good things to know about Python's import system. Here's a writeup of that presentation (this is written mostly as a reference, sorry for the dryness).

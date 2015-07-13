@@ -71,7 +71,8 @@ def render_index_page(template_path, metadata_transformer=None, extra_template_v
     """Renders an index-like page using the given template."""
     template = phial.open_file(template_path)
 
-    date_from_file = lambda f: datetime.datetime.strptime(f.metadata["date"], "%B %d, %Y")
+    to_date = lambda string: datetime.datetime.strptime(string, "%B %d, %Y")
+    date_from_file = lambda f: to_date(f.metadata["date"])
     sorted_posts = sorted(phial.get_task(post_page).files, reverse=True, key=date_from_file)
 
     # Get the metadata ready
@@ -86,7 +87,7 @@ def render_index_page(template_path, metadata_transformer=None, extra_template_v
     # Use mustache to plug everything into the template
     renderer = pystache.Renderer()
     content = renderer.render(
-        template.read(), 
+        template.read(),
         {"posts": [i for i in posts_metadata if not i.get("is_draft", False)]},
         extra_template_values or {})
 
@@ -95,7 +96,14 @@ def render_index_page(template_path, metadata_transformer=None, extra_template_v
 
 @phial.page(depends_on=post_page)
 def main_page():
-    return render_index_page("index.htm")
+    def metadata_transformer(metadata):
+        date = datetime.datetime.strptime(metadata["date"], "%B %d, %Y")
+        metadata["date"] = date.strftime("%m/%d/%Y")
+        metadata["description"] = metadata["description"][len("<div class='document'> <p>"):-len("</div>  </p>")].strip()
+
+        return metadata
+
+    return render_index_page("index.htm", metadata_transformer)
 
 
 @phial.page(depends_on=post_page)
