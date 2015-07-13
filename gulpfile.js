@@ -10,6 +10,7 @@ var shell = require("gulp-shell");
 // var uncss = require('gulp-uncss');
 var webserver = require("gulp-webserver");
 var less = require("gulp-less");
+var autoprefixer = require("gulp-autoprefixer");
 
 gulp.task("phial", shell.task([
     "rm -rf /tmp/johncs-phial",
@@ -25,6 +26,7 @@ function inline_css(html_glob, page_less_glob, output_dir) {
                       "styles/pygments.css"])
                 .pipe(concat("all.less")))
                 .pipe(less())
+                .pipe(autoprefixer())
                 // .pipe(uncss({
                 //     html: file.contents.toString("utf8")
                 // }))
