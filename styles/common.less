@@ -2,6 +2,9 @@
  * generated with the Roman font at http://www.network-science.de/ascii/ */
 
 @lineHeight: 16px;
+@textColor: #657b83;
+@pageBackgroundColor: #fdf6e3;
+@maxBannerWidth: 46ch;
 
 * {
     font-family: "Source Code Pro", serif;
@@ -11,9 +14,13 @@
 }
 
 body {
-    background-color: #fdf6e3;
-    color: #657b83;
+    background-color: @pageBackgroundColor;
+    color: @textColor;
     padding: @lineHeight 2ch (@lineHeight * 10) 2ch;
+
+    @media (max-width: @maxBannerWidth) {
+        padding-bottom: @lineHeight * 5;
+    }
 }
 
 a {

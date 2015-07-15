@@ -10,16 +10,55 @@ h2 {
 }
 
 .ascii-banner {
-    text-align: center;
+    margin: 0 auto @lineHeight auto;
 
     .flame {
         color: #dc322f;
     }
+
+    &-big {
+        width: 43ch;
+    }
+
+    &-small {
+        width: 33ch;
+        display: none;
+    }
+
+    @media (max-width: @maxBannerWidth) {
+        &-big {
+            display: none;
+        }
+
+        &-small {
+            display: block;
+        }
+    }
 }
 
 .nav-bar {
-    margin-bottom: @lineHeight * 2;
     text-align: center;
+    margin-bottom: @lineHeight * 2;
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: block;
+
+        li {
+            display: inline;
+
+            &:after {
+                content: " -";
+            }
+        }
+
+        li:last-child {
+            &:after {
+                content: "";
+            }
+        }
+    }
 }
 
 .blog-info {
