@@ -98,7 +98,7 @@ def render_index_page(template_path, metadata_transformer=None, extra_template_v
 def main_page():
     def metadata_transformer(metadata):
         date = datetime.datetime.strptime(metadata["date"], "%B %d, %Y")
-        metadata["date"] = date.strftime("%m/%d/%Y")
+        metadata["date_short"] = date.strftime("%m/%d/%Y")
         metadata["description"] = metadata["description"][len("<div class='document'> <p>"):-len("</div>  </p>")].strip()
 
         return metadata

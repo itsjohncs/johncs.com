@@ -11,15 +11,14 @@
     <!-- endinject -->
 </head>
 <body class="single-column-content">
-<pre class="ascii-banner">
-<span class="flame">                                                    (     
-                               )              (     )\ )  
-                 (          ( /(              )\   (()/(  
-                 )\    (    )\())   (       (((_)   /(_))
-                ((_)   )\  ((_)\    )\ )    )\___  (_))   </span>
-               _ | |  <span class="flame">((_)</span> | |<span class="flame">(_)</span>  _<span class="flame">(_/(</span>   <span class="flame">((</span>/ __| / __|  
-              | || | / _ \ | ' \  | ' \<span class="flame">))</span>   | (__  \__ \  
-               \__/  \___/ |_||_| |_||_|     \___| |___/  </pre>
+<pre class="ascii-banner" aria-hidden="true"><span class="flame">                                      (     
+                 )              (     )\ )  
+   (          ( /(              )\   (()/(  
+   )\    (    )\())   (       (((_)   /(_))
+  ((_)   )\  ((_)\    )\ )    )\___  (_))   </span>
+ _ | |  <span class="flame">((_)</span> | |<span class="flame">(_)</span>  _<span class="flame">(_/(</span>   <span class="flame">((</span>/ __| / __|  
+| || | / _ \ | ' \  | ' \<span class="flame">))</span>   | (__  \__ \  
+ \__/  \___/ |_||_| |_||_|     \___| |___/  </pre>
     <nav class="nav-bar">
         Blog -
         <a href="#">Projects</a> -
@@ -35,7 +34,7 @@
         {{#posts}}
         <article class="post">
             <div class="post-heading">
-                <time class="post-date" datetime="2001-05-15 19:00"><span aria-hidden="true">[</span>{{date}}<span aria-hidden="true">]</span></time>
+                <time class="post-date" datetime="2001-05-15 19:00"><span aria-hidden="true">[{{date_short}}]</span><span class="sr-only">{{date}}</span></time>
                 <a href="{{link}}" class="post-title">{{title}}</a>
             </div>
             <div class="post-snippet-container">
