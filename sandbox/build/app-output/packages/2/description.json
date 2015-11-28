@@ -1,5 +1,0 @@
-{
-	"target": "awesome-post.html",
-	"inline-js": ["maple.js", "tree.js"],
-	"template": "post.htm"
-}

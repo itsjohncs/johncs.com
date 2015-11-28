@@ -1,5 +1,0 @@
-{
-	"target": "index.html",
-	"inline-css": ["main.less"],
-	"template": "index.htm"
-}
