@@ -14,7 +14,7 @@ const path = require("path");
  
 const crush = function() {
     // A stream of all of our package descriptions
-    const descriptionStream = gulp.src("./build/app-output/packages/*/description.json");
+    const descriptionStream = gulp.src("../build/app-output/packages/*/description.json");
 
     const outputStream = descriptionStream.pipe(foreach(function(stream, file) {
         // Parse the description
@@ -63,7 +63,7 @@ const crush = function() {
         return aggregateStream;
     }));
 
-    return outputStream.pipe(gulp.dest("./build/crush-output/"));
+    return outputStream.pipe(gulp.dest("../build/crush-output/"));
 };
 
 module.exports = crush;

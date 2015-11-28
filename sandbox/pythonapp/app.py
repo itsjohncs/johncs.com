@@ -12,9 +12,9 @@ import sys
 
 import pystache
 
-from pythonapp.post import Post
+from post import Post
 
-POST_TEMPLATE = open("pythonapp/templates/post-page.htm", "rb").read().decode("utf-8")
+POST_TEMPLATE = open("./templates/post-page.htm", "rb").read().decode("utf-8")
 
 
 def render_post_page_template(post):
@@ -33,14 +33,14 @@ def render_post_page_template(post):
     return renderer.render(POST_TEMPLATE, template_params)
 
 
-def main(output_directory):
+def main():
     # Grab all of the posts and sort them by their published date
-    posts = [Post(path) for path in glob.glob("content/posts/*")]
+    posts = [Post(path) for path in glob.glob("../content/posts/*")]
 
     # Go through and create all the post pages
     for post in posts:
         package_dir_name = os.path.splitext(post.get_output_name())[0]
-        package_dir_path = os.path.join(output_directory, "packages", package_dir_name)
+        package_dir_path = os.path.join("../build/app-output/packages", package_dir_name)
 
         # This will error if the directory already exists. This script assumes our output directory
         # has been wiped beforehand, so this is desired.
@@ -62,4 +62,4 @@ def main(output_directory):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main()

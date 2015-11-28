@@ -1,6 +1,6 @@
 build: clean
-	PYTHONPATH=. python pythonapp/app.py ./build/app-output/
-	gulp crush
+	cd pythonapp/; python app.py
+	cd gulpapp/; gulp crush
 
 clean:
 	rm -r ./build/app-output ./build/crush-output

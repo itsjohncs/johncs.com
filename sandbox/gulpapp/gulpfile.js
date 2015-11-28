@@ -1,5 +1,5 @@
 const gulp = require("gulp");
 
-const crush = require("./gulp-app/crush.js");
+const crush = require("./crush.js");
 
 gulp.task("crush", crush);
