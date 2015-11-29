@@ -10,5 +10,9 @@ build: clean
 	@echo === Bash app - collect ===
 	cd bashapp/; bash collect.sh
 
+serve:
+	@echo 'Serving at http://127.0.0.1:50191'
+	cd ./build/collect-output; python -c 'import SimpleHTTPServer, SocketServer; SocketServer.TCPServer(("127.0.0.1", 50191), SimpleHTTPServer.SimpleHTTPRequestHandler).serve_forever()'
+
 clean:
 	rm -rf ./build/app-output ./build/crush-output ./build/collect-output
