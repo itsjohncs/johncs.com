@@ -12,7 +12,7 @@ build: clean
 
 serve:
 	@echo 'Serving at http://127.0.0.1:50191'
-	cd ./build/collect-output; python -c 'import SimpleHTTPServer, SocketServer; SocketServer.TCPServer(("127.0.0.1", 50191), SimpleHTTPServer.SimpleHTTPRequestHandler).serve_forever()'
+	cd ./build/collect-output; ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 50191, :DocumentRoot => Dir.pwd).start'
 
 clean:
 	rm -rf ./build/app-output ./build/crush-output ./build/collect-output
