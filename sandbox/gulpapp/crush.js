@@ -10,6 +10,7 @@ const concat = require("gulp-concat");
 const foreach = require("gulp-foreach");
 const gulp = require("gulp");
 const inject = require("gulp-inject");
+const less = require("gulp-less");
 const path = require("path");
  
 const crush = function() {
@@ -25,12 +26,14 @@ const crush = function() {
         const basePath = path.dirname(file.path);
 
         // Grab all the package's CSS files it wants to inline and create a stream that processes
-        // them.
-        const relativeCssPaths = packageInfo["inline-css"] || [];
-        const cssPaths = relativeCssPaths.map(function (relativePath) {
-            return path.join(basePath, relativePath);
+        // them. 
+        const relativeCssPaths = packageInfo["inlined-less"] || [];
+        const lessPaths = relativeCssPaths.map(function (relativePath) {
+            return path.join("../styles/", relativePath);
         });
-        const cssStream = gulp.src(cssPaths).pipe(concat("all-css.css"));
+        const cssStream = gulp.src(lessPaths)
+            .pipe(less())
+            .pipe(concat("all-css.css"));
 
         // Similarily, grab all the package's JS files it wants to inline and create a stream that
         // processes them.

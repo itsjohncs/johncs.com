@@ -1,0 +1,53 @@
+@lineHeight: 16px;
+@textColor: #657b83;
+@pageBackgroundColor: #fdf6e3;
+@maxBannerWidth: 46ch;
+@dateTimeColor: #6c71c4;
+@gutterColor: #859900;
+
+* {
+    font-family: "Source Code Pro", serif;
+    font-size: 12px;
+    line-height: @lineHeight;
+    letter-spacing: 0;
+}
+
+body {
+    background-color: @pageBackgroundColor;
+    color: @textColor;
+    padding: @lineHeight 2ch (@lineHeight * 10) 2ch;
+
+    @media (max-width: @maxBannerWidth) {
+        padding-bottom: @lineHeight * 5;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #b58900;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.single-column-content {
+    max-width: 72ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-quote-markup {
+    color: #859900;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}

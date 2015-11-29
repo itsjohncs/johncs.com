@@ -55,6 +55,7 @@ def main():
         package_description = {
             "target": "posts/" + post.get_output_name(),
             "template": "template.htm",
+            "inlined-less": ["post-page.less"],
         }
         with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
             # The file will be ASCII encoded (and implicitly UTF-8 encoded)

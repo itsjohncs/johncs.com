@@ -72,7 +72,6 @@ class Post(object):
                                            "%B %d, %Y"))
         self.async_scripts = frontmatter.get("async_scripts", [])
         self.postcontent_scripts = frontmatter.get("postcontent_scripts", [])
-        self.stylesheets = frontmatter.get("stylesheets", [])
         self.raw_content = content
 
     def get_html_content(self):
@@ -95,5 +94,4 @@ class Post(object):
             "async_scripts": self.async_scripts,
             "postcontent_scripts": self.postcontent_scripts,
             "permalink": "/posts/" + self.get_output_name(),
-            "stylesheets": self.stylesheets,
         }

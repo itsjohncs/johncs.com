@@ -1,0 +1,48 @@
+@import "common.less";
+
+.top-bar {
+    background-color: #eee8d5;
+    margin-bottom: @lineHeight;
+
+    .post-date {
+        color: @dateTimeColor;
+    }
+}
+
+p, ol, ul, img {
+    margin: 0 0 @lineHeight 0;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    counter-increment: item;
+
+    &:before {
+        color: @gutterColor;
+        content: counter(item) + ".";
+        display: inline-block;
+        padding: 0 1ch;
+    }
+}
+
+.red-bold {
+    color: red;
+    font-weight: bold;
+}
+
+.rounded-40 {
+    border-radius: 40px;
+}
+
+table.footnote td {
+    padding: 0;
+    margin: 0;
+
+    &.label {
+        padding-right: 1ch;
+    }
+}
