@@ -71,7 +71,9 @@ class Post(object):
         return {
             "title": self.title,
             "published_on": self.published_on.strftime("%m/%d/%y"),
+            "published_on_long": self.published_on.strftime("%B %-d, %Y"),
             "async_scripts": self.async_scripts,
             "postcontent_scripts": self.postcontent_scripts,
-            "permalink": "/posts/" + self.get_output_name(),
+            "permalink": "posts/" + self.get_output_name(),
+            "description": "",
         }
