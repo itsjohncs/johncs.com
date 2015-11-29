@@ -21,12 +21,16 @@ ol {
 
 li {
     counter-increment: item;
+    padding-left: 4ch;
+    position: relative;
 
     &:before {
         color: @gutterColor;
         content: counter(item) + ".";
         display: inline-block;
+        left: 0;
         padding: 0 1ch;
+        position: absolute;
     }
 }
 
