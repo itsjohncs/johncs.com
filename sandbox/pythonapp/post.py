@@ -47,6 +47,13 @@ class Post(object):
         self.file_path = path
 
         self.title = frontmatter["title"]
+
+        # HACK(johnsullivan): Getting rid of the tags in this way feels pretty dirty...
+        self.description = (
+            render_rst(frontmatter["description"])
+                .replace("<p>", "").replace("</p>", "")
+                .replace("<div class=\"document\">", "").replace("</div>", ""))
+
         # TODO(johnsullivan): Rename "date" to "published_on" in the frontmatter of all the posts.
         self.published_on = (
                 datetime.datetime.strptime(frontmatter["date"],
@@ -75,5 +82,5 @@ class Post(object):
             "async_scripts": self.async_scripts,
             "postcontent_scripts": self.postcontent_scripts,
             "permalink": "posts/" + self.get_output_name(),
-            "description": "",
+            "description": self.description,
         }
