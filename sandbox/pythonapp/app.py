@@ -79,7 +79,7 @@ def create_blog_index_package(posts):
     package_description = {
         "target": "blog-index.htm",
         "template": "template.htm",
-        "inlined-less": ["post-index.less"],
+        "inlined-less": ["blog-index.less"],
     }
     with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)
