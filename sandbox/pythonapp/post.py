@@ -26,25 +26,6 @@ def render_rst(text):
     return parts["html_body"]
 
 
-def datetime_to_html_string(datetime):
-    month = datetime.strftime("%B")
-
-    # Figure out the suffix (ex: in 41st, the st is the suffix). For numbers ending with 1-3,
-    # there's a special suffix (except for the teens), for everything else the suffix is th.
-    day_suffix = "th"
-    if not (11 <= datetime.day <= 13) and 1 <= datetime.day % 10 <= 3:
-        day_suffix = {
-            1: "st",
-            2: "nd",
-            3: "rd"
-        }[datetime.day % 10]
-
-    day = "{}<sup aria-hidden='true'>{}</sup>".format(str(datetime.day),
-                                                      day_suffix)
-
-    return "{} {}".format(month, day)
-
-
 def parse_frontmatter(post_contents):
     FRONT_MATTER_END = u"\n...\n"
 
@@ -89,8 +70,7 @@ class Post(object):
     def get_metadata(self):
         return {
             "title": self.title,
-            "published_on_html":
-                datetime_to_html_string(self.published_on),
+            "published_on": self.published_on.strftime("%m/%d/%y"),
             "async_scripts": self.async_scripts,
             "postcontent_scripts": self.postcontent_scripts,
             "permalink": "/posts/" + self.get_output_name(),
