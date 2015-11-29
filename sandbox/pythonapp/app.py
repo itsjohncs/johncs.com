@@ -16,6 +16,7 @@ from post import Post
 
 POST_TEMPLATE = open("./templates/post-page.htm", "rb").read().decode("utf-8")
 BLOG_INDEX_TEMPLATE = open("./templates/blog-index.htm", "rb").read().decode("utf-8")
+RSS_TEMPLATE = open("./templates/rss.xml", "rb").read().decode("utf-8")
 
 
 def render_post_page_template(post):
@@ -84,6 +85,17 @@ def create_blog_index_package(posts):
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)
         f.write(json.dumps(package_description, ensure_ascii=True))
 
+
+def create_rss_page(posts):
+    template_params = {
+        "posts": [post.get_metadata() for post in posts],
+    }
+    renderer = pystache.Renderer(missing_tags="strict")
+    rendered_template = renderer.render(RSS_TEMPLATE, template_params)
+    with open("../build/app-output/rss.xml", "wb") as f:
+        f.write(rendered_template.encode("utf-8"))
+
+
 def main():
     # Grab all of the posts and sort them by their published date
     posts = [Post(path) for path in glob.glob("../content/posts/*")]
@@ -94,6 +106,8 @@ def main():
         create_post_package(post)
 
     create_blog_index_package(posts)
+
+    create_rss_page(posts)
 
 
 if __name__ == "__main__":
