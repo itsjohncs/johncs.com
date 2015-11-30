@@ -23,7 +23,8 @@ def render_rst(text):
     parts = publish_parts(text, writer_name="html",
                           settings_overrides=docutils_settings)
 
-    return parts["html_body"]
+    # HACK(johnsullivan): This transformation would be better done in the RST transformation...
+    return parts["html_body"].replace("<h2>", "<h2><span aria-hidden=\"true\">##</span> ")
 
 
 def parse_frontmatter(post_contents):
