@@ -78,7 +78,7 @@ class Post(object):
     def get_metadata(self):
         return {
             "title": self.title,
-            "published_on": self.published_on.strftime("%m/%d/%y"),
+            "published_on": self.published_on.strftime("%m/%d/%Y"),
             "published_on_long": self.published_on.strftime("%B %-d, %Y"),
             "async_scripts": self.async_scripts,
             "postcontent_scripts": self.postcontent_scripts,
