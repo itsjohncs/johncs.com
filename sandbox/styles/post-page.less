@@ -14,12 +14,12 @@ p, ol, ul, img {
     margin: 0 0 @lineHeight 0;
 }
 
-ol {
+ol, ul {
     list-style: none;
     padding: 0;
 }
 
-li {
+ol > li {
     counter-increment: item;
     padding-left: 4ch;
     position: relative;
@@ -34,9 +34,23 @@ li {
     }
 }
 
+ul > li {
+    padding-left: 3ch;
+    position: relative;
+
+    &:before {
+        color: @gutterColor;
+        content: "*";
+        display: inline-block;
+        left: 0;
+        padding: 0 1ch;
+        position: absolute;
+    }
+}
+
 .red-bold {
-    color: red;
-    font-weight: bold;
+    color: #DC322F;
+    // font-weight: bold;
 }
 
 .rounded-40 {
