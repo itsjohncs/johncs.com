@@ -9,8 +9,6 @@ Last week a mysterious double-sided puzzle appeared at `Khan Academy <https://ww
 
 .. image:: /images/mysterious-puzzle.jpg
     :alt: A picture of the mysterious puzzle
-    :width: 75%
-    :align: center
     :target: /images/mysterious-puzzle.jpg
 
 To solve the puzzle you must fit all four pieces inside the recessed area (the pieces will not entirely fill the area). We found a solution to the easy side after only a few days [#easy_solution]_ but nobody could get close to solving the hard side. So five of us began writing our own solvers.
@@ -21,13 +19,9 @@ Each of us came up with our own answer to this question [#such_coordinates]_. I 
 
 .. image:: /images/triangular-grid.png
     :alt: The triangular grid
-    :width: 75%
-    :align: center
 
 .. image:: /images/johns-coordinates.png
     :alt: My coordinate system
-    :width: 75%
-    :align: center
     :target: /images/johns-coordinates.png
 
 I had a problem though. Once I manually input a piece into my coordinate system, I needed to be able to rotate and reflect that piece into 12 different alignments. Reflection was easy, but despite my best efforts, I couldn't figure out how to rotate the pieces once they were placed into my grid.
@@ -40,7 +34,7 @@ By this time, Ben Eater's solver was done and ticking away. `His solver <https:/
 
 .. image:: /images/eaters-solver.gif
     :alt: Ben Eater's solver
-    :align: center
+    :class: small-image
 
 To try and be a little faster I added in some logic to prune large parts of the search space where possible. This worked by laying down a piece at a time, and only trying the other ones if there were no collisions.
 
@@ -50,8 +44,7 @@ This ended up working well and soon I had `a solver <https://github.com/brownhea
 
 .. image:: /images/solver.gif
     :alt: My solver
-    :width: 50%
-    :align: center
+    :class: small-image
 
 Emily finished `her solver <https://github.com/xymostech/wood-puzzle/blob/master/src/Main.hs>`_ around the same time and we were able to confirm our results. **The hard side of the puzzle was unsolvable**.
 
@@ -59,8 +52,7 @@ Clearly there was a very evil puzzle master in our ranks.
 
 .. image:: /images/evil-kitty.gif
     :alt: An evil kitten
-    :width: 50%
-    :align: center
+    :class: small-image
 
 `Jamie Wong <http://jamie-wong.com/>`_ readily admitted to bringing in the puzzle (though he didn't tell us where he got it). Despite the staggering proof to the contrary though, he was adamant that a solution existed. He said our solvers all shared a fatal flaw.
 

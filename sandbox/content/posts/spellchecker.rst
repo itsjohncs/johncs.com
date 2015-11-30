@@ -19,6 +19,7 @@ I decided to build my own pure-Python spell checker.
 
 .. image:: /images/wat.png
 	:alt: Wait, what?
+	:class: small-image
 
 I was expecting my mentor and others to balk at the idea (`I was an intern during this time <https://www.khanacademy.org/careers/interns>`_). But all I received were encouraging nods, so off I went.
 
@@ -28,6 +29,7 @@ Storing our English words in a Python ``dict`` consumed about 18 MB of space [#b
 
 .. image:: /images/oh-hell-no.gif
 	:alt: Oh hell no.
+	:class: small-image
 
 To reduce memory I first tried using `Python's array module <https://docs.python.org/2/library/array.html>`_ to build my own immutable hash table. This did indeed bring our memory usage down but made spellchecking take several seconds per query.
 
