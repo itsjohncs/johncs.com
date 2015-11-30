@@ -13,7 +13,6 @@ Our search page at Khan Academy displays highlighting information to provide con
 
 .. image:: /images/highlighting_before.png
     :alt: A screenshot of Khan Academy's search results.
-    :class: full-width
 
 6 lines of text for a single result might be too much... Shrinking it in such a way that the highlighting is still useful is difficult though. To get a clearer idea of the problem, let's poke at some example text:
 
@@ -82,4 +81,3 @@ This algorithm will break down under certain situations (ex: all the possible re
 
 .. image:: /images/highlighting_after.png
     :alt: A screenshot of Khan Academy's search results.
-    :class: full-width

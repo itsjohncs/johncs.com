@@ -8,8 +8,6 @@ One year ago, searching for *polinomials* on `Khan Academy's search page <https:
 
 .. image:: /images/showing_results_for.png
     :alt: Google's "Showing results for..." feature.
-    :width: 75%
-    :align: center
 
 I didn't have any illusions of making a solution as good as Google's, but I figured I could improve things for a significant number of users anyways [#reach_research]_.
 
@@ -21,7 +19,6 @@ I decided to build my own pure-Python spell checker.
 
 .. image:: /images/wat.png
 	:alt: Wait, what?
-	:align: center
 
 I was expecting my mentor and others to balk at the idea (`I was an intern during this time <https://www.khanacademy.org/careers/interns>`_). But all I received were encouraging nods, so off I went.
 
@@ -31,7 +28,6 @@ Storing our English words in a Python ``dict`` consumed about 18 MB of space [#b
 
 .. image:: /images/oh-hell-no.gif
 	:alt: Oh hell no.
-	:align: center
 
 To reduce memory I first tried using `Python's array module <https://docs.python.org/2/library/array.html>`_ to build my own immutable hash table. This did indeed bring our memory usage down but made spellchecking take several seconds per query.
 
@@ -45,8 +41,6 @@ Best of all, it works.
 
 .. image:: /images/khan-academy-correction.png
 	:alt: Screenshot of the spell checker working on Khan Academy
-	:align: center
-	:width: 75%
 
 .. [#reach_research] I found that the 28% of the least frequent 16,000 queries and 18% of the most frequent 16,000 queries had typos within edit distance 2 of a known common word. I defined "common word" by creating a single dictionary from some freely licensed english dictionaries and all of Khan Academy's content. This was part of my preliminary research and was done to check that a autocorrecter was a useful feature.
 
