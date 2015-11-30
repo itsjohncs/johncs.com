@@ -19,10 +19,7 @@ Our search page at Khan Academy displays highlighting information to provide con
 
 .. parsed-literal::
 
-    From this experiment we can make a key observation: The values in each of
-    the slices are equal to the the label on the slice, plus or minus some
-    **multiple** of C. This means the difference between any two values in a
-    slice is some **multiple** of C.
+    From this experiment we can make a key observation: The values in each of the slices are equal to the the label on the slice, plus or minus some **multiple** of C. This means the difference between any two values in a slice is some **multiple** of C.
 
 This is too large for us to display directly to the user, but how could we shorten it?
 
@@ -32,8 +29,7 @@ I'd say the second part of the first sentence, after the colon, because it's clo
 
 .. parsed-literal::
 
-    The values in each of the slices are equal to the the label on the slice,
-    plus or minus some **multiple** of C.
+    The values in each of the slices are equal to the the label on the slice, plus or minus some **multiple** of C.
 
 A way we could figure this out is by first creating a list of "stop points" in the text. We want these stop points to be the beginning of a clause, but since that's a hard thing to detect in code we can approximate it by declaring that stop points are the first alphanumeric character after a non-alphanumeric character and some whitespace. We'll also say that the beginning and end of the text are stop points.
 
@@ -41,10 +37,7 @@ So if we annotated the stop points in our example text we'd get:
 
 .. parsed-literal::
 
-    :red-bold:`\|`\From this experiment we can make a key observation: :red-bold:`\|`\The values in each
-    of the slices are equal to the the label on the slice, :red-bold:`\|`\plus or minus some
-    **multiple** of C. :red-bold:`\|`\This means the difference between any two values in a
-    slice is some **multiple** of C.\ :red-bold:`\|`
+    :red-bold:`\|`\From this experiment we can make a key observation: :red-bold:`\|`\The values in each of the slices are equal to the the label on the slice, :red-bold:`\|`\plus or minus some **multiple** of C. :red-bold:`\|`\This means the difference between any two values in a slice is some **multiple** of C.\ :red-bold:`\|`
 
 Each stop point represents a possible start or end point for our result. So our search space is just every combination of two stop points. Some strings we will look at include:
 
@@ -60,10 +53,7 @@ So if we annotated only the preferred stop points in our example text we'd get:
 
 .. parsed-literal::
 
-    :red-bold:`\|`\From this experiment we can make a key observation: :red-bold:`\|`\The values in each
-    of the slices are equal to the the label on the slice, plus or minus some
-    **multiple** of C. :red-bold:`\|`\This means the difference between any two values in a
-    slice is some **multiple** of C.\ :red-bold:`\|`
+    :red-bold:`\|`\From this experiment we can make a key observation: :red-bold:`\|`\The values in each of the slices are equal to the the label on the slice, plus or minus some **multiple** of C. :red-bold:`\|`\This means the difference between any two values in a slice is some **multiple** of C.\ :red-bold:`\|`
 
 Now that we have our vocab in place, we can find our answer. To do so, we'll look at each string in our search space and throw out every string that is outside of our min and max lengths (which we set at 80 and 150 earlier). This leaves us with:
 
@@ -86,8 +76,7 @@ The first two results have preferred stop points at both ends, so the only thing
 
 .. parsed-literal::
 
-    The values in each of the slices are equal to the the label on the slice,
-    plus or minus some **multiple** of C.
+    The values in each of the slices are equal to the the label on the slice, plus or minus some **multiple** of C.
 
 This algorithm will break down under certain situations (ex: all the possible results are too short), but the edge cases end up being simple to handle. The same screenshot that we started with, when this algorithm is applied, becomes:
 
