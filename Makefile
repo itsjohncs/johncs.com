@@ -1,10 +1,10 @@
-.PHONY: build watch serve clean
+.PHONY: build watch serve clean deps
 
 build: clean
-	mkdir ./build/app-output ./build/crush-output ./build/collect-output
+	mkdir ./build ./build/app-output ./build/crush-output ./build/collect-output || true
 
 	@echo === Python app ===
-	cd pythonapp/; python app.py
+	cd pythonapp/; ../env/bin/python app.py
 
 	@echo === Gulp app - crush ===
 	cd gulpapp/; gulp crush
@@ -13,6 +13,8 @@ build: clean
 	cd bashapp/; bash collect.sh
 
 watch:
+	# entr is cross-platform and easy to install. Take a look for it on your
+	# favorite package manager.
 	find . | grep -v '\./build/.*' | entr -d make
 
 serve:
@@ -21,3 +23,8 @@ serve:
 
 clean:
 	rm -rf ./build/app-output ./build/crush-output ./build/collect-output
+
+deps:
+	virtualenv env
+	./env/bin/pip install pygments pystache docutils pyyaml
+	npm install gulp gulp-concat gulp-foreach gulp-less gulp-inject
