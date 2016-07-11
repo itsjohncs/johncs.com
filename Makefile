@@ -28,3 +28,6 @@ deps:
 	virtualenv env
 	./env/bin/pip install pygments pystache docutils pyyaml
 	npm install gulp gulp-concat gulp-foreach gulp-less gulp-inject
+
+ready-publish: build
+	./ready-publish.sh
