@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John CS - Mini Projects</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="description" content="A blog by John Christopher Sullivan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600' rel='stylesheet' type='text/css'>
+
+    <!-- inject:head:css -->
+    <style>* {
+  font-family: "Source Code Pro", serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+body {
+  background-color: #fdf6e3;
+  color: #657b83;
+  padding: 16px 2ch 160px 2ch;
+}
+@media (max-width: 46ch) {
+  body {
+    padding-bottom: 80px;
+  }
+}
+a {
+  text-decoration: none;
+  color: #b58900;
+}
+a:hover {
+  text-decoration: underline;
+}
+.single-column-content {
+  max-width: 72ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block-quote-markup {
+  color: #859900;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+tt {
+  font-weight: 300;
+}
+p {
+  margin: 0;
+}
+h2 {
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+.nav-bar {
+  background-color: #eee8d5;
+  margin-bottom: 16px;
+}
+.nav-bar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.nav-bar ul li {
+  display: inline;
+}
+.nav-bar ul li:after {
+  content: ", ";
+}
+.nav-bar ul li:last-child:after {
+  content: "";
+}
+.page-info {
+  margin-bottom: 16px;
+}
+.post {
+  margin-bottom: 16px;
+}
+.post .post-heading {
+  margin-bottom: 16px;
+  background-color: #eee8d5;
+}
+.post .post-heading .post-date {
+  font-weight: 300;
+  color: #6c71c4;
+}
+.post .post-snippet-container {
+  position: relative;
+  overflow-y: hidden;
+}
+.post .post-snippet-container .quote-gutter {
+  word-wrap: break-word;
+  color: #859900;
+  width: 1ch;
+  position: absolute;
+  user-select: none;
+}
+.post .post-snippet-container .post-snippet {
+  margin-left: 2ch;
+}
+.post-body p,
+.post-body ol,
+.post-body ul,
+.post-body img {
+  margin: 0 0 16px 0;
+}
+.post-body ol,
+.post-body ul {
+  list-style: none;
+  padding: 0;
+}
+.post-body ol > li {
+  counter-increment: item;
+  padding-left: 4ch;
+  position: relative;
+}
+.post-body ol > li:before {
+  color: #859900;
+  content: counter(item) ".";
+  display: inline-block;
+  left: 0;
+  padding: 0 1ch;
+  position: absolute;
+}
+.post-body ul > li {
+  padding-left: 3ch;
+  position: relative;
+}
+.post-body ul > li:before {
+  color: #859900;
+  content: "*";
+  display: inline-block;
+  left: 0;
+  padding: 0 1ch;
+  position: absolute;
+}
+.post-body .red-bold {
+  color: #DC322F;
+}
+.post-body .rounded-40 {
+  border-radius: 40px;
+}
+.post-body table.footnote td {
+  padding: 0;
+  margin: 0;
+}
+.post-body table.footnote td.label {
+  padding-right: 1ch;
+}
+.post-body img {
+  background-color: #eee8d5;
+  border-color: #eee8d5;
+  border-style: solid;
+  border-width: 16px 2ch;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+  width: 100%;
+}
+.post-body img.small-image {
+  max-width: 40ch;
+}
+.post-body tt,
+.post-body pre {
+  font-weight: 300;
+}
+.post-body tt b,
+.post-body pre b,
+.post-body tt strong,
+.post-body pre strong {
+  font-weight: normal;
+}
+.post-body pre {
+  padding: 0 0 0 4ch;
+  white-space: pre-wrap;
+}
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  font-weight: 600;
+}
+.post-body h2 *,
+.post-body h3 *,
+.post-body h4 *,
+.post-body h5 *,
+.post-body h6 * {
+  font-weight: 600;
+}
+.post-body em,
+.post-body i {
+  font-style: normal;
+  font-weight: 600;
+}
+.soft {
+  font-weight: 300;
+}
+</style>
+    <!-- endinject -->
+</head>
+<body class="single-column-content">
+    <nav class="nav-bar" style="text-align: left">
+        <a href="/">John CS</a>:
+        <ul>
+            <li><a href="./blog-index.htm">Blog</a></li>
+            <li>Mini Projects</li>
+            <li><a href="http://johnsullivan.name">Portfolio</a></li>
+            <li><a href="https://github.com/brownhead">GitHub</a></li>
+            <li><a href="https://twitter.com/itsjohncs">Twitter</a></li>
+        </ul>
+    </nav>
+    <div class="page-info">
+        Sometimes I finish itty-bitty projects and put them here! These are the one-night projects; the beautiful i-just-thought-of-something-fun-to-make creations; the sorts of projects I used to make all the time when I was younger but now that I'm all mature and adulty I don't usually have time to complete.<br><br>If these are the sorts of projects that you like, follow along with me via <a href="https://twitter.com/itsjohncs">Twitter</a>. <span class="soft">(Psst... Check out <a href="http://johnsullivan.name">my portfolio</a> for less-mini projects)</span>
+    </div>
+    <h2><span aria-hidden="true">##</span> All Mini Projects</h2>
+    <div class="all-posts">
+        <article class="post">
+            <div class="post-heading">
+                <span>
+                    <a href="https://github.com/brownhead/die-sim" class="post-title">Die Simulator</a>
+                    <time class="post-date"><span aria-hidden="true">[05/22/2015]</span><span class="sr-only">May 22, 2015</span></time>
+                </span>
+            </div>
+            <div class="post-body">
+                <div class="document">
+<p>Ever play D&amp;D, realize you forgot your dice, and decide to write up a script to roll dice for you? Me too! I made it in Python and didn't spend a ton of time adding features, so its understanding of dice-rolling syntax (like <tt class="docutils literal">2d10+8</tt>) is pretty minimal, but it works great!</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/brownhead/die-sim/master/demo.gif"><img alt="A demo of the die simulator" src="https://raw.githubusercontent.com/brownhead/die-sim/master/demo.gif" /></a>
+<p>My initial version of this program had an off by one error which prevented me from ever getting a 20 when rolling a d20! I was upset.</p>
+</div>
+
+            </div>
+        </article>
+    </div>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-51104787-1', 'johncs.com');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
