@@ -1,17 +1,23 @@
-.PHONY: serve env deps build
+.PHONY: build watch serve clean
 
-PHIAL = PYTHONPATH=./phial python -m phial.__main__
+build: clean
+	mkdir ./build/app-output ./build/crush-output ./build/collect-output
 
-build: env deps
-	gulp
+	@echo === Python app ===
+	cd pythonapp/; python app.py
+
+	@echo === Gulp app - crush ===
+	cd gulpapp/; gulp crush
+
+	@echo === Bash app - collect ===
+	cd bashapp/; bash collect.sh
+
+watch:
+	find . | grep -v '\./build/.*' | entr -d make
 
 serve:
-	$(PHIAL) --testing app.py
+	@echo 'Serving at http://127.0.0.1:50191'
+	cd ./build/collect-output; ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 50191, :DocumentRoot => Dir.pwd).start'
 
-env:
-	virtualenv --prompt '(phial)' env
-
-deps: env
-	env/bin/pip install --upgrade PyYAML pystache docutils pygments
-	bower install normalize.css
-	npm install gulp gulp-shell gulp-inject gulp-foreach gulp-concat gulp-minify-css gulp-minify-html gulp-imagemin gulp-webserver gulp-uncss gulp-less gulp-autoprefixer
+clean:
+	rm -rf ./build/app-output ./build/crush-output ./build/collect-output
