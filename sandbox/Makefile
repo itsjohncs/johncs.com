@@ -1,3 +1,5 @@
+.PHONY: build watch serve clean
+
 build: clean
 	mkdir ./build/app-output ./build/crush-output ./build/collect-output
 
@@ -9,6 +11,9 @@ build: clean
 
 	@echo === Bash app - collect ===
 	cd bashapp/; bash collect.sh
+
+watch:
+	find . | grep -v '\./build/.*' | entr -d make
 
 serve:
 	@echo 'Serving at http://127.0.0.1:50191'

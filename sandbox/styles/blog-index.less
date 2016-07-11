@@ -17,7 +17,7 @@ h2 {
         padding: 0;
         margin: 0;
         list-style: none;
-        display: inline-block;
+        display: inline;
 
         li {
             display: inline;
@@ -35,7 +35,7 @@ h2 {
     }
 }
 
-.blog-info {
+.page-info {
     margin-bottom: @lineHeight;
 }
 
@@ -44,16 +44,12 @@ h2 {
 
     .post-heading {
         margin-bottom: @lineHeight;
+        background-color: #eee8d5;
 
         .post-date {
-            position: absolute;
+            // position: absolute;
             font-weight: 300;
             color: @dateTimeColor;
-        }
-
-        .post-title {
-            display: inline-block;
-            margin-left: 13ch;
         }
     }
 

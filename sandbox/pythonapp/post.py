@@ -43,17 +43,21 @@ class Post(object):
         with open(path, "rb") as f:
             frontmatter, content = parse_frontmatter(f.read().decode("utf-8"))
 
+        self.frontmatter = frontmatter
+
         # The path of the post file (ie: the RST file, not the result HTML
         # file).
         self.file_path = path
 
         self.title = frontmatter["title"]
 
-        # HACK(johnsullivan): Getting rid of the tags in this way feels pretty dirty...
-        self.description = (
-            render_rst(frontmatter["description"])
-                .replace("<p>", "").replace("</p>", "")
-                .replace("<div class=\"document\">", "").replace("</div>", ""))
+        self.description = None
+        if "description" in frontmatter:
+            # HACK(johnsullivan): Getting rid of the tags in this way feels pretty dirty...
+            self.description = (
+                render_rst(frontmatter["description"])
+                    .replace("<p>", "").replace("</p>", "")
+                    .replace("<div class=\"document\">", "").replace("</div>", ""))
 
         # TODO(johnsullivan): Rename "date" to "published_on" in the frontmatter of all the posts.
         self.published_on = (
@@ -85,3 +89,19 @@ class Post(object):
             "permalink": "posts/" + self.get_output_name(),
             "description": self.description,
         }
+
+
+class Project(Post):
+    def __init__(self, *args, **kwargs):
+        super(Project, self).__init__(*args, **kwargs)
+
+        self.repo_url = self.frontmatter["url"]
+
+    def get_metadata(self):
+        metadata = super(Project, self).get_metadata()
+        metadata.update({
+            "url": self.repo_url,
+            "html_content": self.get_html_content(),
+        })
+
+        return metadata

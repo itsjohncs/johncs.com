@@ -12,10 +12,12 @@ import sys
 
 import pystache
 
-from post import Post
+from post import Post, Project
 
 POST_TEMPLATE = open("./templates/post-page.htm", "rb").read().decode("utf-8")
 BLOG_INDEX_TEMPLATE = open("./templates/blog-index.htm", "rb").read().decode("utf-8")
+MINI_PROJECT_INDEX_TEMPLATE = open("./templates/mini-projects-index.htm", "rb").read().decode("utf-8")
+INDEX_TEMPLATE = open("./templates/index.htm", "rb").read().decode("utf-8")
 RSS_TEMPLATE = open("./templates/rss.xml", "rb").read().decode("utf-8")
 
 
@@ -86,6 +88,57 @@ def create_blog_index_package(posts):
         f.write(json.dumps(package_description, ensure_ascii=True))
 
 
+def create_mini_projects_index_package(mini_projects):
+    # TODO(johnsullivan): I can DRY this up. Repeated logic from posts. "Make a package" sounds
+    #     like a useful abstraction.
+
+    # Create the "mini_projects index" that has all of the mini_projects inline
+    package_dir_path = "../build/app-output/packages/mini-projects-index"
+    os.makedirs(package_dir_path)
+
+    template_params = {
+        "mini_projects": [project.get_metadata() for project in mini_projects],
+    }
+    renderer = pystache.Renderer(missing_tags="strict")
+    rendered_template = renderer.render(MINI_PROJECT_INDEX_TEMPLATE, template_params)
+    with open(os.path.join(package_dir_path, "template.htm"), "wb") as f:
+        f.write(rendered_template.encode("utf-8"))
+
+    # Render the package description (see crush.js for the code that reads this)
+    package_description = {
+        "target": "mini-projects-index.htm",
+        "template": "template.htm",
+        "inlined-less": ["mini-projects-index.less"],
+    }
+    with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
+        # The file will be ASCII encoded (and implicitly UTF-8 encoded)
+        f.write(json.dumps(package_description, ensure_ascii=True))
+
+def create_index_package():
+    # TODO(johnsullivan): I can DRY this up. Repeated logic from posts. "Make a package" sounds
+    #     like a useful abstraction.
+
+    # Create the index that serves as the main page
+    package_dir_path = "../build/app-output/packages/index"
+    os.makedirs(package_dir_path)
+
+    template_params = {}
+    renderer = pystache.Renderer(missing_tags="strict")
+    rendered_template = renderer.render(INDEX_TEMPLATE, template_params)
+    with open(os.path.join(package_dir_path, "template.htm"), "wb") as f:
+        f.write(rendered_template.encode("utf-8"))
+
+    # Render the package description (see crush.js for the code that reads this)
+    package_description = {
+        "target": "index.htm",
+        "template": "template.htm",
+        "inlined-less": ["blog-index.less"],
+    }
+    with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
+        # The file will be ASCII encoded (and implicitly UTF-8 encoded)
+        f.write(json.dumps(package_description, ensure_ascii=True))
+
+
 def create_rss_page(posts):
     template_params = {
         "posts": [post.get_metadata() for post in posts],
@@ -106,6 +159,14 @@ def main():
         create_post_package(post)
 
     create_blog_index_package(posts)
+
+    # Grab all of the projects and sort them by their published date
+    projects = [Project(path) for path in glob.glob("../content/mini_projects/*")]
+    projects = sorted(projects, key=lambda post: post.published_on, reverse=True)
+
+    create_mini_projects_index_package(projects)
+
+    create_index_package()
 
     create_rss_page(posts)
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>John CS - Blog Index</title>
+    <title>John CS - Mini Projects</title>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="description" content="A blog by John C Sullivan">
+    <meta name="description" content="A blog by John Christopher Sullivan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600' rel='stylesheet' type='text/css'>
 
@@ -15,36 +15,31 @@
     <nav class="nav-bar" style="text-align: left">
         <a href="/">John CS</a>:
         <ul>
-            <li>Blog</li>
-            <li><a href="./mini-projects-index.htm">Mini Projects</a></li>
+            <li><a href="./blog-index.htm">Blog</a></li>
+            <li>Mini Projects</li>
             <li><a href="http://johnsullivan.name">Portfolio</a></li>
             <li><a href="https://github.com/brownhead">GitHub</a></li>
             <li><a href="https://twitter.com/itsjohncs">Twitter</a></li>
         </ul>
     </nav>
     <div class="page-info">
-        I blog sometimes! So far the only topics I've covered have been related to software engineering, but I'm not above random posts about cats.<br><br>Follow along with <a href="/rss.xml">RSS</a> or <a href="https://twitter.com/itsjohncs">Twitter</a>.
+        Sometimes I finish itty-bitty projects and put them here! These are the one-night projects; the beautiful i-just-thought-of-something-fun-to-make creations; the sorts of projects I used to make all the time when I was younger but now that I'm all mature and adulty I don't usually have time to complete.<br><br>If these are the sorts of projects that you like, follow along with me via <a href="https://twitter.com/itsjohncs">Twitter</a>. <span class="soft">(Psst... Check out <a href="http://johnsullivan.name">my portfolio</a> for less-mini projects)</span>
     </div>
-    <h2><span aria-hidden="true">##</span> All Posts</h2>
+    <h2><span aria-hidden="true">##</span> All Mini Projects</h2>
     <div class="all-posts">
-        {{#posts}}
+        {{#mini_projects}}
         <article class="post">
             <div class="post-heading">
                 <span>
-                    <a href="{{permalink}}" class="post-title">{{title}}</a>
+                    <a href="{{url}}" class="post-title">{{title}}</a>
                     <time class="post-date"><span aria-hidden="true">[{{published_on}}]</span><span class="sr-only">{{published_on_long}}</span></time>
                 </span>
             </div>
-            <div class="post-snippet-container">
-                <div class="quote-gutter" aria-hidden="true">
-                    >>>>>>>>>>>>>>>>>>>>
-                </div>
-                <div class="post-snippet">
-                    {{{description}}} <a href="{{permalink}}">(more)</a>
-                </div>
+            <div class="post-body">
+                {{{html_content}}}
             </div>
         </article>
-        {{/posts}}
+        {{/mini_projects}}
     </div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
