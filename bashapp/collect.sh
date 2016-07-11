@@ -16,3 +16,6 @@ cp -r ../build/crush-output/* ../build/collect-output/
 
 # Copy over the RSS feed
 cp ../build/app-output/rss.xml ../build/collect-output/rss.xml
+
+# Add the CNAME file
+echo "johncs.com" > ../build/collect-output/CNAME
