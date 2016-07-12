@@ -15,7 +15,7 @@ build: clean
 watch:
 	# entr is cross-platform and easy to install. Take a look for it on your
 	# favorite package manager.
-	find . | grep -v '\./build/.*' | entr -d make
+	find . | grep -v '\./\(build\|node_modules\|env\|\.git\)\(/.*\|$$\)' | entr -d make
 
 serve:
 	@echo 'Serving at http://127.0.0.1:50191'
