@@ -53,16 +53,12 @@ a:hover {
 tt {
   font-weight: 300;
 }
-p {
-  margin: 0;
-}
-h2 {
-  font-weight: 600;
-  margin: 0 0 16px 0;
-}
 .nav-bar {
   background-color: #eee8d5;
+  border-left: 1ch solid #268bd2;
+  border-right: 1ch solid #268bd2;
   margin-bottom: 16px;
+  padding: 0 1ch;
 }
 .nav-bar ul {
   padding: 0;
@@ -81,6 +77,40 @@ h2 {
 }
 .nav-bar a {
   color: #268bd2;
+}
+img {
+  background-color: #eee8d5;
+  border-color: #eee8d5;
+  border-style: solid;
+  border-width: 16px 2ch;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+  width: 100%;
+}
+img.small-image {
+  max-width: 40ch;
+}
+img.tiny-image {
+  max-width: 30ch;
+}
+@media (min-width: 80ch) {
+  .floating-head {
+    float: left;
+    margin-right: 2ch;
+  }
+}
+p,
+ol,
+ul {
+  margin: 0 0 16px 0;
+}
+h2 {
+  font-weight: 600;
+  margin: 0 0 16px 0;
 }
 .page-info {
   margin-bottom: 16px;
@@ -114,7 +144,7 @@ h2 {
     <!-- endinject -->
 </head>
 <body class="single-column-content">
-    <nav class="nav-bar" style="text-align: left">
+    <nav class="nav-bar">
         <a href="/">John CS</a>:
         <ul>
             <li>Blog</li>

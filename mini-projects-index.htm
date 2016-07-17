@@ -53,16 +53,12 @@ a:hover {
 tt {
   font-weight: 300;
 }
-p {
-  margin: 0;
-}
-h2 {
-  font-weight: 600;
-  margin: 0 0 16px 0;
-}
 .nav-bar {
   background-color: #eee8d5;
+  border-left: 1ch solid #268bd2;
+  border-right: 1ch solid #268bd2;
   margin-bottom: 16px;
+  padding: 0 1ch;
 }
 .nav-bar ul {
   padding: 0;
@@ -81,6 +77,40 @@ h2 {
 }
 .nav-bar a {
   color: #268bd2;
+}
+img {
+  background-color: #eee8d5;
+  border-color: #eee8d5;
+  border-style: solid;
+  border-width: 16px 2ch;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+  width: 100%;
+}
+img.small-image {
+  max-width: 40ch;
+}
+img.tiny-image {
+  max-width: 30ch;
+}
+@media (min-width: 80ch) {
+  .floating-head {
+    float: left;
+    margin-right: 2ch;
+  }
+}
+p,
+ol,
+ul {
+  margin: 0 0 16px 0;
+}
+h2 {
+  font-weight: 600;
+  margin: 0 0 16px 0;
 }
 .page-info {
   margin-bottom: 16px;
@@ -109,12 +139,6 @@ h2 {
 }
 .post .post-snippet-container .post-snippet {
   margin-left: 2ch;
-}
-.post-body p,
-.post-body ol,
-.post-body ul,
-.post-body img {
-  margin: 0 0 16px 0;
 }
 .post-body ol,
 .post-body ul {
@@ -159,21 +183,6 @@ h2 {
 .post-body table.footnote td.label {
   padding-right: 1ch;
 }
-.post-body img {
-  background-color: #eee8d5;
-  border-color: #eee8d5;
-  border-style: solid;
-  border-width: 16px 2ch;
-  box-sizing: border-box;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60ch;
-  width: 100%;
-}
-.post-body img.small-image {
-  max-width: 40ch;
-}
 .post-body tt,
 .post-body pre {
   font-weight: 300;
@@ -210,11 +219,14 @@ h2 {
 .soft {
   font-weight: 300;
 }
+.timestamp-anchor {
+  color: #6c71c4;
+}
 </style>
     <!-- endinject -->
 </head>
 <body class="single-column-content">
-    <nav class="nav-bar" style="text-align: left">
+    <nav class="nav-bar">
         <a href="/">John CS</a>:
         <ul>
             <li><a href="./blog-index.htm">Blog</a></li>
@@ -233,7 +245,7 @@ h2 {
             <div class="post-heading">
                 <span>
                     <a href="https://github.com/brownhead/die-sim" class="post-title">Die Simulator</a>
-                    <time class="post-date"><span aria-hidden="true">[05/22/2015]</span><span class="sr-only">May 22, 2015</span></time>
+                    <time class="post-date"><span aria-hidden="true">[<a class="timestamp-anchor" name="die-sim" href="#die-sim">05/22/2015</a>]</span><span class="sr-only">May 22, 2015</span></time>
                 </span>
             </div>
             <div class="post-body">
@@ -241,6 +253,23 @@ h2 {
 <p>Ever play D&amp;D, realize you forgot your dice, and decide to write up a script to roll dice for you? Me too! I made it in Python and didn't spend a ton of time adding features, so its understanding of dice-rolling syntax (like <tt class="docutils literal">2d10+8</tt>) is pretty minimal, but it works great!</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/brownhead/die-sim/master/demo.gif"><img alt="A demo of the die simulator" src="https://raw.githubusercontent.com/brownhead/die-sim/master/demo.gif" /></a>
 <p>My initial version of this program had an off by one error which prevented me from ever getting a 20 when rolling a d20! I was upset.</p>
+</div>
+
+            </div>
+        </article>
+        <article class="post">
+            <div class="post-heading">
+                <span>
+                    <a href="https://github.com/brownhead/different-logger" class="post-title">Different Logger</a>
+                    <time class="post-date"><span aria-hidden="true">[<a class="timestamp-anchor" name="different-logger" href="#different-logger">08/13/2014</a>]</span><span class="sr-only">August 13, 2014</span></time>
+                </span>
+            </div>
+            <div class="post-body">
+                <div class="document">
+<p>I wanted Python's logging library to give me pretty output and highlight the substituted values. So I made a little library that'd make it do all those things! Here's some output:</p>
+<a class="reference external image-reference" href="/images/different-logger-messages.png"><img alt="Various log messages printed by the logger." src="/images/different-logger-messages.png" /></a>
+<a class="reference external image-reference" href="/images/different-logger-exception.png"><img alt="A log message with a stack trace printed by the logger." src="/images/different-logger-exception.png" /></a>
+<p>You don't need to do anything special to use it, just use the Python <tt class="docutils literal">logging</tt> library like normal (ex: <tt class="docutils literal"><span class="pre">logging.error(&quot;%s</span> foobars received, expected 17&quot;, num_foobars)</tt>).</p>
 </div>
 
             </div>
