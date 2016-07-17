@@ -88,3 +88,37 @@ tt {
         color: #268bd2;
     }
 }
+
+img {
+    background-color: #eee8d5;
+    border-color: #eee8d5;
+    border-style: solid;
+    border-width: @lineHeight 2ch;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: @lineHeight;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60ch;
+    width: 100%;
+
+    &.small-image {
+        max-width: 40ch;
+    }
+
+    &.tiny-image {
+        max-width: 30ch;
+    }
+}
+
+// TODO: move to index.less or something
+@media (min-width: 80ch) {
+    .floating-head {
+        float: left;
+        margin-right: 2ch;
+    }
+}
+
+p, ol, ul {
+    margin: 0 0 @lineHeight 0;
+}
