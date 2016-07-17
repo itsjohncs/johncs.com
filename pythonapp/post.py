@@ -40,6 +40,8 @@ def parse_frontmatter(post_contents):
 
 class Post(object):
     def __init__(self, path):
+        self.slug = os.path.splitext(os.path.basename(path))[0]
+
         with open(path, "rb") as f:
             frontmatter, content = parse_frontmatter(f.read().decode("utf-8"))
 
@@ -88,6 +90,7 @@ class Post(object):
             "postcontent_scripts": self.postcontent_scripts,
             "permalink": "posts/" + self.get_output_name(),
             "description": self.description,
+            "slug": self.slug,
         }
 
 
