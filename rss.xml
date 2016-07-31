@@ -5,6 +5,15 @@
         <link>http://johncs.com</link>
         <description>Blog of John Christopher Sullivan</description>
         <item>
+            <title>Principles of Building a Simple Site</title>
+            <link>http://johncs.com/posts/building-websites.htm</link>
+            <description>
+Simple websites can be very useful: a site for your cat pictures and thoughts, a blog for your company, a portfolio for advancing your career, etc. I've made a bunch and I have some lessons to share.
+
+</description>
+            <pubDate>July 30, 2016</pubDate>
+        </item>
+        <item>
             <title>I talk to myself on GitHub</title>
             <link>http://johncs.com/posts/monologues.htm</link>
             <description>
