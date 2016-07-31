@@ -18,7 +18,7 @@ If you *are* interested in making the best website you can without running out o
 #. **Keep the website's goal in mind.** If you just want a place to host your thoughts in a blog format, don't get caught up worrying about design too much. If you're building a portfolio, make sure your design conveys what you want it to (ex: "I've made a lot of cool stuff!" or "the things I've built have millions of users").
 #. **Make a static site.** By this I mean make a site that could be hosted on GitHub Pages or a similarily simple service. Sometimes this isn't possible, but building and maintaining something besides a static site is way more difficult, so try really hard to Keep It Static Silly.
 
-I haven't gotten around to adding comments to this blog yet, but feel free to send me your throughts or ask me questions on `twitter <https://twitter.com/itsjohncs>`_.
+I haven't gotten around to adding comments to this blog yet, but feel free to send me your thoughts or ask me questions on `twitter <https://twitter.com/itsjohncs>`_.
 
 .. [#some_of_my_sites]
 	
