@@ -1,10 +1,10 @@
 title: Principles of Building a Simple Site
 date: July 30, 2016
 description: >
-    Simple websites can be very useful: a site for your cat pictures and thoughts, a blog for your company, a portfolio for advancing your career, etc. I've made a bunch and I have some lessons to share.
+    Simple websites can be super useful: a site for your cat pictures and thoughts, a blog for your company, a portfolio for advancing your career, etc. I've made a bunch and I have some lessons to share.
 ...
 
-Simple websites can be very useful: a site for your cat pictures and thoughts, a blog for your company, a portfolio for advancing your career, etc.
+Simple websites can be super useful: a site for your cat pictures and thoughts, a blog for your company, a portfolio for advancing your career, etc.
 
 I've made a bunch of simple sites and I have some lessons to share [#some_of_my_sites]_. But first, I've got a question for you: do you care more about completing a good website, or do you care more about something else (like learning)?
 
