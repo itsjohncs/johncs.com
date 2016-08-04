@@ -14,10 +14,9 @@ WELL NO MORE!! Look at this absolutely terribly encoded traceback:
     PASSING!!\\\\n^CTraceback (most recent call last):\\\\n
     File \\\\\\"tools/devshell.py\\\\\\", line 145, in
     <module>\\\\n    from devshell_eval import *\\\\n  File \\
-    \\\\"/Users/johnsullivan/khan/webapp/tools/devshell_eval.p
+    \\\\"webapp/tools/devshell_eval.p
     y\\\\\\", line 4, in <module>\\\\n    from
-    assessment_items.models import *\\\\n  File \\\\\\"/U sers
-    /johnsullivan/.virtualenv/khan27/lib/python2.7/sre_parse.p
+    assessment_items.models import *\\\\n  File \\\\\\"khan27/lib/python2.7/sre_parse.p
     y\\\\\\", line 126, in __len__\\\\n    def
     __len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\",
     \\"type\\": \\"traceback\\"}", "test_result": "aborted"}'
@@ -29,9 +28,9 @@ THE TERROR!!! Fortunately I made a script that turns that big blob into somethin
     Traceback (most recent call last):
       File "tools/devshell.py", line 145, in <module>
         from devshell_eval import *
-      File "/Users/johnsullivan/khan/webapp/tools/devshell_eval.py", line 4, in <module>
+      File "webapp/tools/devshell_eval.py", line 4, in <module>
         from assessment_items.models import *
-      File "/U sers/johnsullivan/.virtualenv/khan27/lib/python2.7/sre_parse.py", line 126, in __len__
+      File "khan27/lib/python2.7/sre_parse.py", line 126, in __len__
         def __len__(self):
     KeyboardInterrupt\\\\n$\\\\n\\",
     \\"type\\": \\"traceback\\"}", "test_result": "aborted"}'
