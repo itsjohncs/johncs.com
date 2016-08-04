@@ -247,6 +247,48 @@ h2 {
         <article class="post">
             <div class="post-heading">
                 <span>
+                    <a href="https://github.com/brownhead/tbget" class="post-title">tbget</a>
+                    <time class="post-date"><span aria-hidden="true">[<a class="timestamp-anchor" name="tbget" href="#tbget">08/04/2015</a>]</span><span class="sr-only">August 4, 2015</span></time>
+                </span>
+            </div>
+            <div class="post-body">
+                <div class="document">
+<p>Pretty often when I'm looking at some of the logs at Khan Academy, I find a traceback that I want to take a closer look at, but it has been shoved through a JSON parser or <tt class="docutils literal">repr()</tt> a couple times. So I end up spending a couple minutes just formatting it enough to be readable.</p>
+<p>WELL NO MORE!! Look at this absolutely terribly encoded traceback:</p>
+<pre class="code literal-block">
+'{&quot;test_data&quot;: &quot;{\\&quot;data\\&quot;: \\&quot;$ tools/runtests.py
+\\\\nRUNNING ALL SORTS OF TESTS\\\\nSTUFF IS
+PASSING!!\\\\n^CTraceback (most recent call last):\\\\n
+File \\\\\\&quot;tools/devshell.py\\\\\\&quot;, line 145, in
+&lt;module&gt;\\\\n    from devshell_eval import *\\\\n  File \\
+\\\\&quot;/Users/johnsullivan/khan/webapp/tools/devshell_eval.p
+y\\\\\\&quot;, line 4, in &lt;module&gt;\\\\n    from
+assessment_items.models import *\\\\n  File \\\\\\&quot;/U sers
+/johnsullivan/.virtualenv/khan27/lib/python2.7/sre_parse.p
+y\\\\\\&quot;, line 126, in __len__\\\\n    def
+__len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\&quot;,
+\\&quot;type\\&quot;: \\&quot;traceback\\&quot;}&quot;, &quot;test_result&quot;: &quot;aborted&quot;}'
+</pre>
+<p>THE TERROR!!! Fortunately I made a script that turns that big blob into something a bit nicer:</p>
+<pre class="code pytb literal-block">
+<span class="gt">Traceback (most recent call last):
+</span>  File <span class="nb">&quot;tools/devshell.py&quot;</span>, line <span class="m">145</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="kn">from</span> <span class="nn">devshell_eval</span> <span class="kn">import</span> <span>*</span>
+  File <span class="nb">&quot;/Users/johnsullivan/khan/webapp/tools/devshell_eval.py&quot;</span>, line <span class="m">4</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="kn">from</span> <span class="nn">assessment_items.models</span> <span class="kn">import</span> <span>*</span>
+  File <span class="nb">&quot;/U sers/johnsullivan/.virtualenv/khan27/lib/python2.7/sre_parse.py&quot;</span>, line <span class="m">126</span>, in <span class="n">__len__</span>
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gr">KeyboardInterrupt\\\\n$\\\\n\\&quot;,
+\\&quot;type\\&quot;</span>: <span class="n">\\&quot;traceback\\&quot;}&quot;, &quot;test_result&quot;: &quot;aborted&quot;}'</span>
+</pre>
+<p>Unfortunately I don't think it's possible for my tool to know for sure when a traceback ends using its current strategy, so there's some gunk at the end, but eh.</p>
+</div>
+
+            </div>
+        </article>
+        <article class="post">
+            <div class="post-heading">
+                <span>
                     <a href="https://github.com/brownhead/simple-frontmatter" class="post-title">Simple Frontmatter Parser</a>
                     <time class="post-date"><span aria-hidden="true">[<a class="timestamp-anchor" name="simple-frontmatter" href="#simple-frontmatter">08/03/2015</a>]</span><span class="sr-only">August 3, 2015</span></time>
                 </span>
