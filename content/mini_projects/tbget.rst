@@ -3,9 +3,11 @@ date: August 4, 2015
 url: https://github.com/brownhead/tbget
 ...
 
-Pretty often when I'm looking at some of the logs at Khan Academy, I find a traceback that I want to take a closer look at, but it has been shoved through a JSON parser or ``repr()`` a couple times. So I end up spending a couple minutes just formatting it enough to be readable.
+The log viewers we use at Khan Academy usually show tracebacks in some kind of escaped format (with newlines replaced with ``\n``, or the whole thing getting embedded into a large JSON object), so quickly formatting tracebacks has become a pastime for me.
 
-WELL NO MORE!! Look at this absolutely terribly encoded traceback:
+Yesterday I got tired of formatting though, so now I have a fancy tool that can turn the most heinously encoded tracebacks into beautifully formatted emeralds.
+
+*Heinous:*
 
 .. code-block::
 
@@ -21,7 +23,7 @@ WELL NO MORE!! Look at this absolutely terribly encoded traceback:
     __len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\",
     \\"type\\": \\"traceback\\"}", "test_result": "aborted"}'
 
-THE TERROR!!! Fortunately I made a script that turns that big blob into something a bit nicer:
+*Beautiful emerald:*
 
 .. code-block:: pytb
 
@@ -34,5 +36,3 @@ THE TERROR!!! Fortunately I made a script that turns that big blob into somethin
         def __len__(self):
     KeyboardInterrupt\\\\n$\\\\n\\",
     \\"type\\": \\"traceback\\"}", "test_result": "aborted"}'
-
-Unfortunately I don't think it's possible for my tool to know for sure when a traceback ends using its current strategy, so there's some gunk at the end, but eh.
