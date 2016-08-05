@@ -225,6 +225,9 @@ h2 {
 .timestamp-anchor {
   color: #6c71c4;
 }
+.literal-block {
+  overflow-wrap: break-word;
+}
 </style>
     <!-- endinject -->
 </head>
@@ -253,8 +256,9 @@ h2 {
             </div>
             <div class="post-body">
                 <div class="document">
-<p>Pretty often when I'm looking at some of the logs at Khan Academy, I find a traceback that I want to take a closer look at, but it has been shoved through a JSON parser or <tt class="docutils literal">repr()</tt> a couple times. So I end up spending a couple minutes just formatting it enough to be readable.</p>
-<p>WELL NO MORE!! Look at this absolutely terribly encoded traceback:</p>
+<p>The log viewers we use at Khan Academy usually show tracebacks in some kind of escaped format (with newlines replaced with <tt class="docutils literal">\n</tt>, or the whole thing getting embedded into a large JSON object), so quickly formatting tracebacks has become a pastime for me.</p>
+<p>Yesterday I got tired of formatting though, so now I have a fancy tool that can turn the most heinously encoded tracebacks into beautifully formatted emeralds.</p>
+<p><em>Heinous:</em></p>
 <pre class="code literal-block">
 '{&quot;test_data&quot;: &quot;{\\&quot;data\\&quot;: \\&quot;$ tools/runtests.py
 \\\\nRUNNING ALL SORTS OF TESTS\\\\nSTUFF IS
@@ -268,7 +272,7 @@ y\\\\\\&quot;, line 126, in __len__\\\\n    def
 __len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\&quot;,
 \\&quot;type\\&quot;: \\&quot;traceback\\&quot;}&quot;, &quot;test_result&quot;: &quot;aborted&quot;}'
 </pre>
-<p>THE TERROR!!! Fortunately I made a script that turns that big blob into something a bit nicer:</p>
+<p><em>Beautiful emerald:</em></p>
 <pre class="code pytb literal-block">
 <span class="gt">Traceback (most recent call last):
 </span>  File <span class="nb">&quot;tools/devshell.py&quot;</span>, line <span class="m">145</span>, in <span class="n">&lt;module&gt;</span>
@@ -280,7 +284,6 @@ __len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\&quot;,
 <span class="gr">KeyboardInterrupt\\\\n$\\\\n\\&quot;,
 \\&quot;type\\&quot;</span>: <span class="n">\\&quot;traceback\\&quot;}&quot;, &quot;test_result&quot;: &quot;aborted&quot;}'</span>
 </pre>
-<p>Unfortunately I don't think it's possible for my tool to know for sure when a traceback ends using its current strategy, so there's some gunk at the end, but eh.</p>
 </div>
 
             </div>
