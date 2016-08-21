@@ -6,10 +6,10 @@
 @gutterColor: #859900;
 
 * {
-    font-family: "Source Code Pro", serif;
+    font-family: inherit;
     font-size: 14px;
-    line-height: @lineHeight;
     letter-spacing: 0;
+    line-height: @lineHeight;
 }
 
 html {
@@ -19,10 +19,19 @@ html {
 body {
     background-color: @pageBackgroundColor;
     color: @textColor;
+    font-family: monospace;
     padding: @lineHeight 2ch (@lineHeight * 10) 2ch;
 
     @media (max-width: @maxBannerWidth) {
         padding-bottom: @lineHeight * 5;
+    }
+
+    &.fonts-loading {
+        visibility: hidden;
+    }
+
+    &.fonts-loaded {
+        font-family: "Source Code Pro", monospace;
     }
 }
 

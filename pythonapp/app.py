@@ -55,6 +55,7 @@ def create_post_package(post):
         "target": "posts/" + post.get_output_name(),
         "template": "template.htm",
         "inlined-less": ["post-page.less"],
+        "inlined-js": ["fontloader.js", "google-analytics.js"],
     }
     with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)
@@ -82,6 +83,7 @@ def create_blog_index_package(posts):
         "target": "blog-index.htm",
         "template": "template.htm",
         "inlined-less": ["blog-index.less"],
+        "inlined-js": ["fontloader.js", "google-analytics.js"],
     }
     with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)
@@ -109,6 +111,7 @@ def create_mini_projects_index_package(mini_projects):
         "target": "mini-projects-index.htm",
         "template": "template.htm",
         "inlined-less": ["mini-projects-index.less"],
+        "inlined-js": ["fontloader.js", "google-analytics.js"],
     }
     with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)
@@ -133,6 +136,7 @@ def create_index_package():
         "target": "index.htm",
         "template": "template.htm",
         "inlined-less": ["blog-index.less"],
+        "inlined-js": ["fontloader.js", "google-analytics.js"],
     }
     with open(os.path.join(package_dir_path, "description.json"), "wb") as f:
         # The file will be ASCII encoded (and implicitly UTF-8 encoded)

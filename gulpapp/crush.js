@@ -37,9 +37,9 @@ const crush = function() {
 
         // Similarily, grab all the package's JS files it wants to inline and create a stream that
         // processes them.
-        const relativeJsPaths = packageInfo["inline-js"] || [];
+        const relativeJsPaths = packageInfo["inlined-js"] || [];
         const jsPaths = relativeJsPaths.map(function (relativePath) {
-            return path.join(basePath, relativePath);
+            return path.join("../javascript/", relativePath);
         });
         const jsStream = gulp.src(jsPaths).pipe(concat("all-js.js"));
 
@@ -56,7 +56,7 @@ const crush = function() {
                 }
             }))
             .pipe(inject(jsStream, {
-                starttag: "<!-- inject:head:js -->",
+                starttag: "<!-- inject:body-end:javascript -->",
                 transform: function (filePath, file) {
                     return "<script>" + file.contents.toString("utf-8") + "</script>";
                 }
