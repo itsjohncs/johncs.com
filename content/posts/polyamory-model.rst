@@ -1,4 +1,4 @@
-title: A model of polyamorous relationships
+title: A model of (polyamorous) relationships
 date: January 18, 2017
 description: I want to present a model for thinking about relationships and polyamory. Like any model, I will relate it (hopefully strongly) to real world things, but the model exists within its own system.
 ...
