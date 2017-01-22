@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John CS - A model of polyamorous relationships</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- inject:head:css -->
+    <style>* {
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background-color: #fdf6e3;
+  color: #657b83;
+  font-family: monospace;
+  padding: 20px 2ch 200px 2ch;
+}
+@media (max-width: 46ch) {
+  body {
+    padding-bottom: 100px;
+  }
+}
+body.fonts-loading {
+  visibility: hidden;
+}
+body.fonts-loaded {
+  font-family: "Source Code Pro", monospace;
+}
+a {
+  text-decoration: none;
+  color: #b58900;
+}
+a:hover {
+  text-decoration: underline;
+}
+.single-column-content {
+  max-width: 72ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block-quote-markup {
+  color: #859900;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+tt {
+  font-weight: 300;
+}
+.nav-bar {
+  background-color: #eee8d5;
+  border-left: 1ch solid #268bd2;
+  border-right: 1ch solid #268bd2;
+  margin-bottom: 20px;
+  padding: 0 1ch;
+}
+.nav-bar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: inline;
+}
+.nav-bar ul li {
+  display: inline;
+}
+.nav-bar ul li:after {
+  content: ", ";
+}
+.nav-bar ul li:last-child:after {
+  content: "";
+}
+.nav-bar a {
+  color: #268bd2;
+}
+img {
+  background-color: #eee8d5;
+  border-color: #eee8d5;
+  border-style: solid;
+  border-width: 20px 2ch;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+  width: 100%;
+}
+img.small-image {
+  max-width: 40ch;
+}
+img.tiny-image {
+  max-width: 30ch;
+}
+@media (min-width: 80ch) {
+  .floating-head {
+    float: left;
+    margin-right: 2ch;
+  }
+}
+p,
+ol,
+ul {
+  margin: 0 0 20px 0;
+}
+.post-body ol,
+.post-body ul {
+  list-style: none;
+  padding: 0;
+}
+.post-body ol > li {
+  counter-increment: item;
+  padding-left: 4ch;
+  position: relative;
+}
+.post-body ol > li:before {
+  color: #859900;
+  content: counter(item) ".";
+  display: inline-block;
+  left: 0;
+  padding: 0 1ch;
+  position: absolute;
+}
+.post-body ul > li {
+  padding-left: 3ch;
+  position: relative;
+}
+.post-body ul > li:before {
+  color: #859900;
+  content: "*";
+  display: inline-block;
+  left: 0;
+  padding: 0 1ch;
+  position: absolute;
+}
+.post-body .red-bold {
+  color: #DC322F;
+}
+.post-body .rounded-40 {
+  border-radius: 40px;
+}
+.post-body table.footnote td {
+  padding: 0;
+  margin: 0;
+}
+.post-body table.footnote td.label {
+  padding-right: 1ch;
+}
+.post-body tt,
+.post-body pre {
+  font-weight: 300;
+}
+.post-body tt b,
+.post-body pre b,
+.post-body tt strong,
+.post-body pre strong {
+  font-weight: normal;
+}
+.post-body pre {
+  padding: 0 0 0 4ch;
+  white-space: pre-wrap;
+}
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  font-weight: 600;
+}
+.post-body h2 *,
+.post-body h3 *,
+.post-body h4 *,
+.post-body h5 *,
+.post-body h6 * {
+  font-weight: 600;
+}
+.post-body em,
+.post-body i {
+  font-style: normal;
+  font-weight: 600;
+}
+.nav-bar .post-date {
+  font-weight: 300;
+  color: #6c71c4;
+}
+</style>
+    <!-- endinject -->
+</head>
+<body class="single-column-content">
+    <script>
+        if (!(sessionStorage && sessionStorage.getItem &&
+                sessionStorage.getItem("fontLoadingResult") === "fail")) {
+            document.body.className += " fonts-loading"
+        }
+    </script>
+    <header class="nav-bar">
+        <a href="/">John CS</a> &gt; <a href="../blog-index.htm">Blog</a> &gt; A model of polyamorous relationships <span class="post-date">[01/18/2017]</span>
+    </header>
+    <div class="post-body">
+        <div class="document">
+<p>I want to present a model for thinking about relationships and polyamory. Like any model, I will relate it (hopefully strongly) to real world things, but the model exists within its own system (see <a class="reference external" href="https://en.wikipedia.org/wiki/Conceptual_model">this wikipedia article on models</a>).</p>
+<p>I mention this, because I'm about to define what a Relationship is. Notice the capital R, I'm writing the word like that to differentiate it from the slippery, super-cool word &quot;relationship&quot; that we use all the time (that means different things to everyone). A <strong>R</strong>elationship is an object that exists in this model that I'm about to define. I'm going to assert some things about Relationships that hopefully help us to understand real-world, slippery relationships, but I am not asserting things about real-world relationships directly. So anyways...</p>
+<div class="section" id="definitions">
+<h2><span aria-hidden="true">##</span> Definitions</h2>
+<p>A Relationship has a few interesting properties:</p>
+<ul class="simple">
+<li>it exists between exactly two people</li>
+<li>it contains a set of Expectations</li>
+<li>it is a member of zero or more Communities.</li>
+</ul>
+<p>A Community has just a couple of interesting properties:</p>
+<ul class="simple">
+<li>it contains people and Relationships</li>
+<li>it contains a set of Expectations too</li>
+</ul>
+<p>An Expectation is a sort-of contract that binds everyone and everything inside of a Relationship or inside of a Community. Just like contracts in the real world, Expectations can be:</p>
+<ul class="simple">
+<li>poorly understood, such that two people have different ideas of what the Expectation demands</li>
+<li>implied, such that they exist but have not been discussed</li>
+<li>broken, such that someone acts in a way that is counter to what was apparently agreed to</li>
+</ul>
+<p>That's pretty much the whole model (sorry mathematicians).</p>
+<a class="reference external image-reference" href="/images/math-disappointment.png"><img alt="A picture of a turtle with the text &quot;I was promised math, I received only disappointment&quot; laid over it." class="small-image" src="/images/math-disappointment.png" /></a>
+<p>Let me show you how I use it to think about relationships and why it helps me.</p>
+</div>
+<div class="section" id="monogamy">
+<h2><span aria-hidden="true">##</span> Monogamy</h2>
+<p>I'm going to apply the model to monogamy first because monogamy is a very simple case.</p>
+<p>A monogamous Relationship often has a lot of Expectations. The big one (that makes the Relationship monogamous) is the Expectation that both people in the Relationship will not &quot;interact too intimately&quot; with people outside the Relationship (with the meaning/bar of too much intimacy varying).</p>
+<p>When someone in the Relationship breaks that Expectation, bad things happen, heavy discussions are had, and popular songs are written.</p>
+<a class="reference external image-reference" href="/images/singing-turtle.png"><img alt="An illustration of a singing turtle. It is cute." class="small-image" src="/images/singing-turtle.png" /></a>
+<p>A theme of this post is that meeting, defining, and updating the various Expectations that bind each person is important. When an Expectation is broken, strife happens. So it's important to make sure that Expectations are well-understood and well-communicated.</p>
+</div>
+<div class="section" id="closed-tightly-connected-polyamory">
+<h2><span aria-hidden="true">##</span> Closed, Tightly Connected Polyamory</h2>
+<p>Let's look at a monogamous-like relationship between three people, so we can see how Communities are involved without getting too complicated.</p>
+<p>Let's say we have three people. Each person has a Relationship with each other person (so that's 3 Relationships in total). Each Relationship may have slightly or vastly different Expectations (ex: Relationship 1 has an Expectation where roughly 2 days a week of each person's time is spent together in 1-on-1 interaction, where Relationship 2 has a similar expectation but only a couple days a month because they live so far apart). Here's a graph where the three people are named after single letters, how convenient!</p>
+<pre class="literal-block">
+A - B
+ \ /
+  C
+</pre>
+<p>All three Relationships, and all the three people, are in a Community together. And that Community has the Expectation that no one will &quot;interact too intimately&quot; with anyone outside of the Community (again the meaning of too much intimacy varies).</p>
+<a class="reference external image-reference" href="/images/three-turtles.jpg"><img alt="A picture of three turtles on a log. The author is getting carried away with the turtle images." class="small-image" src="/images/three-turtles.jpg" /></a>
+<p>Just like for each Relationship: meeting, defining, and updating this Community's Expectations is very important. It's not enough for just a couple people in the Community to decide that an Expectation can be broken or changed, everyone has to agree, otherwise strife happens.</p>
+<p>In this example where there's a strong relationship between everyone involved, handling Community Expectations may not be more difficult than handling Relationship Expectations. But...</p>
+</div>
+<div class="section" id="general-open-polyamory">
+<h2><span aria-hidden="true">##</span> General, Open Polyamory</h2>
+<p>An open polyamorous relationship can get super tricky, quickly. Specifically, managing Community expectations can be very challenging because not everyone in the Community necessarily has strong communication channels between each other. Let's see a turtle related image that relates to this for a moment:</p>
+<a class="reference external image-reference" href="/images/bunch-of-turtles.jpg"><img alt="A picture of many turtles in a big turtle mess." class="small-image" src="/images/bunch-of-turtles.jpg" /></a>
+<p>Interesting, that's a big mess of turtles. Now let's look at a graph describing Relationships that span 6 people:</p>
+<pre class="literal-block">
+A -- B -- D -- F
+      \    \
+       C    E
+</pre>
+<p>To highlight the difficulty of the situation, let's say <em>B</em> and all their partners (<em>A</em>, <em>C</em>, and <em>D</em>) have agreed to always get STI screens done every 3 months. Within our model, we might say that <em>A</em>, <em>B</em>, <em>C</em>, and <em>D</em> are all in a Community which has that Expectation.</p>
+<p>We're already in potentially ill-defined territory here, because it's not immediately clear (from what I've written) whether everyone expects <em>D</em>'s partners to also get screened.</p>
+<p>But maybe everything is fine, life is proceeding, and everyone's generally happy. And then at some point <em>A</em> wants everyone to use latex gloves whenever genital touching occurs during sex. <em>A</em> now has the task of convincing the entire Community to agree to this, and they may have to communicate almost exclusively through <em>B</em>. So now everyone is playing telephone while trying to establish a contract-like Expectation that binds them all.</p>
+<p><em>A</em> may worry that <em>C</em> or <em>D</em> could feel put-off by the idea of <em>A</em> pushing this change. Strife could occur because <em>A</em> feels like they can't affect the Community in ways that are important to them.</p>
+</div>
+<div class="section" id="answers">
+<h2><span aria-hidden="true">##</span> Answers</h2>
+<p>I like thinking about my real-world relationships within this model because while relationships are very complicated and have lots of complicated pieces that go well-beyond just a set of Expectations and a pair of people, <em>R</em>elationships and <em>C</em>ommunities are simple and well-defined and I can understand the idea of explicit, contract-like Expectations existing and affecting everyone.</p>
+<p>This model helps me to recognize the difficulty of communicating Community Expectations as something above and beyond the difficulty of communicating Relationship Expectations (which is already challenging).</p>
+<p>Indeed it helps me understand a piece of why so many people choose hierarchical polyamory: if one or two people have the power to add Expectations to a Community without needing to get explicit approval from others in that Community, less difficult games of telephone have to happen.</p>
+<p>But of course, I don't actually have any answers to the problems of &quot;how do I make these things less difficult&quot;, or &quot;why did you write this give me my time back&quot;. I'd be interested in hearing your thoughts though. Say hello to me on <a class="reference external" href="https://twitter.com/itsjohncs">twitter</a> if you'd like to share.</p>
+<a class="reference external image-reference" href="/images/goodbye-turtle.png"><img alt="A picture of a waving turtle with the caption &quot;goodbye for now.&quot;" class="small-image" src="/images/goodbye-turtle.png" /></a>
+</div>
+</div>
+
+    </div>
+    <div class="post-footer">
+        <br>--<br><br>
+        <a href="/blog-index.htm">« more posts</a> | follow me via <a href="https://twitter.com/itsjohncs">twitter</a>, or <a href="http://johncs.com/rss.xml">RSS</a>
+    </div>
+    <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,600' rel='stylesheet' type='text/css'>
+    <!-- inject:body-end:javascript -->
+    <script>// Promise Polyfill
+(function(){'use strict';var f,g=[];function l(a){g.push(a);1==g.length&&f()}function m(){for(;g.length;)g[0](),g.shift()}f=function(){setTimeout(m)};function n(a){this.a=p;this.b=void 0;this.f=[];var b=this;try{a(function(a){q(b,a)},function(a){r(b,a)})}catch(c){r(b,c)}}var p=2;function t(a){return new n(function(b,c){c(a)})}function u(a){return new n(function(b){b(a)})}function q(a,b){if(a.a==p){if(b==a)throw new TypeError;var c=!1;try{var d=b&&b.then;if(null!=b&&"object"==typeof b&&"function"==typeof d){d.call(b,function(b){c||q(a,b);c=!0},function(b){c||r(a,b);c=!0});return}}catch(e){c||r(a,e);return}a.a=0;a.b=b;v(a)}}
+function r(a,b){if(a.a==p){if(b==a)throw new TypeError;a.a=1;a.b=b;v(a)}}function v(a){l(function(){if(a.a!=p)for(;a.f.length;){var b=a.f.shift(),c=b[0],d=b[1],e=b[2],b=b[3];try{0==a.a?"function"==typeof c?e(c.call(void 0,a.b)):e(a.b):1==a.a&&("function"==typeof d?e(d.call(void 0,a.b)):b(a.b))}catch(h){b(h)}}})}n.prototype.g=function(a){return this.c(void 0,a)};n.prototype.c=function(a,b){var c=this;return new n(function(d,e){c.f.push([a,b,d,e]);v(c)})};
+function w(a){return new n(function(b,c){function d(c){return function(d){h[c]=d;e+=1;e==a.length&&b(h)}}var e=0,h=[];0==a.length&&b(h);for(var k=0;k<a.length;k+=1)u(a[k]).c(d(k),c)})}function x(a){return new n(function(b,c){for(var d=0;d<a.length;d+=1)u(a[d]).c(b,c)})};window.Promise||(window.Promise=n,window.Promise.resolve=u,window.Promise.reject=t,window.Promise.race=x,window.Promise.all=w,window.Promise.prototype.then=n.prototype.c,window.Promise.prototype["catch"]=n.prototype.g);}());
+
+// Font Face Observer https://github.com/bramstein/fontfaceobserver
+(function(){function l(a,b){document.addEventListener?a.addEventListener("scroll",b,!1):a.attachEvent("scroll",b)}function m(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",function c(){document.removeEventListener("DOMContentLoaded",c);a()}):document.attachEvent("onreadystatechange",function k(){if("interactive"==document.readyState||"complete"==document.readyState)document.detachEvent("onreadystatechange",k),a()})};function q(a){this.a=document.createElement("div");this.a.setAttribute("aria-hidden","true");this.a.appendChild(document.createTextNode(a));this.b=document.createElement("span");this.c=document.createElement("span");this.h=document.createElement("span");this.f=document.createElement("span");this.g=-1;this.b.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.c.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+this.f.style.cssText="max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";this.h.style.cssText="display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;";this.b.appendChild(this.h);this.c.appendChild(this.f);this.a.appendChild(this.b);this.a.appendChild(this.c)}
+function w(a,b){a.a.style.cssText="max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;left:-999px;white-space:nowrap;font:"+b+";"}function x(a){var b=a.a.offsetWidth,c=b+100;a.f.style.width=c+"px";a.c.scrollLeft=c;a.b.scrollLeft=a.b.scrollWidth+100;return a.g!==b?(a.g=b,!0):!1}function z(a,b){function c(){var a=k;x(a)&&null!==a.a.parentNode&&b(a.g)}var k=a;l(a.b,c);l(a.c,c);x(a)};function A(a,b){var c=b||{};this.family=a;this.style=c.style||"normal";this.weight=c.weight||"normal";this.stretch=c.stretch||"normal"}var B=null,C=null,D=null;function H(){if(null===C){var a=document.createElement("div");try{a.style.font="condensed 100px sans-serif"}catch(b){}C=""!==a.style.font}return C}function I(a,b){return[a.style,a.weight,H()?a.stretch:"","100px",b].join(" ")}
+A.prototype.load=function(a,b){var c=this,k=a||"BESbswy",y=b||3E3,E=(new Date).getTime();return new Promise(function(a,b){null===D&&(D=!!window.FontFace);if(D){var J=new Promise(function(a,b){function e(){(new Date).getTime()-E>=y?b():document.fonts.load(I(c,c.family),k).then(function(c){1<=c.length?a():setTimeout(e,25)},function(){b()})}e()}),K=new Promise(function(a,c){setTimeout(c,y)});Promise.race([K,J]).then(function(){a(c)},function(){b(c)})}else m(function(){function r(){var b;if(b=-1!=f&&
+-1!=g||-1!=f&&-1!=h||-1!=g&&-1!=h)(b=f!=g&&f!=h&&g!=h)||(null===B&&(b=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent),B=!!b&&(536>parseInt(b[1],10)||536===parseInt(b[1],10)&&11>=parseInt(b[2],10))),b=B&&(f==t&&g==t&&h==t||f==u&&g==u&&h==u||f==v&&g==v&&h==v)),b=!b;b&&(null!==d.parentNode&&d.parentNode.removeChild(d),clearTimeout(G),a(c))}function F(){if((new Date).getTime()-E>=y)null!==d.parentNode&&d.parentNode.removeChild(d),b(c);else{var a=document.hidden;if(!0===a||void 0===
+a)f=e.a.offsetWidth,g=n.a.offsetWidth,h=p.a.offsetWidth,r();G=setTimeout(F,50)}}var e=new q(k),n=new q(k),p=new q(k),f=-1,g=-1,h=-1,t=-1,u=-1,v=-1,d=document.createElement("div"),G=0;d.dir="ltr";w(e,I(c,"sans-serif"));w(n,I(c,"serif"));w(p,I(c,"monospace"));d.appendChild(e.a);d.appendChild(n.a);d.appendChild(p.a);document.body.appendChild(d);t=e.a.offsetWidth;u=n.a.offsetWidth;v=p.a.offsetWidth;F();z(e,function(a){f=a;r()});w(e,I(c,'"'+c.family+'",sans-serif'));z(n,function(a){g=a;r()});w(n,I(c,'"'+
+c.family+'",serif'));z(p,function(a){h=a;r()});w(p,I(c,'"'+c.family+'",monospace'))})})};"undefined"!==typeof module?module.exports=A:(window.FontFaceObserver=A,window.FontFaceObserver.prototype.load=A.prototype.load);}());
+
+// Use that observer to enable the web fonts once they're loaded
+var fonts = [
+    (new FontFaceObserver("Source Code Pro", {weight: 300})).load(),
+    (new FontFaceObserver("Source Code Pro", {weight: 400})).load(),
+    (new FontFaceObserver("Source Code Pro", {weight: 600})).load(),
+];
+
+Promise.all(fonts).then(function() {
+    document.body.className = document.body.className.replace(/fonts-loading/, "fonts-loaded");
+}, function() {
+	document.body.className = document.body.className.replace(/fonts-loading/, "");
+
+	if (sessionStorage && sessionStorage.setItem) {
+		sessionStorage.setItem("fontLoadingResult", "fail");
+	}
+});
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51104787-1', 'johncs.com');
+ga('send', 'pageview');
+</script>
+    <!-- endinject -->
+</body>
+</html>
