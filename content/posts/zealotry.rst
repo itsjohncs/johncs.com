@@ -26,6 +26,8 @@ There's a general rule of mine that often saves me in this situation: if I can't
 
 So in this "someone is probably being a zealot and I don't know whether it's me" situation, I end up asking "could you help me understand?" And then I'll keep trying to understand until I feel confident I could argue on behalf of the person if needed. I also wait until I'm not angry or frustrated anymore, because those emotions cloud my judgement like toxic fumes. Afterwards I usually understand where the zealotry is, and moving forward is always much easier.
 
+It's worth mentioning that this is the ideal case. The thing I try to do. I'm not sure how often I'm successful, but I'm hoping more and more often as the years pass by.
+
 I encourage you to try this practice out: try to recognize that you don't intimately understand why someone is doing what they're doing then put hard effort into correcting that.
 
 This isn't just useful in your professional life either. Do you not understand why those in the #BlackLivesMatter movement are doing what they're doing? Do you not understand why anyone voted for Trump? Do you not understand why pronouns are very important for many people? It takes effort to understand, but it's often worth it.
