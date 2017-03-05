@@ -28,9 +28,7 @@ So in this "someone is probably being a zealot and I don't know whether it's me"
 
 It's worth mentioning that this is the ideal case. The thing I try to do. I'm not sure how often I'm successful, but I'm hoping more and more often as the years pass by.
 
-I encourage you to try this practice out: try to recognize that you don't intimately understand why someone is doing what they're doing then put hard effort into correcting that.
-
-This isn't just useful in your professional life either. Do you not understand why those in the #BlackLivesMatter movement are doing what they're doing? Do you not understand why anyone voted for Trump? Do you not understand why pronouns are very important for many people? It takes effort to understand, but it's often worth it.
+This isn't just useful in my professional life either. Do I not understand why those in the #BlackLivesMatter movement are doing what they're doing? Do I not understand why anyone voted for Trump? Do I not understand why pronouns are very important for many people?
 
 Alright, here's another turtle image to break the suddenly heavy mood:
 
