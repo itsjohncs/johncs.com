@@ -16,15 +16,15 @@ Since `I've got a turtle image thing </posts/polyamory-model.htm>`_ going, I tho
 
 In my day-to-day I see zealotry manifest in people when they look at a single thing-to-optimize and give it unfair weight. Here's some examples from the software engineering world:
 
-* premature optimization can be motivated by putting unnecessary weight on speed
-* useful things like project estimates can be thrown out because developers can be too focussed on the inevitable innaccuracy of them
-* code reviews can be unnecessarily frustrating when someone is too focussed on maintainability (or some other -ity)
+* premature optimization can be motivated by putting undue weight on speed
+* useful things like project estimates can be thrown out because developers can be too focused on the inevitable inaccuracy of them
+* code reviews can be unnecessarily frustrating when someone is too focused on maintainability (or some other -ity)
 
 These are perhaps obvious examples when laid out this way, but when someone is debating/arguing/foam-sword-fighting me over something, I can have a really tough time actually recognizing my zealotry. This is because *when I'm the one exhibiting zealotry I'm more likely to think that other people are the ones being unreasonable*.
 
-There's a general rule of mine that often saves me in this situation: if I can't intimately empathize with a point someone is making, I'm clearly lacking information. Everyone's brain works surprisingly similarily, and I should be capable of understanding why someone is doing something.
+There's a general rule of mine that often saves me in this situation: if I can't intimately empathize with a point someone is making, I'm clearly lacking information. Everyone's brain works surprisingly similarly, and I should be capable of understanding why someone is doing something.
 
-So in this "someone is probably being a zealot and I don't know whether it's me" situation, I end up asking "could you help me understand?" And then I'll keep trying to understand until I feel confident I could argue on behalf of the person if needed. I also wait until I'm not angry or frustrated anymore, because those emotions cloud my judgement like toxic fumes. Afterwards I usually understand where the zealotry is, and moving forward is always much easier.
+So in this "someone is probably being a zealot and I don't know whether it's me" situation, I end up asking "could you help me understand?" And then I'll keep trying to understand until I feel confident I could argue on behalf of the person if needed. I also wait until I'm not angry or frustrated anymore, because those emotions cloud my judgment like toxic fumes. Afterwards I usually understand where the zealotry is, and moving forward is always much easier.
 
 It's worth mentioning that this is the ideal case. The thing I try to do. I'm not sure how often I'm successful, but I'm hoping more and more often as the years pass by.
 
