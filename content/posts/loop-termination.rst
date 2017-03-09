@@ -17,3 +17,13 @@ But I'd find that my code doesn't do what I want it to, and my interviewer could
 I'm guaranteed to always return ``None``!
 
 This is (perhaps) a silly example. But the general technique of thinking about the termination condition I want when writing a loop condition is constantly useful to me.
+
+.
+
+.
+
+.
+
+This is the shortest post I've ever written... I'm nervous about just ending it abrubtly. But I guess it can't be helped :(.
+
+Bye for now!
