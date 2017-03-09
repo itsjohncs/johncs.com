@@ -1,0 +1,19 @@
+title: A very practical piece of pure CS
+date: March 8, 2017
+description: "If an interviewer asked me to find the last item in a linked list, I might write some code like this:"
+...
+
+If an interviewer asked me to find the last item in a linked list, I might write some code like this:
+
+.. code-block:: python
+
+    def get_last(node):
+        while node is not None:
+            node = node.next
+        return node
+
+But I'd find that my code doesn't do what I want it to, and my interviewer could probably whip up a formal proof of that shortly after I wrote the second line. This is because my loop condition is ``node is not None``, so my "termination condition" (ie: the thing that will absolutely be true immediately after we exit the loop) is ``node is None``.
+
+I'm guaranteed to always return ``None``!
+
+This is (perhaps) a silly example. But the general technique of thinking about the termination condition I want when writing a loop condition is constantly useful to me.
