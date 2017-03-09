@@ -27,7 +27,7 @@ clean:
 deps:
 	virtualenv env
 	./env/bin/pip install pygments pystache docutils pyyaml
-	npm install gulp gulp-concat gulp-foreach gulp-less gulp-inject
+	npm install gulp gulp-concat gulp-foreach gulp-less gulp-inject gulp-clean-css
 
 ready-publish: build
 	./ready-publish.sh

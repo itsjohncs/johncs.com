@@ -8,6 +8,7 @@
 
 const concat = require("gulp-concat");
 const foreach = require("gulp-foreach");
+const cleanCSS = require("gulp-clean-css");
 const gulp = require("gulp");
 const inject = require("gulp-inject");
 const less = require("gulp-less");
@@ -33,6 +34,7 @@ const crush = function() {
         });
         const cssStream = gulp.src(lessPaths)
             .pipe(less())
+            .pipe(cleanCSS())
             .pipe(concat("all-css.css"));
 
         // Similarily, grab all the package's JS files it wants to inline and create a stream that
