@@ -5,6 +5,15 @@
         <link>http://johncs.com</link>
         <description>Blog of John Christopher Sullivan</description>
         <item>
+            <title>A very practical piece of pure CS</title>
+            <link>http://johncs.com/posts/loop-termination.htm</link>
+            <description>
+If an interviewer asked me to find the last item in a linked list, I might write some code like this:
+
+</description>
+            <pubDate>March 8, 2017</pubDate>
+        </item>
+        <item>
             <title>Could I be a zealot? Yes and it sucks.</title>
             <link>http://johncs.com/posts/zealotry.htm</link>
             <description>
