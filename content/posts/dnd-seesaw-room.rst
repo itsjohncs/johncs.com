@@ -1,0 +1,45 @@
+title: The Seesaw - A D&D 5E Encounter
+date: April 19, 2017
+description: I've been DMing a Dungeons and Dragons (fifth edition) game every other week for awhile. During this last session on Monday they found themselves in the center of a room with a rectangular floor.
+...
+
+I've been `DMing <https://en.wikipedia.org/wiki/Dungeon_Master>`_ a Dungeons and Dragons (fifth edition) game every other week for awhile. During this last session on Monday they found themselves in the center of a room with a rectangular floor.
+
+I wanna share this encounter because I thought it was fun, and hopefully another DM gains some inspiration from it.
+
+The party enters the room
+-------------------------
+
+Directly in front of them was a fairly round boulder, to the left was an unmoving suit of armor holding a sword, and to the right was a stone gargoyle. The gargoyle's head was tilting upwards, staring at one of two mirrors built into the "ceiling", though because of the rounded walls it was hard to know where the walls ended and the ceiling began.
+
+.. image:: /images/dnd-seesaw-room-diagram.png
+    :alt: A diagram showing a side view of the room.
+    :target: /images/dnd-seesaw-room-diagram.png
+
+When the party spread out to investigate the gargoyle and armor, the floor started shifting: rotating like a seesaw, depending on the distribution of the party along the floor. Then the boulder in the center of the room started rolling downhill, causing the room to rotate even faster.
+
+The gargoyle and suit of armor took this opportunity to reveal their liveliness and attack the party. Actually surprisingly, the sword was a separate enemy and flew out from the armor's grasp to attack the party independently.
+
+Ghoulish
+--------
+
+There's a lot going on in this encounter (and I have yet to reveal why the mirrors are important), so I made sure to have a few less complicated encounters leading up to it. But I like how it ended up a lot. It gave a lot of color and depth to an otherwise simple combat encounter.
+
+The party was unsure of whether to let the room spin or try to balance out the seesaw, and they had to figure it out while in combat.
+
+Whether by choice or not, the floor eventually spun quite a bit, and when the floor had spun about 20 degrees the party noticed that the mirror that was quickly getting closer to touching the floor was starting to distort the reflection of the party. The party members looked sickly and pale in the mirror. As the floor kept rotating, their reflections started losing bits of their skin and stopped mirroring the parties actions.
+
+With only 5 degrees of rotation to go before the floor was aligned with the bottom of the mirror, the party was now looking at a window into a room where several ghoulish versions of themselves were trying to push through to their side.
+
+They managed to dispatch the armor and gargoyle by this point and spun the floor the other way so it aligned with the other mirror, which vanished to reveal a door leading out of the room.
+
+Short DM Notes
+--------------
+
+If the party had allowed the floor to rotate fully to the ghoulish mirror, the mirror would have shattered as several ghouls flooded into the room. The floor would not have spun any further in that direction.
+
+I didn't know which mirror would be the ghoulish mirror and which would be the exit mirror when the party entered the room. Whichever mirror they brought the floor to first would be the ghoulish mirror.
+
+I gave the floor and boulder an initiative (value 20), and figured out how much the floor would rotate when the turn came up. I decided between 0, 5, 10, or 15 degrees based on the distribution of the party, enemies, and boulders. I didn't sweat the math too much and decided everyone in the party (as well as the enemies) weighed 1 unit, and the boulder weighed 2 units. Then I just eyeballed the distribution to figure out how much the room should spin.
+
+Poke me on twitter if you have any thoughts on this!
