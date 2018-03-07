@@ -1,4 +1,4 @@
-This is the source code for [a thoroughly silly personal site](http://johncs.com). I didn't design any of the code to be reusable by anyone else because [I just wanted to get this thing built](http://johncs.com/posts/building-websites.htm), but you're welcome to peruse the code anyways!
+This is the source code for [a thoroughly silly personal site](http://blog.johncs.com). I didn't design any of the code to be reusable by anyone else because [I just wanted to get this thing built](http://johncs.com/posts/building-websites.htm), but you're welcome to peruse the code anyways!
 
 # Hacking
 
