@@ -21,7 +21,7 @@ And `the first piece of feedback I received <https://www.reddit.com/r/design_cri
 
 This was a tough thing to read right out of the gate. It's the thing I was most scared of happening, someone taking offense to the identity I'm putting forward. It made it worse that it's dressed up in pretty words.
 
-I don't feel like I have the vocabulary or the knowledge to talk about why I think this comment is shitty, at least in the way I want to. But I recognized it as a microagression I normally see pointed at people of color... "Do you really need to mention that your black? What does your race have to do with this?" or "Can you make this character's skin lighter?" because blackness is something that you can only mention when you're talking about race, otherwise these people would like "one cis white man please and thank you".
+I don't feel like I have the vocabulary or the knowledge to talk about why I think this comment is shitty, at least in the way I want to. But I recognized it as a microagression I normally see pointed at people of color... "Do you really need to mention that your black? What does your race have to do with this?" or "Can you make this character's skin lighter?" because blackness is something that can only be present when you're specifically talking about race, otherwise these people would like "one cis white man please and thank you".
 
 Amusingly `someone else's comment <https://www.reddit.com/r/design_critiques/comments/82iqq8/please_critique_the_engagingness_of_my_about/dvb69cf/>`__ that said:
 
