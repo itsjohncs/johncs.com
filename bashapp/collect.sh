@@ -18,4 +18,4 @@ cp -r ../build/crush-output/* ../build/collect-output/
 cp ../build/app-output/rss.xml ../build/collect-output/rss.xml
 
 # Add the CNAME file
-echo "johncs.com" > ../build/collect-output/CNAME
+echo "blog.johncs.com" > ../build/collect-output/CNAME
