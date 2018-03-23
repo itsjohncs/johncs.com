@@ -4,7 +4,7 @@
 set -e
 set -x
 
-TEMP_DIR="$(mktemp -d -t engblog)"
+TEMP_DIR="$(mktemp -d -t johncs-blog)"
 git clone --branch gh-pages git@github.com:brownhead/blog.johncs.com.git "$TEMP_DIR"
 rsync -rv --delete --exclude=.git ./build/collect-output/ "$TEMP_DIR"
 
