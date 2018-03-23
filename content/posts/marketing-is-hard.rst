@@ -27,4 +27,4 @@ So I'm gonna shift my approach. I'm gonna build a Shmeppy Minimum-Viable-Product
 
 Next week I start development.
 
-If you wanna hang out with me while I do it, join brand new `Shmeppy Discord server <https://discord.gg/Q246DD5>`__. It'd be easy to convince me to set up a Twitch stream too, so lemme know if any of ya'll would like that.
+If you wanna hang out with me while I do it, join the brand new `Shmeppy Discord server <https://discord.gg/Q246DD5>`__. It'd be easy to convince me to set up a Twitch stream too, so lemme know if any of ya'll would like that.
