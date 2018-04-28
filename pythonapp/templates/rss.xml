@@ -3,7 +3,7 @@
     <channel>
         <title>John CS</title>
         <link>http://johncs.com</link>
-        <description>Blog of John Christopher Sullivan</description>
+        <description>Blog of John Sullivan</description>
         {{#posts}}
         <item>
             <title>{{title}}</title>
