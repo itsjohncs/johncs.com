@@ -25,4 +25,4 @@ And the interviewer sounded very confident in that diagnosis.
 
 How many times did I reject a candidate after my interview, with reasonable confidence that they would have trouble hacking through ambiguity if they joined Khan Academy, while they would've actually been fantabulous at it. My bet is so many times.
 
-(I've got lots more thoughts on interviewing. Follow my dinky blog if you wanna read those thoughts 😃.)
+(I've got lots more thoughts on interviewing. Follow my dinky blog if you wanna read those thoughts 😃. Also I'm not looking for work right now, I just had a golden opportunity to do an interview and decided to take it.)
