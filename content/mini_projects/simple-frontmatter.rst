@@ -1,11 +1,11 @@
 title: Simple Frontmatter Parser
 date: August 3, 2015
-url: https://github.com/brownhead/simple-frontmatter
+url: https://github.com/itsjohncs/simple-frontmatter
 ...
 
 I wonder how many people have implemented a simple frontmatter parser... Judging by the volume of static site generators out there I bet there's a bunch.
 
-I made one for `Phial <https://github.com/brownhead/phial>`_ that was totally over-engineered awhile ago, but then for the `KA Engineering blog <http://engineering.khanacademy.org>`_ and `this site <http://johncs.com>`_ I went with a simpler version. I doubt it'd be useful, but just in case I figured I should release it under the UNLICENSE.
+I made one for `Phial <https://github.com/itsjohncs/phial>`_ that was totally over-engineered awhile ago, but then for the `KA Engineering blog <http://engineering.khanacademy.org>`_ and `this site <http://johncs.com>`_ I went with a simpler version. I doubt it'd be useful, but just in case I figured I should release it under the UNLICENSE.
 
 Here's a document that the parser could handle:
 

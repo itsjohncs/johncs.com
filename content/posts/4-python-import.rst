@@ -50,4 +50,4 @@ You can also add arbitrary Python into these files by prefixing an ``import`` st
 Extending the Import System
 ---------------------------
 
-If your needs are complex, you might want to take advantage of the hooks added by `PEP 302 <http://legacy.python.org/dev/peps/pep-0302/>`_ to extend the import system. You can also extend or reimplement the ``site`` module yourself (I did this while creating `Super Zippy <https://github.com/brownhead/superzippy>`_). Finally, you can do super crazy things like overriding ``__import__``. If you want to do it you can probably get Python to let you do it.
+If your needs are complex, you might want to take advantage of the hooks added by `PEP 302 <http://legacy.python.org/dev/peps/pep-0302/>`_ to extend the import system. You can also extend or reimplement the ``site`` module yourself (I did this while creating `Super Zippy <https://github.com/itsjohncs/superzippy>`_). Finally, you can do super crazy things like overriding ``__import__``. If you want to do it you can probably get Python to let you do it.

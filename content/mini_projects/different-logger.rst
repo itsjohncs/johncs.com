@@ -1,6 +1,6 @@
 title: Different Logger
 date: August 13, 2014
-url: https://github.com/brownhead/different-logger
+url: https://github.com/itsjohncs/different-logger
 ...
 
 I wanted Python's logging library to give me pretty output and highlight the substituted values. So I made a little library that'd make it do all those things! Here's some output:

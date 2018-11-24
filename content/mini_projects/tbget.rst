@@ -1,6 +1,6 @@
 title: tbget
 date: August 4, 2016
-url: https://github.com/brownhead/tbget
+url: https://github.com/itsjohncs/tbget
 ...
 
 The log viewers we use at Khan Academy usually show tracebacks in some kind of escaped format (with newlines replaced with ``\n``, or the whole thing getting embedded into a large JSON object), so quickly formatting tracebacks has become a pastime for me.

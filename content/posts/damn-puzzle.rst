@@ -40,7 +40,7 @@ To try and be a little faster I added in some logic to prune large parts of the 
 
 For example, first my program would lay down Piece A somewhere. If Piece A collided with a wall, my program would not try laying down Piece B yet, but would instead move Piece A somewhere else. Similarily, once it came time to lay down
 
-This ended up working well and soon I had `a solver <https://github.com/brownhead/damn-puzzle/blob/master/boom.js>`_ that could brute force the puzzle in less than a minute.
+This ended up working well and soon I had `a solver <https://github.com/itsjohncs/damn-puzzle/blob/master/boom.js>`_ that could brute force the puzzle in less than a minute.
 
 .. image:: /images/solver.gif
     :alt: My solver
