@@ -51,52 +51,52 @@
     Expenses:Food:Groceries  $47.70
     Liabilities:Bank of America:Credit Card
 </pre>
-<p>There's a lot more to say about Ledger, and you should read <a class="reference external" href="https://www.ledger-cli.org/3.0/doc/ledger3.html">its awesome manual</a> if you want more exposition about it. But this is maybe enough to vaguely understand the rest of this post… Let's hope so.</p>
+<p>There's a lot more to say about Ledger, and you should read <a class="reference external" href="https://www.ledger-cli.org/3.0/doc/ledger3.html">its awesome manual</a> or <a class="reference external" href="https://plaintextaccounting.org/">plaintextaccounting.org</a> if you want more exposition about it. But this is maybe enough to vaguely understand the rest of this post… Let's hope so.</p>
 </div>
 <div class="section" id="the-answer">
 <h2><span aria-hidden="true">##</span> The Answer</h2>
 <p>I now track the entire reimbursement process in my ledger file. The first steps are recorded as purchases of a THERAPY commodity from my therapist:</p>
 <pre class="literal-block">
 2018/01/03 * Dr. Therapist Person
-    Assets:Reimbursements:Insurance:Therapy:Unsubmitted  1 THERAPY &#64; =$200.00
-    Assets:Wells Fargo:Checking
+    Reimbursements:Unsubmitted  1 THERAPY &#64; =$200.00
+    Checking
 </pre>
-<p>This transaction says &quot;take $200 out of Checking, convert it into 1 THERAPY which has a fixed cost of $200, and put that THERAPY into Unsubmitted.&quot;</p>
-<p>The reason I use these tokens rather than just transfering the money is that Ledger will remember the date at which I bought the token. So if I want to know which visits I haven't submitted a claim for, Ledger will tell me directly:</p>
+<p>This transaction says &quot;take $200 out of Checking, convert it into 1 THERAPY which has a fixed cost of $200, and put that THERAPY into Reimbursements:Unsubmitted.&quot; (The account names I use in my actual ledger file are much longer, but I'll spare you for now.)</p>
+<p>The reason I use these commodities rather than just transfering the money is that Ledger will remember the date at which I bought the token. So if I want to know which visits I haven't submitted a claim for, Ledger will tell me directly:</p>
 <pre class="literal-block">
-$ ledger -f ledger.dat --lots  balance Assets:Reimbursements:Insurance:Therapy:Unsubmitted
-1 THERAPY {=$200.00} [18-Jan-03]  Assets:Reimbursements:Insurance:Therapy:Unsubmitted
+$ ledger -f ledger.dat --lots  balance Reimbursements:Unsubmitted
+1 THERAPY {=$200.00} [18-Jan-03]
 </pre>
 <p>If instead of using these THERAPY commodities I just transfered $200 into the Unsubmitted account, I'd need to track which specific visits have been submitted some other way.</p>
 <p>Over the course of a month, my Unsubmitted account will gather more THERAPY until I get to the next step and submit a superbill. At this point, I'll transfer the specific THERAPY lots mentionined in the superbill to another account:</p>
 <pre class="literal-block">
 2018/02/03 * Insurance Claim Submission
-    Assets:Reimbursements:Insurance:Therapy:Submitted  1 THERAPY {=$200.00} [2018/01/03]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  1 THERAPY {=$200.00} [2018/01/10]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  1 THERAPY {=$200.00} [2018/01/17]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  1 THERAPY {=$200.00} [2018/01/24]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  1 THERAPY {=$200.00} [2018/01/31]
-    Assets:Reimbursements:Insurance:Therapy:Unsubmitted
+    Reimbursements:Submitted  1 THERAPY {=$200.00} [2018/01/03]
+    Reimbursements:Submitted  1 THERAPY {=$200.00} [2018/01/10]
+    Reimbursements:Submitted  1 THERAPY {=$200.00} [2018/01/17]
+    Reimbursements:Submitted  1 THERAPY {=$200.00} [2018/01/24]
+    Reimbursements:Submitted  1 THERAPY {=$200.00} [2018/01/31]
+    Reimbursements:Unsubmitted
 </pre>
 <p>Now I know that I'm waiting for my insurance company to get back to me. Once they've processed my claim, these THERAPY lots are transformed back into cash (though not yet cash that I have access to).</p>
 <pre class="literal-block">
 2018/02/27 * Insurance Claim Processed
-    Assets:Reimbursements:Insurance:Therapy:Processed  $720.00
+    Reimbursements:Processed  $720.00
     Expenses:Medical  $80.00
         ; Payee: Dr. Therapist Person
-    Assets:Reimbursements:Insurance:Therapy:Submitted  -1 THERAPY {=$200.00} [2018/01/03]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  -1 THERAPY {=$200.00} [2018/01/10]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  -1 THERAPY {=$200.00} [2018/01/17]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  -1 THERAPY {=$200.00} [2018/01/24]
-    Assets:Reimbursements:Insurance:Therapy:Submitted  -1 THERAPY {=$200.00} [2018/01/31]
+    Reimbursements:Submitted  -1 THERAPY {=$200.00} [2018/01/03]
+    Reimbursements:Submitted  -1 THERAPY {=$200.00} [2018/01/10]
+    Reimbursements:Submitted  -1 THERAPY {=$200.00} [2018/01/17]
+    Reimbursements:Submitted  -1 THERAPY {=$200.00} [2018/01/24]
+    Reimbursements:Submitted  -1 THERAPY {=$200.00} [2018/01/31]
 </pre>
 <p>Now I know there's cash on its way to my partner, and soon I'll complete the process:</p>
 <pre class="literal-block">
 2018/03/08 * My Partner
-    Assets:Venmo  $720.00
-    Assets:Reimbursements:Insurance:Therapy:Processed
+    Venmo  $720.00
+    Reimbursements:Processed
 </pre>
-<p>I don't know yet what I'll do when a dispute how one of my claims was processed, but I suspect I have the tools to deal with it.</p>
+<p>I don't know yet what I'll do when I dispute how one of my claims was processed, but I suspect I have the tools to deal with it.</p>
 </div>
 <div class="section" id="results">
 <h2><span aria-hidden="true">##</span> Results</h2>
