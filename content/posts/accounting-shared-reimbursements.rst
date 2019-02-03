@@ -1,0 +1,78 @@
+title: "Answering questions with accounting: Shared Reimbursements"
+date: February 2, 2019
+description: "This is a sequal to my last post `\"Answering questions with accounting: Reimbursements\" </posts/accounting-reimbursements.htm>`__. In this post, we'll take things one step farther and I'll talk about how I'm tracking reimbursable expenses that I share with my partner."
+...
+
+This is a sequal to my last post `"Answering questions with accounting: Reimbursements" </posts/accounting-reimbursements.htm>`__. In that post, I talked about how I use `Ledger <https://www.ledger-cli.org/>`__ to track my medical reimbursements with my insurance company.
+
+In this post, we'll take things one step farther and I'll talk about how I'm tracking reimbursable expenses that I share with my partner.
+
+Some Quick Backstory
+--------------------
+
+My partner and I do not have a joint checking account, but we do have various expenses we share the cost of.
+
+One such shared expense is our dog: Pigby.
+
+.. image:: /images/pigby.jpg
+    :alt: A picture of my dog pigby
+    :target: /images/pigby.jpg
+    :class: small-image
+
+We have pet insurance for Pigby and when we go to the vet we can get reimbursed for part of the cost. So the problem is: how do I track these reimbursements like I did in my last post?
+
+The Dirty Details
+-----------------
+
+The whole problem is mostly contained in the very first transaction I have to log: paying the vet for their services. It's extra tricky because either my partner or I could pay for a vet visit.
+
+If I pay for it, I end up with this transaction:
+
+::
+
+    2019/02/01 * Dr. Vet Person
+        Reimbursements:Unsubmitted  0.5 REIMB @ =$38.00
+        Reimbursements:My Partner  $19.00
+        Liabilities:Credit Card  -$38.00
+
+There's 2 high-level things being done here:
+
+1. I'm buying half of a REIMB commodity that tracks the status of our reimbursement with the insurance company (this is just like the THERAPY commodity in my last post).
+2. I'm noting that my partner owes me $19.00, because I paid for the service and they need to pay me back for half.
+
+After the vet visit my partner will send me the half they owe me, which zeroes out their reimbursement account:
+
+::
+
+    2019/02/01 * My Partner
+        Assets:Venmo  $19.00
+        Reimbursements:My Partner
+
+Now if instead my partner pays for the service, I'll pay them half through Venmo and we get a much simpler transaction:
+
+::
+
+    2019/02/01 * Dr. Vet Person
+        Reimbursements:Unsubmitted  0.5 REIMB @ =$38.00
+        Assets:Venmo  $19.00
+
+In this case, they don't owe me any money, so all I need to worry about is buying half of a REIMB commodity.
+
+Fortunately, we've now taken care of the hard stuff. The remaining transactions (which track the reimbursement through its various stages) are just like they were in the last post:
+
+::
+
+    2019/02/01 * Insurance Claim Submission
+        Reimbursements:Submitted  0.5 REIMB {=$38.00} [2019/02/01]
+        Reimbursements:Unsubmitted
+
+    2019/02/10 * Insurance Claim Processed
+        Reimbursements:Processed  $10.00
+        Expenses:Pigby  $9.00
+        Reimbursements:Submitted -0.5 REIMB {=$38.00} [2019/02/01] @ $38.00
+
+    2019/02/14 * My Partner
+        ; Insurance sends my partner the money, then they
+        ; send me my part.
+        Assets:Venmo  $10.00
+        Reimbursements:Processed
