@@ -1,4 +1,4 @@
-title: "Answering questions with accounting: Shared Reimbursements"
+title: "Answering questions with accounting: Shared reimbursements"
 date: February 2, 2019
 description: "This is a sequal to my last post `\"Answering questions with accounting: Reimbursements\" </posts/accounting-reimbursements.htm>`__. In this post, we'll take things one step farther and I'll talk about how I'm tracking reimbursable expenses that I share with my partner."
 ...
