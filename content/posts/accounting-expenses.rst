@@ -1,0 +1,116 @@
+title: "Answering questions with accounting: Expenses in Quicken vs Ledger"
+date: February 8, 2019
+description: Answering the question "How much money did I spend eating out versus buying groceries this month?" is trickier than Quicken would have you believe…
+...
+
+In `an earlier post </posts/accounting-reimbursements.htm>`__, I mysteriously said:
+
+    For example, I might ask "How much money did I spend eating out versus buying groceries this month?" Even this is a more complicated question to answer than Quicken's developers would like you to believe, but I'll talk about that in some other post.
+
+Welcome to that some other post.
+
+The Differences
+---------------
+
+I used to use `Quicken <https://www.quicken.com/>`__ to do most of my personal accounting. I'd let it download transactions from my financial institutions, then I'd spot check some of the numbers to make sure they look right, but I wouldn't go through transaction-by-transaction to really double-check everything.
+
+In contrast I now use `Ledger <https://www.ledger-cli.org/>`__ to do my personal accounting, and I *do* go through transaction-by-transaction to ensure that everything looks correct. There's still a good amount of human error that can happen, but I trust my Ledger data a lot.
+
+I want to share some expense numbers from my Quicken file and compare them to the same time periods from my Ledger file.
+
+========  =========  =========  =========  =========
+    X            Quicken               Ledger
+--------  --------------------  --------------------
+Month     Total      Groceries  Total      Groceries
+========  =========  =========  =========  =========
+2019 Jan  $3,186.49  $498.85    $6,192.89  $260.81
+2018 Dec  $3,628.57  $296.19    $3,681.44  $137.05
+2018 Aug  $6,116.60  $288.74    $4,658.12  $144.37
+========  =========  =========  =========  =========
+
+Quicken's numbers aren't quite right. Why?
+
+Splitting Groceries
+-------------------
+
+Quicken doesn't know that my partner and I split our grocery bill, and we do that (primarily) via my partner reimbursing me at the end of each month. Zooming in, here's how Quicken has categorized a grocery transaction:
+
+::
+
+    2018/12/01  Sprouts
+        Food & Dining:Groceries  $131.73
+        Credit Card
+
+Now here's how I've recorded it in Ledger (though I use `automated transactions <https://www.ledger-cli.org/3.0/doc/ledger3.html#Automated-Transactions>`__ to do the splitting automatically):
+
+::
+
+    2018/12/01  Sprouts
+        Expenses:Food:Groceries  $65.865
+        Assets:Reimbursements:My Partner:Groceries  $65.865
+        Liabilities:Credit Card  -$131.73
+
+If I divide each of Quicken's grocery expense totals by 2, we get much closer to Ledger's correct value.
+
+To get the rest of the way, I need to account for the fact that Quicken is correctly categorizing the transactions I make when I reimburse my partner for groceries after *they* go to the store (which happens sometimes). After that adjustment, the grocery expenses in Quicken and Ledger match exactly.
+
+One mystery solved.
+
+Medical Expense
+---------------
+
+Quicken's guess at my total expenses for January is way off. But most of that can be attributed to the fact that I don't have Quicken hooked up to my insurance claims website, and I had a major medical expense in January that hasn't been paid off.
+
+In particular, I have this transaction in my ledger file, and there is no corresponding transaction in Quicken:
+
+::
+
+    2019/01/26  Sleep Clinic
+        Expenses:Medical  $3,021.93
+        Liabilities:Insurance:Member Responsibility:Sleep Clinic
+
+Quicken is not necessarily wrong in this case. Whether to book the expense when (a) I receive the bill from my insurance (as I've done in my Ledger file) or (b) when I pay the bill from one of my accounts (as Quicken is geared to do) is a matter of preference.
+
+Adjusting for this expense brings the totals pretty close together. Another mystery (mostly) solved.
+
+Double Paying Rent
+------------------
+
+Most of the discrepancy in August is due to a double rent payment.
+
+When I pay rent varies. For example, I could pay February's rent anywhere between the last day of January or the third of February without being late. This means that sometimes a single month will have two rent payments in it.
+
+I handle this in Ledger by using `effective dates <https://www.ledger-cli.org/3.0/doc/ledger3.html#Effective-Dates>`__:
+
+::
+
+    2018/08/30=2018/09/01  My Partner
+        Expenses:Apartment:Rent  $1,057.50
+            ; Payee: Landlord
+        Expenses:Apartment:Utilities  $36.00
+        Expenses:Medical Insurance Premiums  $70.00
+        Expenses:Vision Insurance Premiums  $2.79
+        Expenses:Dental Insurance Premiums  $9.46
+        Expenses:Music Subscription  $7.50
+            ; Payee: Cool Music Company
+        Assets:Reimbursements:My Partner:Groceries  $-100.00
+        Assets:Bank of America:Checking  $-1,083.25
+
+Quicken does not automatically do this, and August had one such transaction in it. Accounting for that brings down the difference between Quicken and Ledger significantly.
+
+The final mystery mostly solved.
+
+How bad are these discrepancies?
+--------------------------------
+
+Quicken is doing a pretty decent job with almost no human intervention. If I zoom into each expense account the differences are more pronounced, for example: Quicken has no idea how much I'm paying for health insurance premiums, instead categorizing those payments as rent. But at a high-level it's giving me a good rough view of where my money is going.
+
+The cost of keeping accurate books like I'm currently doing is high. I spent an entire week getting my Ledger workflow figured out, and I continue to spend an hour or two each month categorizing my expenses.
+
+So when someone asks me how they should do their accounting, unless they're a programmer who loves the command line I usually suggest that they just use Quicken. It'll do a pretty good job with almost no effort on their part. If they're feeling extra motivated they can go through and manually recategorize and split transactions in Quicken to get additional accuracy.
+
+But personally I'll never use Quicken again. I find its interface to be a huge pain when doing a ton of manual categorization and splitting, it doesn't allow any automation, and its handling of stock portfolios is terrible (it has never correctly handled the cost basis of lots for me).
+
+More than any of those gripes though, I hate how hard it is to be confident in any of Quicken's numbers. It's set up to do a lot of great things automatically, but it gets things wrong often enough that I *want* to instead check everything manually.
+
+Accounting is a tool that lets me get answers to my financial questions, but if I can't be confident in the answers I'm getting I feel like I'm just wasting my time.
