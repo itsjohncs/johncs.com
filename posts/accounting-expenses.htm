@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Principles of Building a Simple Site - blog.johncs.com</title>
+    <title>Answering questions with accounting: Expenses in Quicken vs Ledger - blog.johncs.com</title>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,30 +18,123 @@
         }
     </script>
     <header class="nav-bar">
-        <a href="/">blog.johncs.com</a>: <a href="../blog-index.htm">Posts</a> &gt; Principles of Building a Simple Site <span class="post-date">[07/30/2016]</span>
+        <a href="/">blog.johncs.com</a>: <a href="../blog-index.htm">Posts</a> &gt; Answering questions with accounting: Expenses in Quicken vs Ledger <span class="post-date">[02/08/2019]</span>
     </header>
     <div class="post-body">
         <div class="document">
-<p>I've made a bunch of simple websites over the years <a class="footnote-reference" href="#simple-site" id="id1">[1]</a>, and from my endless failures I've built up some principles I now follow:</p>
-<ol class="arabic simple">
-<li><strong>Avoid learning new things where possible.</strong> Learning takes time and energy, and will burn me out. If given the choice of two tools, go with the one I know how to use already.</li>
-<li><strong>Do not generalize.</strong> Whenever I try to create &quot;a general tool for building X&quot;, and then try to use that tool to make X <a class="footnote-reference" href="#phial" id="id2">[2]</a>, I burn myself out. Just write a script that suits my exact needs instead (<a class="reference external" href="https://github.com/Khan/engblog/blob/master/src/app.py">example</a>).</li>
-<li><strong>Be realistic about who needs to grok the code.</strong> If I'm building a personal website, only I need to be comfortable hacking on it; so go ahead and use three different languages and twelve other tools in the build process (<a class="reference external" href="https://github.com/itsjohncs/johncs.com/blob/master/Makefile">example</a>).</li>
-<li><strong>Keep the website's goal in mind.</strong> If I just want a place to host my thoughts in a blog format, don't get caught up worrying about design too much (I didn't have a blog for a long time because of this). If I'm building a portfolio, make sure my design conveys what I want it to (<a class="reference external" href="http://johnsullivan.name/">my portfolio</a> tries to very quickly convey that I've made a lot of things using a lot of different technologies over a long period of time).</li>
-<li><strong>Make a static site.</strong> By this I mean make a site that could be hosted on GitHub Pages or a similarily simple service. Sometimes this isn't possible, but building and maintaining something besides a static site is so much more obnoxious, so try really hard to Keep It Static Silly.</li>
-</ol>
-<table class="docutils footnote" frame="void" id="simple-site" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
+<p>In <a class="reference external" href="/posts/accounting-reimbursements.htm">an earlier post</a>, I mysteriously said:</p>
+<blockquote>
+For example, I might ask &quot;How much money did I spend eating out versus buying groceries this month?&quot; Even this is a more complicated question to answer than Quicken's developers would like you to believe, but I'll talk about that in some other post.</blockquote>
+<p>Welcome to that some other post.</p>
+<div class="section" id="the-differences">
+<h2><span aria-hidden="true">##</span> The Differences</h2>
+<p>I used to use <a class="reference external" href="https://www.quicken.com/">Quicken</a> to do most of my personal accounting. I'd let it download transactions from my financial institutions, then I'd spot check some of the numbers to make sure they look right, but I wouldn't go through transaction-by-transaction to really double-check everything.</p>
+<p>In contrast I now use <a class="reference external" href="https://www.ledger-cli.org/">Ledger</a> to do my personal accounting, and I <em>do</em> go through transaction-by-transaction to ensure that everything looks correct. There's still a good amount of human error that can happen, but I trust my Ledger data a lot.</p>
+<p>I want to share some expense numbers from my Quicken file and compare them to the same time periods from my Ledger file.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">X</th>
+<th class="head" colspan="2">Quicken</th>
+<th class="head" colspan="2">Ledger</th>
+</tr>
+<tr><th class="head">Month</th>
+<th class="head">Total</th>
+<th class="head">Groceries</th>
+<th class="head">Total</th>
+<th class="head">Groceries</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>I don't have a precise definition of a &quot;simple website&quot; for you, but here's some typical examples of them: blogs, portfolios, project homepages, company websites, etc. Sites with no account management, if there's user-generated content it's super minimal (ex: comments on a blog), backends are usually no more than static file servers, etc.</td></tr>
+<tr><td>2019 Jan</td>
+<td>$3,186.49</td>
+<td>$498.85</td>
+<td>$6,192.89</td>
+<td>$260.81</td>
+</tr>
+<tr><td>2018 Dec</td>
+<td>$3,628.57</td>
+<td>$296.19</td>
+<td>$3,681.44</td>
+<td>$137.05</td>
+</tr>
+<tr><td>2018 Aug</td>
+<td>$6,116.60</td>
+<td>$288.74</td>
+<td>$4,658.12</td>
+<td>$144.37</td>
+</tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="phial" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="https://github.com/itsjohncs/phial">Phial</a> is my attempt at building a static site generator when I really should've been concentrating on just building my blog. There's a shockingly large <a class="reference external" href="https://www.staticgen.com/">list of static site generators</a> that's a nice reminder that I'm not the only one to get caught in this trap.</td></tr>
-</tbody>
-</table>
+<p>Quicken's numbers aren't quite right. Why?</p>
+</div>
+<div class="section" id="splitting-groceries">
+<h2><span aria-hidden="true">##</span> Splitting Groceries</h2>
+<p>Quicken doesn't know that my partner and I split our grocery bill, and we do that (primarily) via my partner reimbursing me at the end of each month. Zooming in, here's how Quicken has categorized a grocery transaction:</p>
+<pre class="literal-block">
+2018/12/01  Sprouts
+    Food &amp; Dining:Groceries  $131.73
+    Credit Card
+</pre>
+<p>Now here's how I've recorded it in Ledger (though I use <a class="reference external" href="https://www.ledger-cli.org/3.0/doc/ledger3.html#Automated-Transactions">automated transactions</a> to do the splitting automatically):</p>
+<pre class="literal-block">
+2018/12/01  Sprouts
+    Expenses:Food:Groceries  $65.865
+    Assets:Reimbursements:My Partner:Groceries  $65.865
+    Liabilities:Credit Card  -$131.73
+</pre>
+<p>If I divide each of Quicken's grocery expense totals by 2, we get much closer to Ledger's correct value.</p>
+<p>To get the rest of the way, I need to account for the fact that Quicken is correctly categorizing the transactions I make when I reimburse my partner for groceries after <em>they</em> go to the store (which happens sometimes). After that adjustment, the grocery expenses in Quicken and Ledger match exactly.</p>
+<p>One mystery solved.</p>
+</div>
+<div class="section" id="medical-expense">
+<h2><span aria-hidden="true">##</span> Medical Expense</h2>
+<p>Quicken's guess at my total expenses for January is way off. But most of that can be attributed to the fact that I don't have Quicken hooked up to my insurance claims website, and I had a major medical expense in January that hasn't been paid off.</p>
+<p>In particular, I have this transaction in my ledger file, and there is no corresponding transaction in Quicken:</p>
+<pre class="literal-block">
+2019/01/26  Sleep Clinic
+    Expenses:Medical  $3,021.93
+    Liabilities:Insurance:Member Responsibility:Sleep Clinic
+</pre>
+<p>Quicken is not necessarily wrong in this case. Whether to book the expense when (a) I receive the bill from my insurance (as I've done in my Ledger file) or (b) when I pay the bill from one of my accounts (as Quicken is geared to do) is a matter of preference.</p>
+<p>Adjusting for this expense brings the totals pretty close together. Another mystery (mostly) solved.</p>
+</div>
+<div class="section" id="double-paying-rent">
+<h2><span aria-hidden="true">##</span> Double Paying Rent</h2>
+<p>Most of the discrepancy in August is due to a double rent payment.</p>
+<p>When I pay rent varies. For example, I could pay February's rent anywhere between the last day of January or the third of February without being late. This means that sometimes a single month will have two rent payments in it.</p>
+<p>I handle this in Ledger by using <a class="reference external" href="https://www.ledger-cli.org/3.0/doc/ledger3.html#Effective-Dates">effective dates</a>:</p>
+<pre class="literal-block">
+2018/08/30=2018/09/01  My Partner
+    Expenses:Apartment:Rent  $1,057.50
+        ; Payee: Landlord
+    Expenses:Apartment:Utilities  $36.00
+    Expenses:Medical Insurance Premiums  $70.00
+    Expenses:Vision Insurance Premiums  $2.79
+    Expenses:Dental Insurance Premiums  $9.46
+    Expenses:Music Subscription  $7.50
+        ; Payee: Cool Music Company
+    Assets:Reimbursements:My Partner:Groceries  $-100.00
+    Assets:Bank of America:Checking  $-1,083.25
+</pre>
+<p>Quicken does not automatically do this, and August had one such transaction in it. Accounting for that brings down the difference between Quicken and Ledger significantly.</p>
+<p>The final mystery mostly solved.</p>
+</div>
+<div class="section" id="how-bad-are-these-discrepancies">
+<h2><span aria-hidden="true">##</span> How bad are these discrepancies?</h2>
+<p>Quicken is doing a pretty decent job with almost no human intervention. If I zoom into each expense account the differences are more pronounced, for example: Quicken has no idea how much I'm paying for health insurance premiums, instead categorizing those payments as rent. But at a high-level it's giving me a good rough view of where my money is going.</p>
+<p>The cost of keeping accurate books like I'm currently doing is high. I spent an entire week getting my Ledger workflow figured out, and I continue to spend an hour or two each month categorizing my expenses.</p>
+<p>So when someone asks me how they should do their accounting, unless they're a programmer who loves the command line I usually suggest that they just use Quicken. It'll do a pretty good job with almost no effort on their part. If they're feeling extra motivated they can go through and manually recategorize and split transactions in Quicken to get additional accuracy.</p>
+<p>But personally I'll never use Quicken again. I find its interface to be a huge pain when doing a ton of manual categorization and splitting, it doesn't allow any automation, and its handling of stock portfolios is terrible (it has never correctly handled the cost basis of lots for me).</p>
+<p>More than any of those gripes though, I hate how hard it is to be confident in any of Quicken's numbers. It's set up to do a lot of great things automatically, but it gets things wrong often enough that I <em>want</em> to instead check everything manually.</p>
+<p>Accounting is a tool that lets me get answers to my financial questions, but if I can't be confident in the answers I'm getting I feel like I'm just wasting my time.</p>
+</div>
 </div>
 
     </div>
