@@ -53,6 +53,8 @@ class Post(object):
 
         self.title = frontmatter["title"]
 
+        self.tie_breaker = frontmatter.get("tie-breaker", 0)
+
         self.description = None
         if "description" in frontmatter:
             # HACK(johnsullivan): Getting rid of the tags in this way feels pretty dirty...

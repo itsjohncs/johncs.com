@@ -156,7 +156,10 @@ def create_rss_page(posts):
 def main():
     # Grab all of the posts and sort them by their published date
     posts = [Post(path) for path in glob.glob("../content/posts/*")]
-    posts = sorted(posts, key=lambda post: post.published_on, reverse=True)
+    posts = sorted(
+        posts,
+        key=lambda post: (post.published_on, post.tie_breaker),
+        reverse=True)
 
     # Go through and create all the post pages
     for post in posts:
