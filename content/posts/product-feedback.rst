@@ -1,0 +1,23 @@
+title: Passing through the advice and getting to the actual user experiences
+date: February 11, 2019
+description: When a user gives me advice on a product, I ask them what experience they had that prompted them to give that advice.
+...
+
+When a user gives me advice on a product, I ask them what experience they had that prompted them to give me that advice. For example, here's two things a user might say:
+
+1. "You should add a footer with a link to your team page."
+2. "I wanted to donate to your patreon but I couldn't find it. I looked around your site forever, then finally searched for your name on Google and found a link to your Patreon on your team page."
+
+2 is obviously much more useful than 1, but a user will often think through 2, process it in their mind, and then only tell me 1. In this way, I could get a few users telling me that I should add a footer to my team page while that may not even be the best way to solve the real problem (which is that users can't figure out how to donate to me).
+
+In both cases the user is expressing good-will. In fact, they're being very useful either way. It's far more common for a user to just say nothing and then I have no idea anything is wrong 😅. 1 is just an example of user goodwill that I can easily get even more value from if I put in a little extra effort.
+
+So what do I actually do when a user directly asks for a feature, requests a change, or gives me other advice? Here's a message I sent a user who was engaged and interested in talking to me about Shmeppy, but was giving me advice, rather than telling me what they had actually experienced:
+
+	I appreciate you taking the time to think about all this. This is fairly processed feedback you’re giving me though, and I’m actually most interested in some less processed feedback. For example, you mention zooming as an improvement. Could you tell me more about what you experienced yesterday that prompted you to bring that up?
+
+Alternatively a less verbose method I'll employ is to just ask clarifying questions. Usually the actual experience that the user had will fall out from it. So above I might've instead said "Oh interesting, I haven't heard someone mention zooming as a pain point yet. Could you elaborate on that?"
+
+Sometimes I don't quite have the energy for the wordplay and I just hope that I know why the user is giving that particular advice. But I try not to let myself get away with this too often.
+
+Ultimately it's my responsibility to make a product I'm working on the best it can be, and while it can be totally useful (and fun!) to brainstorm high-level solutions to problems with users, the problems need to be understood first. And those problems will be most evident from a collection of experiences, not a collection of advice.
