@@ -7,7 +7,7 @@ My "how excited I am about Shmeppy" meter has gone up and down the last ten mont
 
 .. raw:: html
 
-	<video loop autoplay>
+	<video loop autoplay controls>
 		<source
 			src="/images/shmeppy-screencast.webm"
 			type="video/webm">
