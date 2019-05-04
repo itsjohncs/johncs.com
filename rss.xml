@@ -5,6 +5,15 @@
         <link>http://johncs.com</link>
         <description>Blog of John Sullivan</description>
         <item>
+            <title>Haskell monads and the nest of lies</title>
+            <link>http://johncs.com/posts/monads-and-how-we-lie.htm</link>
+            <description>
+The <tt class="docutils literal">IO</tt> monad in Haskell works by assuming our universe is in a simulation and that your tiny computer can capture the entire state of the universe and play it forwards in real time.
+
+</description>
+            <pubDate>May 3, 2019</pubDate>
+        </item>
+        <item>
             <title>Shmeppy is looking great</title>
             <link>http://johncs.com/posts/shmeppy-is-looking-great.htm</link>
             <description>
