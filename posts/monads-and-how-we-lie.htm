@@ -28,7 +28,8 @@
 <div class="section" id="the-abstraction-we-all-know-and-love">
 <h2><span aria-hidden="true">##</span> The Abstraction We All Know and Love</h2>
 <p>You've probably heard that the <tt class="docutils literal">IO</tt> monad represents an action to be executed later. Here's a paragraph from <a class="reference external" href="http://learnyouahaskell.com/input-and-output">Learn You a Haskell for Great Good!</a> saying exactly that:</p>
-<p>&gt; We can read the type of putStrLn like this: putStrLn takes a string and returns an I/O action that has a result type of () […] An I/O action is something that, when performed, will carry out an action with a side-effect […] and will also contain some kind of return value inside it.</p>
+<blockquote>
+We can read the type of putStrLn like this: putStrLn takes a string and returns an I/O action that has a result type of () […] An I/O action is something that, when performed, will carry out an action with a side-effect […] and will also contain some kind of return value inside it.</blockquote>
 <p>This might be the extent of your understanding of the <tt class="docutils literal">IO</tt> monad and that's totally fine. It's fairly serviceable abstraction: <tt class="docutils literal">IO a</tt> is a reference to a function, and that function returns a value of type <tt class="docutils literal">a</tt>. Cool cool, great great.</p>
 </div>
 <div class="section" id="the-sky-darkens-thunder-clashes">
