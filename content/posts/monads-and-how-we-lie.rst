@@ -14,7 +14,7 @@ The Abstraction We All Know and Love
 
 You've probably heard that the ``IO`` monad represents an action to be executed later. Here's a paragraph from `Learn You a Haskell for Great Good! <http://learnyouahaskell.com/input-and-output>`__ saying exactly that:
 
-> We can read the type of putStrLn like this: putStrLn takes a string and returns an I/O action that has a result type of () […] An I/O action is something that, when performed, will carry out an action with a side-effect […] and will also contain some kind of return value inside it.
+    We can read the type of putStrLn like this: putStrLn takes a string and returns an I/O action that has a result type of () […] An I/O action is something that, when performed, will carry out an action with a side-effect […] and will also contain some kind of return value inside it.
 
 This might be the extent of your understanding of the ``IO`` monad and that's totally fine. It's fairly serviceable abstraction: ``IO a`` is a reference to a function, and that function returns a value of type ``a``. Cool cool, great great.
 
