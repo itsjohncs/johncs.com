@@ -16,12 +16,12 @@ You've probably heard that the ``IO`` monad represents an action to be executed 
 
     We can read the type of putStrLn like this: putStrLn takes a string and returns an I/O action that has a result type of () […] An I/O action is something that, when performed, will carry out an action with a side-effect […] and will also contain some kind of return value inside it.
 
-This might be the extent of your understanding of the ``IO`` monad and that's totally fine. It's fairly serviceable abstraction: ``IO a`` is a reference to a function, and that function returns a value of type ``a``. Cool cool, great great.
+This might be the extent of your understanding of the ``IO`` monad and that's totally fine. It's a fairly serviceable abstraction: ``IO a`` is a reference to a function, and that function returns a value of type ``a``. Cool cool, great great.
 
 The Sky Darkens, Thunder Clashes
 ================================
 
-But hold on a sec, if ``IO a`` is a reference to a function, what parameters does the function take? If it doesn't take any parameters, wouldn't any two ``IO String`` references be equivalent? We are pure and fancy and Haskell isn't supposed to let a function return different things if it's given the same arguments. So how can two ``getLine`` calls return two different things?
+But hold on a sec, if ``IO a`` is a reference to a function, what parameters does the function take? If it doesn't take any parameters, wouldn't any two invocations of a function be equivalent? We are pure and fancy and Haskell isn't supposed to let a function return different things if it's given the same arguments. So how can two ``getLine`` calls return two different things?
 
 Well there is a parameter, and it's really weird: ``IO a`` expands out to essentially ``World -> (World, a)``.
 
