@@ -30,7 +30,7 @@ const crush = function() {
         // them. 
         const relativeCssPaths = packageInfo["inlined-less"] || [];
         const lessPaths = relativeCssPaths.map(function (relativePath) {
-            return path.join("../styles/", relativePath);
+            return path.join("../styles/solarized-light/", relativePath);
         });
         const cssStream = gulp.src(lessPaths)
             .pipe(less())
