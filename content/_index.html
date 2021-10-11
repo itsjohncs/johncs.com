@@ -1,0 +1,31 @@
++++
++++
+
+<p>
+    I'm making <a href="https://shmeppy.com">Shmeppy</a>: an online wet-erase mat for playing DnD and other TTRPGs.
+</p>
+<div class="video-container">
+    <div class="browser-bar">
+        <div class="browser-bar-button red"></div>
+        <div class="browser-bar-button yellow"></div>
+        <div class="browser-bar-button green"></div>
+        <div class="browser-bar-address">
+            https://shmeppy.com/game/2068210233
+        </div>
+    </div>
+    <video
+        onClick="startScreencast()"
+        loop
+        muted
+        playsInline
+        autoPlay
+        id="screencast"
+    >
+        <source src="shmeppy-screencast.mp4" type="video/mp4">
+    </video>
+    <script>
+    document.body.addEventListener("load", function() {
+        document.getElementById("screencast").play();
+    });
+    </script>
+</div>

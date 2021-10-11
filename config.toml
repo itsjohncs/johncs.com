@@ -1,3 +1,4 @@
-baseURL = 'https://johncs.com/'
-languageCode = 'en-us'
-title = 'johncs.com'
+baseURL = "https://johncs.com/"
+languageCode = "en-us"
+title = "johncs.com"
+assetDir = "assets"
