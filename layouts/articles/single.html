@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{.Title}} - johncs.com</title>
+<meta charset="utf-8">
+<!-- TODO: these are free fonts, can host them myself and avoid contributing
+  -- to google's privacy nightmare. -->
+<link href="https://fonts.googleapis.com/css?family=Chivo:900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400" rel="stylesheet">
+<link rel="shortcut icon" href="me.jpg" type="image/x-icon">
+<meta name="description" content="{{.Description}}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:description" content="{{.Summary}}" />
+<meta property="og:image" content="{{ .Params.cover_image | default "http://johncs.com/me.jpg" }}" />
+
+{{ $normalize := resources.Get "normalize.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $normalize.RelPermalink }}">
+
+{{ $articleCss := resources.Get "article.css" |
+    resources.PostCSS |
+    resources.Minify }}
+<link href="{{ $articleCss.RelPermalink }}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav>
+        <a href="#">johncs|blog</a>
+    </nav>
+    <div class="post-title-container">
+        <h1>
+            <span class="date">{{ .Date.Format "JAN.2.2006" }}</span><br>
+            {{ .Title }}
+        </h1>
+    </div>
+</header>
+<article>
+    {{.Content}}
+</article>
+</body>
+</html>
+

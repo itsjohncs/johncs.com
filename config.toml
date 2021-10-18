@@ -2,3 +2,9 @@ baseURL = "https://johncs.com/"
 languageCode = "en-us"
 title = "johncs.com"
 assetDir = "assets"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
