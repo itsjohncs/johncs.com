@@ -93,7 +93,7 @@ nav img {
     box-decoration-break: clone;
 }
 
-.post-title-container h1 .date {
+.post-title-container h1 time {
     color: var(--accent-color);
 }
 

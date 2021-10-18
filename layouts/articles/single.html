@@ -29,7 +29,7 @@
     </nav>
     <div class="post-title-container">
         <h1>
-            <span class="date">{{ .Date.Format "JAN.2.2006" }}</span><br>
+            <time datetime="{{ .Date.Format "2006-01-02"}}">{{ .Date.Format "JAN.2.2006" }}</time><br>
             {{ .Title }}
         </h1>
     </div>
