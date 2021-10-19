@@ -1,9 +1,10 @@
 body {
     --accent-color: #ffbf00;
-    --background-color: #fff;
+    --background-color: #eee;
     --moon-display: none;
     --sun-display: block;
-    color: #000;
+    --text-color: #000;
+    color: var(--text-color);
     margin: 40px auto;
     max-width: 700px;
     background-color: var(--background-color);
@@ -14,15 +15,15 @@ body.override-dark {
     --accent-color: #cc9900;
     --moon-display: block;
     --sun-display: none;
-    color: #cbd0d0;
+    --text-color: #cbd0d0;
 }
 
 body.override-light {
     --accent-color: #ffbf00;
-    --background-color: #fff;
+    --background-color: #eee;
     --moon-display: none;
     --sun-display: block;
-    color: #000;
+    --text-color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,17 +32,17 @@ body.override-light {
         --accent-color: #cc9900;
         --moon-display: block;
         --sun-display: none;
-        color: #cbd0d0;
+        --text-color: #cbd0d0;
     }
 }
 
 @media (prefers-color-scheme: light) {
     body {
         --accent-color: #ffbf00;
-        --background-color: #fff;
+        --background-color: #eee;
         --moon-display: none;
         --sun-display: block;
-        color: #000;
+        --text-color: #000;
     }
 }
 
@@ -126,18 +127,25 @@ nav #color-scheme-toggle .sun {
         height: 19px;
     }
 
+    nav #color-scheme-toggle:hover {
+        top: -1px;
+    }
+
     nav #color-scheme-toggle .moon {
-        /*top: -30px;*/
         height: 50px;
+    }
+
+    nav #color-scheme-toggle .sun {
+        top: -15px;
     }
 }
 
 @media (prefers-reduced-motion) {
-    nav a {
+    nav a, nav a:hover {
         top: 0;
     }
 
-    nav #color-scheme-toggle {
+    nav #color-scheme-toggle, nav #color-scheme-toggle:hover {
         top: -4px;
     }
 }
@@ -271,12 +279,6 @@ article .highlight code {
     overflow-wrap: break-word;
     overflow-wrap: anywhere;
     color: #f8f8f2;
-}
-
-@media (prefers-color-scheme: dark) {
-    article .highlight code {
-        color: inherit;
-    }
 }
 
 article .highlight .ln  {
