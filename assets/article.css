@@ -228,4 +228,5 @@ article .highlight .ln  {
     box-sizing: border-box;
     padding-right: 5px;
     margin-right: var(--gutter-margin);
+    user-select: none;
 }
