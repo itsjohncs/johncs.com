@@ -1,7 +1,19 @@
 body {
     --accent-color: #ffbf00;
+    --background-color: #fff;
     margin: 40px auto;
     max-width: 700px;
+    color: black;
+    background-color: var(--background-color);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --background-color: #34373A;
+        --accent-color: #cc9900;
+        color: #cbd0d0;
+    }
 }
 
 @media (max-width: 800px) {
@@ -24,11 +36,11 @@ nav .spacer {
 }
 
 nav a {
+    color: inherit;
     position: relative;
     font-family: 'Chivo';
     font-weight: 900;
     text-decoration: none;
-    color: #000;
     text-transform: uppercase;
     font-size: 48px;
     line-height: 26px;
@@ -82,7 +94,7 @@ nav img {
 .post-title-container h1 {
     font-family: 'Chivo';
     display: inline;
-    background-color: #FFF;
+    background-color: var(--background-color);
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: -1px;
@@ -153,8 +165,8 @@ article blockquote {
 }
 
 article a {
+    color: #000;
     background-color: var(--accent-color);
-    color: black;
     text-decoration: none;
     font-weight: 700;
     padding: 4px 8px;
@@ -196,6 +208,12 @@ article .highlight code {
     overflow-wrap: break-word;
     overflow-wrap: anywhere;
     color: #f8f8f2;
+}
+
+@media (prefers-color-scheme: dark) {
+    article .highlight code {
+        color: inherit;
+    }
 }
 
 article .highlight .ln  {
