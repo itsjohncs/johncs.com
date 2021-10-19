@@ -174,11 +174,11 @@ nav #color-scheme-toggle .sun {
 
 .post-title-container h1 time {
     color: var(--accent-color);
-    transition: color 0.1s ease-in;
 }
 
 .post-title-container h1 time:hover, .post-title-container h1 time:focus {
     color: var(--text-color);
+    transition: color 0.1s ease-in;
 }
 
 @media (max-width: 800px) {
