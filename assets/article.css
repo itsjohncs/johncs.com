@@ -4,6 +4,7 @@ body {
     --moon-display: none;
     --sun-display: block;
     --text-color: #000;
+    --tt-bg-color: #CCC;;
     color: var(--text-color);
     margin: 40px auto;
     max-width: 700px;
@@ -16,6 +17,7 @@ body.override-dark {
     --moon-display: block;
     --sun-display: none;
     --text-color: #cbd0d0;
+    --tt-bg-color: #454545;
 }
 
 body.override-light {
@@ -24,6 +26,7 @@ body.override-light {
     --moon-display: none;
     --sun-display: block;
     --text-color: #000;
+    --tt-bg-color: #CCC;;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,6 +36,7 @@ body.override-light {
         --moon-display: block;
         --sun-display: none;
         --text-color: #cbd0d0;
+        --tt-bg-color: #454545;
     }
 }
 
@@ -43,6 +47,7 @@ body.override-light {
         --moon-display: none;
         --sun-display: block;
         --text-color: #000;
+        --tt-bg-color: #CCC;;
     }
 }
 
@@ -225,9 +230,10 @@ article h2 a {
     padding: 4px 8px;
 }
 
-article tt {
-    font-size: 18px;
-    line-height: 22px;
+article p code {
+    font-family: 'Source Code Pro', monospace, monospace;
+    background-color: var(--tt-bg-color);
+    padding: 2px 4px;
 }
 
 article blockquote {
@@ -252,7 +258,6 @@ article a:hover {
 }
 
 article .highlight {
-    font-family: monospace;
     background-color: #272822;
     --gutter-width: 30px;
     --gutter-margin: 10px;
