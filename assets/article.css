@@ -189,6 +189,7 @@ article .highlight {
     padding-right: var(--gutter-margin);
     width: 100%;
     margin-left: calc(-1 * (var(--gutter-width) + var(--gutter-margin)));
+    counter-reset: line-number;
 }
 
 @media (max-width: 800px) {
@@ -229,4 +230,11 @@ article .highlight .ln  {
     padding-right: 5px;
     margin-right: var(--gutter-margin);
     user-select: none;
+    visibility: hidden;
+}
+
+article .highlight .ln::after {
+    counter-increment: line-number;
+    content: counter(line-number);
+    visibility: visible;
 }
