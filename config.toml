@@ -8,3 +8,6 @@ assetDir = "assets"
     lineNos = true
     lineNumbersInTable = false
     noClasses = false
+
+[permalinks]
+  articles = "/blog/articles/:filename/"
