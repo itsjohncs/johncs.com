@@ -251,10 +251,43 @@ article a {
     text-decoration: none;
     font-weight: 700;
     padding: 4px 8px;
+    box-decoration-break: clone;
 }
 
 article a:hover {
     text-decoration: underline;
+}
+
+article .md-img-container {
+    background-color: var(--tt-bg-color);
+    padding: 20px;
+}
+
+article .md-img-container a {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0;
+}
+
+article .md-img-container img {
+    display: block;
+    width: 1px;
+    width: 100%;
+    max-width: max-content;
+}
+
+@media (max-width: 800px) {
+    article .md-img-container {
+        padding: 5px;
+    }
+}
+
+article sup a {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 12px;
 }
 
 article .highlight {
