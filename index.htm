@@ -441,12 +441,6 @@ a:hover {
     margin-top: -12px;
 }
 
-.follow-me-blurb {
-    border: 3px solid #FC913A;
-    padding: 15px;
-    margin-left: -18px;
-}
-
 .nav-bar {
     color: #CCC;
     word-spacing: 4px;
@@ -554,87 +548,13 @@ a:hover {
         position: static;
     }
 
-    .follow-me-blurb, .sign-up, .nav-bar {
+    .nav-bar {
         border-width: 2px;
         padding: 10px;
         margin-left: -12px;
     }
-
-    .sign-up-button {
-        display: block;
-        width: 100%;
-    }
 }
-
-/**
- * Screencast
- */
-.video-container {
-    box-sizing: border-box;
-    border-radius: 6px;
-    border: 5px solid #D3D3D3;
-    display: flex;
-    flex-direction: column;
-    background-color: #D3D3D3;
-}
-
-#screencast {
-    width: 100%;
-}
-
-.browser-bar {
-    display: flex;
-    width: 100%;
-    height: 30px;
-    background-color: #D3D3D3;
-    align-items: center;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-
-.browser-bar .browser-bar-button {
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    margin-right: 5px;
-    flex-shrink: 0;
-}
-
-.browser-bar .browser-bar-button.red {
-    background-color: #F46F48;
-}
-
-.browser-bar .browser-bar-button.yellow {
-    background-color: #EDAA2D;
-}
-
-.browser-bar .browser-bar-button.green {
-    background-color: #7CC439;
-    margin-right: 10px;
-}
-
-.browser-bar .browser-bar-address {
-    background-color: #F6F6F6;
-    flex-grow: 1;
-    height: 15px;
-    font-size: 8px;
-    line-height: 15px;
-    vertical-align: 15px;
-    padding-left: 5px;
-    color: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    user-select: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 </style>
-<script>
-function startScreencast() {
-    document.getElementById("screencast").play();
-}
-</script>
 </head>
 <body onLoad="startScreencast()">
 <div class="rainbow-container">
