@@ -11,3 +11,4 @@ assetDir = "assets"
 
 [permalinks]
   articles = "/blog/articles/:filename/"
+  honks = "/blog/honks/:filename/"
