@@ -23,7 +23,7 @@ This is the source of my confidence: I know that regardless of what a user says,
 
 * sit down on my giant bean bag and give my anxiety my full attention until it subsides.
 * write in my journal.
-* write `an angry blog post </posts/all-the-transitions.htm>`__.
+* write an angry blog post.
 * talk to someone I trust to listen to me and support me.
 * go running.
 * take a day off and let myself do whatever I want.
