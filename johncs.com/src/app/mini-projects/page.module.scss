@@ -11,3 +11,37 @@
   width: 100%;
   margin-top: 2rem;
 }
+.main {
+  padding: 2rem;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  
+  h2 {
+    margin-top: 0;
+  }
+
+  a {
+    color: #0070f3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+}
