@@ -8,7 +8,17 @@ import * as tbget from './projects/tbget.mdx';
 import styles from "./page.module.scss";
 import Link from 'next/link';
 
-const projects = [
+interface ProjectMetadata {
+    title: string;
+    date: string;
+    url: string;
+}
+
+interface Project {
+    metadata: ProjectMetadata;
+}
+
+const projects: Project[] = [
     simpleFrontmatter,
     dieSim,
     differentLogger,
@@ -17,7 +27,7 @@ const projects = [
 
 export default function ProjectIndex() {
     return <div className={styles.projectList}>
-        {projects.map((project, index) => (
+        {projects.map((project: Project, index: number) => (
               <div key={index} className={styles.project}>
                 <h2>
                   <Link href={project.metadata.url}>
