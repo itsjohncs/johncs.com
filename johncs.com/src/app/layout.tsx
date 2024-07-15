@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import "./globals.scss";
-import BodyContent from '../components/BodyContent';
+import NavBar from '../components/NavBar';
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
@@ -17,9 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <BodyContent className={`${sourceCodePro.className} single-column-content`}>
+      <body className={`${sourceCodePro.className} single-column-content`}>
+        <NavBar />
         {children}
-      </BodyContent>
+      </body>
     </html>
   );
 }
