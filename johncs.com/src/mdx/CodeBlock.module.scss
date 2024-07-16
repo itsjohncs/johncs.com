@@ -1,8 +1,9 @@
-.inlineCodeBlock {
+.codeBlockBody {
   font-weight: 300;
 }
 
-.codeBlock {
+.codeBlock .codeBlockBody {
+  font-weight: inherit;
   display: block;
   color: #657b83;
   white-space: pre-wrap;

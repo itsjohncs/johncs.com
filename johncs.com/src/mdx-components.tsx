@@ -1,11 +1,10 @@
 import type { MDXComponents } from "mdx/types";
-import { CodeBlock } from "./mdx/CodeBlock";
-import { PreProvider } from "./mdx/PreContext";
+import { CodeBlock, CodeBlockBody } from "./mdx/CodeBlock";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    pre: ({ children }) => <PreProvider>{children}</PreProvider>,
-    code: CodeBlock,
+    pre: CodeBlock,
+    code: CodeBlockBody,
     ...components,
   };
 }
