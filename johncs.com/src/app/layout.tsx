@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import "./globals.scss";
-import NavBar from '../components/NavBar';
+import NavBar from "../components/NavBar";
 
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 

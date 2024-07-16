@@ -1,14 +1,14 @@
 export const metadata = {
   title: "tbget",
   date: "August 4, 2016",
-  url: "https://github.com/itsjohncs/tbget"
+  url: "https://github.com/itsjohncs/tbget",
 };
 
 The log viewers we use at Khan Academy usually show tracebacks in some kind of escaped format (with newlines replaced with `\n`, or the whole thing getting embedded into a large JSON object), so quickly formatting tracebacks has become a pastime for me.
 
 Yesterday I got tired of formatting though, so now I have a fancy tool that can turn the most heinously encoded tracebacks into beautifully formatted emeralds.
 
-*Heinous:*
+_Heinous:_
 
 ```
 '{"test_data": "{\\"data\\": \\"$ tools/runtests.py
@@ -24,7 +24,7 @@ __len__(self):\\\\nKeyboardInterrupt\\\\n$\\\\n\\",
 \\"type\\": \\"traceback\\"}", "test_result": "aborted"}'
 ```
 
-*Beautiful emerald:*
+_Beautiful emerald:_
 
 ```python
 Traceback (most recent call last):
