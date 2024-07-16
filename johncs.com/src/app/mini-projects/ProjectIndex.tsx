@@ -4,6 +4,7 @@ import * as simpleFrontmatter from "#root/app/mini-projects/projects/simple-fron
 import * as dieSim from "#root/app/mini-projects/projects/die-sim.mdx";
 import * as differentLogger from "#root/app/mini-projects/projects/different-logger.mdx";
 import * as tbget from "#root/app/mini-projects/projects/tbget.mdx";
+import { Heading2 } from "#root/headings";
 
 import Link from "next/link";
 
@@ -25,6 +26,7 @@ const projects = [simpleFrontmatter, dieSim, differentLogger, tbget];
 export default function ProjectIndex() {
   return (
     <div className="all-posts">
+      <Heading2>All Mini Projects</Heading2>
       {projects.map((project, index: number) => (
         <article key={index} className="post">
           <div className="post-heading">
