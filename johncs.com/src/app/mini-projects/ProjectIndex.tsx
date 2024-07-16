@@ -1,9 +1,9 @@
 "use client";
 
-import * as simpleFrontmatter from './projects/simple-frontmatter.mdx';
-import * as dieSim from './projects/die-sim.mdx';
-import * as differentLogger from './projects/different-logger.mdx';
-import * as tbget from './projects/tbget.mdx';
+import * as simpleFrontmatter from '#root/app/mini-projects/projects/simple-frontmatter.mdx';
+import * as dieSim from '#root/app/mini-projects/projects/die-sim.mdx';
+import * as differentLogger from '#root/app/mini-projects/projects/different-logger.mdx';
+import * as tbget from '#root/app/mini-projects/projects/tbget.mdx';
 
 import styles from "./page.module.scss";
 import Link from 'next/link';
