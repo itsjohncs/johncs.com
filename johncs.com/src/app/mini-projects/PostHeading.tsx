@@ -27,8 +27,7 @@ export default function PostHeading({ url, title, date }: PostHeadingProps) {
           {title}
         </Link>
         <time className="post-date">
-          <span aria-hidden="true">
-            [
+          <span aria-hidden="true">[</span>
             <a
               id={getSlug(url)}
               className="timestamp-anchor"
@@ -36,9 +35,7 @@ export default function PostHeading({ url, title, date }: PostHeadingProps) {
             >
               {date}
             </a>
-            ]
-          </span>
-          <span className="sr-only">{date}</span>
+          <span aria-hidden="true">]</span>
         </time>
       </span>
     </div>
