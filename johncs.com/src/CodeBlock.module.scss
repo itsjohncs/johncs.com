@@ -1,0 +1,97 @@
+.codeBlock {
+  color: #657b83;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  background-color: #fdf6e3;
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+
+  &::selection,
+  & ::selection {
+    background: #073642;
+  }
+
+  // These class names are built into prism-react-renderer so we need to
+  // prevent mangling them, thus :global.
+  :global .token {
+    &.comment,
+    &.prolog,
+    &.doctype,
+    &.cdata {
+      color: #93a1a1;
+    }
+
+    &.punctuation {
+      color: #586e75;
+    }
+
+    &.namespace {
+      opacity: 0.7;
+    }
+
+    &.property,
+    &.tag,
+    &.boolean,
+    &.number,
+    &.constant,
+    &.symbol,
+    &.deleted {
+      color: #268bd2;
+    }
+
+    &.selector,
+    &.attr-name,
+    &.string,
+    &.char,
+    &.builtin,
+    &.url,
+    &.inserted {
+      color: #2aa198;
+    }
+
+    &.entity {
+      color: #657b83;
+      background: #eee8d5;
+    }
+
+    &.atrule,
+    &.attr-value,
+    &.keyword {
+      color: #859900;
+    }
+
+    &.function,
+    &.class-name {
+      color: #b58900;
+    }
+
+    &.regex,
+    &.important,
+    &.variable {
+      color: #cb4b16;
+    }
+
+    &.important,
+    &.bold {
+      font-weight: bold;
+    }
+
+    &.italic {
+      font-style: italic;
+    }
+
+    &.entity {
+      cursor: help;
+    }
+  }
+}
