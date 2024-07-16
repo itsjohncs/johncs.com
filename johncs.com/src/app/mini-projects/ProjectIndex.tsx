@@ -24,6 +24,7 @@ export default function ProjectIndex() {
             url={project.metadata.url}
             title={project.metadata.title}
             date={project.metadata.date}
+            anchorDate={true}
           />
           <div className="post-body">
             <project.default />

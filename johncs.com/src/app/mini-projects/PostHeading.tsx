@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./PostHeading.module.scss";
+import { ReactNode } from "react";
 
 function getSlug(rawURL: string): string {
   try {
@@ -14,13 +15,37 @@ function getSlug(rawURL: string): string {
   }
 }
 
+function MaybeAnchor({
+  slug,
+  children,
+}: {
+  slug?: string;
+  children: ReactNode;
+}) {
+  if (slug) {
+    return (
+      <a id={slug} className={styles.timestampAnchor} href={`#${slug}`}>
+        {children}
+      </a>
+    );
+  } else {
+    return <span>{children}</span>;
+  }
+}
+
 interface PostHeadingProps {
   url: string;
   title: string;
   date: string;
+  anchorDate?: boolean;
 }
 
-export default function PostHeading({ url, title, date }: PostHeadingProps) {
+export default function PostHeading({
+  url,
+  title,
+  date,
+  anchorDate,
+}: PostHeadingProps) {
   return (
     <h3 className={styles.postHeading}>
       <span>
@@ -29,13 +54,9 @@ export default function PostHeading({ url, title, date }: PostHeadingProps) {
         </Link>
         <time className={styles.postDate}>
           <span aria-hidden="true">[</span>
-          <a
-            id={getSlug(url)}
-            className={styles.timestampAnchor}
-            href={`#${getSlug(url)}`}
-          >
+          <MaybeAnchor slug={anchorDate ? getSlug(url) : undefined}>
             {date}
-          </a>
+          </MaybeAnchor>
           <span aria-hidden="true">]</span>
         </time>
       </span>

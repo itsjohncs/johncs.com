@@ -8,7 +8,7 @@ export default function NavBar(): React.ReactElement {
       <Link href="/">blog.johncs.com</Link>:
       <ul>
         <li>
-          <Link href="/blog">Posts</Link>
+          <Link href="/posts">Posts</Link>
         </li>
         <li>
           <Link href="/mini-projects">Mini Projects</Link>
