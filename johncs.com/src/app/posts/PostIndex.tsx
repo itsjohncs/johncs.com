@@ -1,12 +1,12 @@
 "use client";
 
-import { metadata as samplePostMetadata } from "#root/app/posts/(content)/sample-post/page.mdx";
+import { metadata as solvingAWoodenPuzzleMetadata } from "#root/app/posts/(content)/solving-a-wooden-puzzle/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
 
 const postMetadata = [
   {
-    ...samplePostMetadata,
-    href: "/posts/sample-post",
+    ...solvingAWoodenPuzzleMetadata,
+    href: "/posts/solving-a-wooden-puzzle",
   },
 ];
 
