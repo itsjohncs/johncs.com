@@ -4,7 +4,7 @@ import * as simpleFrontmatter from "#root/app/mini-projects/projects/simple-fron
 import * as dieSim from "#root/app/mini-projects/projects/die-sim.mdx";
 import * as differentLogger from "#root/app/mini-projects/projects/different-logger.mdx";
 import * as tbget from "#root/app/mini-projects/projects/tbget.mdx";
-import { Heading1 } from "#root/headings";
+import { Heading1 } from "#root/mdx/headings";
 import PostHeading from "./PostHeading";
 
 const projects = [simpleFrontmatter, dieSim, differentLogger, tbget];
