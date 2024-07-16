@@ -1,0 +1,22 @@
+.postHeading {
+  margin-bottom: var(--line-height);
+  background-color: #eee8d5;
+}
+
+.postTitle {
+  margin-right: 0.5rem;
+}
+
+.postDate {
+  font-weight: 300;
+  color: var(--date-time-color);
+}
+
+.timestampAnchor {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

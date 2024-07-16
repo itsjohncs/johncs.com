@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./PostHeading.module.scss";
 
 function getSlug(rawURL: string): string {
   try {
@@ -21,20 +22,20 @@ interface PostHeadingProps {
 
 export default function PostHeading({ url, title, date }: PostHeadingProps) {
   return (
-    <div className="post-heading">
+    <div className={styles.postHeading}>
       <span>
-        <Link href={url} className="post-title">
+        <Link href={url} className={styles.postTitle}>
           {title}
         </Link>
-        <time className="post-date">
+        <time className={styles.postDate}>
           <span aria-hidden="true">[</span>
-            <a
-              id={getSlug(url)}
-              className="timestamp-anchor"
-              href={`#${getSlug(url)}`}
-            >
-              {date}
-            </a>
+          <a
+            id={getSlug(url)}
+            className={styles.timestampAnchor}
+            href={`#${getSlug(url)}`}
+          >
+            {date}
+          </a>
           <span aria-hidden="true">]</span>
         </time>
       </span>
