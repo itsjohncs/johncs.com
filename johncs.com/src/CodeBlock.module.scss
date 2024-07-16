@@ -1,25 +1,16 @@
 .codeBlock {
+  display: block;
   color: #657b83;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 1em;
-  text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  overflow-wrap: anywhere;
   tab-size: 4;
   hyphens: none;
-  background-color: #fdf6e3;
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
-
-  &::selection,
-  & ::selection {
-    background: #073642;
-  }
+  padding: var(--line-height) 4ch;
+  max-width: 100%;
+  box-sizing: border-box;
 
   // These class names are built into prism-react-renderer so we need to
   // prevent mangling them, thus :global.

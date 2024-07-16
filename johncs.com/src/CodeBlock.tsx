@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Highlight } from "prism-react-renderer";
 import styles from "./CodeBlock.module.scss";
 
 interface CodeBlockProps {
-  children: string;
+  children?: ReactNode;
   className?: string;
 }
 
@@ -17,8 +17,8 @@ const except = <T extends object, K extends keyof T>(
 };
 
 export function CodeBlock({ children, className }: CodeBlockProps) {
-  if (!className) {
-    return <code>{children}</code>;
+  if (!className || typeof children !== "string") {
+    return <code className={styles.codeBlock}>{children}</code>;
   }
 
   const language = className.replace(/language-/gm, "");
