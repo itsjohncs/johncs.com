@@ -1,6 +1,6 @@
 "use client";
 
-import { metadata as samplePostMetadata } from "#root/app/posts/sample-post/page.mdx";
+import { metadata as samplePostMetadata } from "#root/app/posts/(content)/sample-post/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
 
 const postMetadata = [
