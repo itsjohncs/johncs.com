@@ -1,5 +1,4 @@
 import styles from "./page.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -7,7 +6,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.floatingHead}>
         <Link href="/me.jpg">
-          <Image src="/me.jpg" alt="John Sullivan" width={200} height={200} />
+          <img src="/me.jpg" alt="John Sullivan" />
         </Link>
       </div>
       <div>
