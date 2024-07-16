@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import styles from "./NavBar.module.scss";
 
-const NavBar: React.FC = () => {
+export default function NavBar(): React.ReactElement {
   return (
     <nav className={styles.navBar}>
-      blog.johncs.com:
+      <Link href="/">blog.johncs.com</Link>:
       <ul>
         <li>
           <Link href="/blog">Posts</Link>
@@ -16,6 +16,4 @@ const NavBar: React.FC = () => {
       </ul>
     </nav>
   );
-};
-
-export default NavBar;
+}
