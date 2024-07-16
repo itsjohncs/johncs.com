@@ -22,7 +22,7 @@ interface PostHeadingProps {
 
 export default function PostHeading({ url, title, date }: PostHeadingProps) {
   return (
-    <div className={styles.postHeading}>
+    <h3 className={styles.postHeading}>
       <span>
         <Link href={url} className={styles.postTitle}>
           {title}
@@ -39,6 +39,6 @@ export default function PostHeading({ url, title, date }: PostHeadingProps) {
           <span aria-hidden="true">]</span>
         </time>
       </span>
-    </div>
+    </h3>
   );
 }
