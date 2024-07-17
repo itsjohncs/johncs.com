@@ -1,7 +1,7 @@
 @import "#root/app/solarized.scss";
 
 .navBar {
-  background-color: $base2;
+  background-color: var(--feature-background-color);
   border-left: 1ch solid $blue;
   border-right: 1ch solid $blue;
   margin-bottom: var(--line-height);

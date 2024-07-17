@@ -5,6 +5,7 @@
   --text-color: #{$base00};
   --page-background-color: #{$base3};
   --max-banner-width: 46ch;
+  --feature-background-color: #{$base2};
 }
 
 * {
@@ -42,8 +43,8 @@ a {
 
 img,
 video {
-  background-color: $base2;
-  border-color: $base2;
+  background-color: var(--feature-background-color);
+  border-color: var(--feature-background-color);
   border-style: solid;
   border-width: var(--line-height) 2ch;
   box-sizing: border-box;

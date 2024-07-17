@@ -59,7 +59,7 @@
 
     &.entity {
       color: $base00;
-      background: $base2;
+      background: var(--feature-background-color);
     }
 
     &.atrule,
