@@ -10,7 +10,7 @@ import PostHeading from "./PostHeading";
 const projects = [simpleFrontmatter, dieSim, differentLogger, tbget];
 
 // Sort projects by date, newest first
-const sortedProjects = projects.sort(
+projects.sort(
   (a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date),
 );
 
@@ -18,7 +18,7 @@ export default function ProjectIndex() {
   return (
     <div className="all-posts">
       <Heading1>All Mini Projects</Heading1>
-      {sortedProjects.map((project, index: number) => (
+      {projects.map((project, index: number) => (
         <article key={index} className="post">
           <PostHeading
             url={project.metadata.url}
