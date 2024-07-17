@@ -1,0 +1,16 @@
+.postSnippetContainer {
+  position: relative;
+  overflow-y: hidden;
+
+  .quoteGutter {
+    word-wrap: break-word;
+    color: var(--gutter-color);
+    width: 1ch;
+    position: absolute;
+    user-select: none;
+  }
+
+  .postSnippet {
+    margin-left: 2ch;
+  }
+}
