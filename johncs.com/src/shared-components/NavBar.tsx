@@ -15,10 +15,14 @@ export function PostNavBar({ title, href, date }: Props): ReactElement {
         <nav className={classNames(styles.navBar, styles.post)}>
             <ul>
                 <li>
-                    <Link href="/">blog.johncs.com</Link>
+                    <Link className={styles.pageLink} href="/">
+                        blog.johncs.com
+                    </Link>
                 </li>
                 <li>
-                    <Link href="/posts">Posts</Link>
+                    <Link className={styles.pageLink} href="/posts">
+                        Posts
+                    </Link>
                 </li>
                 <li>
                     {title}{" "}
@@ -41,7 +45,9 @@ export default function NavBar({ path }: NavBarProps): ReactElement {
             {path === "/" ? (
                 <span>blog.johncs.com</span>
             ) : (
-                <Link href="/">blog.johncs.com</Link>
+                <Link className={styles.pageLink} href="/">
+                    blog.johncs.com
+                </Link>
             )}
             :{" "}
             <ul>
@@ -49,14 +55,18 @@ export default function NavBar({ path }: NavBarProps): ReactElement {
                     {path === "/posts" ? (
                         <span>Posts</span>
                     ) : (
-                        <Link href="/posts">Posts</Link>
+                        <Link className={styles.pageLink} href="/posts">
+                            Posts
+                        </Link>
                     )}
                 </li>
                 <li>
                     {path === "/mini-projects" ? (
                         <span>Mini Projects</span>
                     ) : (
-                        <Link href="/mini-projects">Mini Projects</Link>
+                        <Link className={styles.pageLink} href="/mini-projects">
+                            Mini Projects
+                        </Link>
                     )}
                 </li>
             </ul>
