@@ -6,11 +6,11 @@ import PostDate from "./PostDate";
 
 interface Props {
   title: string;
-  path: string;
+  href: string;
   date: string;
 }
 
-export function PostNavBar({ title, path, date }: Props): ReactElement {
+export function PostNavBar({ title, href, date }: Props): ReactElement {
   return (
     <nav className={classNames(styles.navBar, styles.post)}>
       <ul>
@@ -27,7 +27,7 @@ export function PostNavBar({ title, path, date }: Props): ReactElement {
         <li>
           {title}{" "}
           <PostDate>
-            <Link href={path}>{date}</Link>
+            <Link href={href}>{date}</Link>
           </PostDate>
         </li>
       </ul>
