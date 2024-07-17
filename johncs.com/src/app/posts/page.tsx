@@ -5,7 +5,7 @@ import NavBar from "#root/shared-components/NavBar";
 export default function Posts() {
     return (
         <>
-            <NavBar />
+            <NavBar path="/posts" />
             <main>
                 <p>
                     I blog sometimes! I&apos;ve covered topics including

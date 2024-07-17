@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <NavBar />
+            <NavBar path="/" />
             <main className={styles.main}>
                 <div className={styles.floatingHead}>
                     <Link href="/me.jpg">

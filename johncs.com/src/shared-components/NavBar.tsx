@@ -15,14 +15,10 @@ export function PostNavBar({ title, href, date }: Props): ReactElement {
         <nav className={classNames(styles.navBar, styles.post)}>
             <ul>
                 <li>
-                    <Link href="/">
-                        blog.johncs.com
-                    </Link>
+                    <Link href="/">blog.johncs.com</Link>
                 </li>
                 <li>
-                    <Link href="/posts">
-                        Posts
-                    </Link>
+                    <Link href="/posts">Posts</Link>
                 </li>
                 <li>
                     {title}{" "}
@@ -35,23 +31,33 @@ export function PostNavBar({ title, href, date }: Props): ReactElement {
     );
 }
 
-export default function NavBar(): ReactElement {
+interface NavBarProps {
+    path: "/" | "/posts" | "/mini-projects";
+}
+
+export default function NavBar({ path }: NavBarProps): ReactElement {
     return (
         <nav className={styles.navBar}>
-            <Link href="/">
-                blog.johncs.com
-            </Link>
+            {path === "/" ? (
+                <span>blog.johncs.com</span>
+            ) : (
+                <Link href="/">blog.johncs.com</Link>
+            )}
             :{" "}
             <ul>
                 <li>
-                    <Link href="/posts">
-                        Posts
-                    </Link>
+                    {path === "/posts" ? (
+                        <span>Posts</span>
+                    ) : (
+                        <Link href="/posts">Posts</Link>
+                    )}
                 </li>
                 <li>
-                    <Link href="/mini-projects">
-                        Mini Projects
-                    </Link>
+                    {path === "/mini-projects" ? (
+                        <span>Mini Projects</span>
+                    ) : (
+                        <Link href="/mini-projects">Mini Projects</Link>
+                    )}
                 </li>
             </ul>
         </nav>
