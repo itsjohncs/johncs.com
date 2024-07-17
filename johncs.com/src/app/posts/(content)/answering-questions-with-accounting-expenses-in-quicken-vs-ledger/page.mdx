@@ -1,3 +1,5 @@
+import Table from "#root/mdx/Table";
+
 export const metadata = {
   title: "Answering questions with accounting: Expenses in Quicken vs Ledger",
   date: "February 8, 2019",
@@ -24,14 +26,15 @@ In contrast I now use [Ledger](https://www.ledger-cli.org/) to do my personal ac
 
 I want to share some expense numbers from my Quicken file and compare them to the same time periods from my Ledger file.
 
-<table>
+<Table>
   <thead>
     <tr>
-      <th rowSpan="2">Month</th>
+      <th></th>
       <th colSpan="2">Quicken</th>
       <th colSpan="2">Ledger</th>
     </tr>
     <tr>
+      <th>Month</th>
       <th>Total</th>
       <th>Groceries</th>
       <th>Total</th>
@@ -61,7 +64,7 @@ I want to share some expense numbers from my Quicken file and compare them to th
       <td>$144.37</td>
     </tr>
   </tbody>
-</table>
+</Table>
 
 Quicken's numbers aren't quite right. Why?
 

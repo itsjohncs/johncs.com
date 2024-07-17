@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { CodeBlock, CodeBlockBody } from "./mdx/CodeBlock";
 import { SuperScript, SuperScriptLink } from "./mdx/SuperScript";
+import Table from "./mdx/Table";
 import {
   Heading1,
   Heading2,
@@ -28,6 +29,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         return <a {...props} />;
       }
     },
+    table: Table,
     ...components,
   };
 }
