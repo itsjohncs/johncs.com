@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ReactNode } from "react";
 import { Highlight } from "prism-react-renderer";
 import styles from "./CodeBlock.module.scss";
