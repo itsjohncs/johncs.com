@@ -1,10 +1,4 @@
 declare module "#root/app/posts/(content)/*.mdx" {
-  import { ReactNode } from "react";
-  interface PostMetadata {
-    title: string;
-    date: string;
-    url: string;
-    description: ReactNode;
-  }
+  import PostMetadata from "./PostMetadata";
   export const metadata: PostMetadata;
 }
