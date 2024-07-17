@@ -31,7 +31,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       }
     },
     table: Table,
-    blockquote: Quote as any,
+    blockquote: Quote,
     ...components,
   };
 }

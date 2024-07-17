@@ -3,7 +3,7 @@
 .quoteContainer {
   position: relative;
   overflow-y: hidden;
-  margin-bottom: var(--line-height);
+  margin: 0 0 var(--line-height) 0;
 
   .quoteGutter {
     word-wrap: break-word;
