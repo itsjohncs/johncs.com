@@ -1,0 +1,12 @@
+@import "../app/solarized.scss";
+
+.list {
+  list-style: " * ";
+  padding: 0;
+  padding-left: 3ch;
+
+  li::marker {
+    white-space: pre;
+    color: $yellow;
+  }
+}

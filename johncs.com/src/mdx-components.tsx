@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import { CodeBlock, CodeBlockBody } from "./mdx/CodeBlock";
 import { SuperScript, SuperScriptLink } from "./mdx/SuperScript";
 import Table from "./mdx/Table";
+import UnorderedList from "./mdx/UnorderedList";
 import {
   Heading1,
   Heading2,
@@ -31,6 +32,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       }
     },
     table: Table,
+    ul: UnorderedList,
     blockquote: Quote,
     ...components,
   };
