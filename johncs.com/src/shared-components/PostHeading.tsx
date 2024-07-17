@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./PostHeading.module.scss";
 import { ReactNode } from "react";
+import PostDate from "./PostDate";
 
 function getSlug(rawURL: string): string {
   try {
@@ -52,13 +53,11 @@ export default function PostHeading({
         <Link href={url} className={styles.postTitle}>
           {title}
         </Link>
-        <time className={styles.postDate}>
-          <span aria-hidden="true">[</span>
+        <PostDate>
           <MaybeAnchor slug={anchorDate ? getSlug(url) : undefined}>
             {date}
           </MaybeAnchor>
-          <span aria-hidden="true">]</span>
-        </time>
+        </PostDate>
       </span>
     </h3>
   );
