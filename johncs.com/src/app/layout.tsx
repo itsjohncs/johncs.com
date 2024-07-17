@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sourceCodePro.className} single-column-content`}>
+      <body className={sourceCodePro.className}>
         <NavBar />
         {children}
       </body>
