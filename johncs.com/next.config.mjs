@@ -1,3 +1,4 @@
+import remarkGfm from "remark-gfm";
 import withMdx from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
@@ -5,4 +6,4 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
 };
 
-export default withMdx()(nextConfig);
+export default withMdx({ options: { remarkPlugins: [remarkGfm] } })(nextConfig);
