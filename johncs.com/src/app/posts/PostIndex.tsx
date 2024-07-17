@@ -5,6 +5,7 @@ import { metadata as sqliteTransactionsMetadata } from "#root/app/posts/(content
 import { metadata as accountingExpensesMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-expenses-in-quicken-vs-ledger/page.mdx";
 import { metadata as pythonImportSystemMetadata } from "#root/app/posts/(content)/the-python-import-system/page.mdx";
 import { metadata as intelligentlyShorteningTextMetadata } from "#root/app/posts/(content)/intelligently-shortening-text/page.mdx";
+import { metadata as localStorageTodayMetadata } from "#root/app/posts/(content)/local-storage-today/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -28,6 +29,10 @@ const postMetadata = [
   {
     ...intelligentlyShorteningTextMetadata,
     href: "/posts/intelligently-shortening-text",
+  },
+  {
+    ...localStorageTodayMetadata,
+    href: "/posts/local-storage-today",
   },
 ];
 
