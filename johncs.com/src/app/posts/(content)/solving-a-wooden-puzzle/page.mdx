@@ -16,11 +16,11 @@ Last week a mysterious double-sided puzzle appeared at [Khan Academy](https://ww
   alt="A picture of the mysterious puzzle"
 />
 
-To solve the puzzle you must fit all four pieces inside the recessed area (the pieces will not entirely fill the area). We found a solution to the easy side after only a few days[^1] but nobody could get close to solving the hard side. So five of us began writing our own solvers.
+To solve the puzzle you must fit all four pieces inside the recessed area (the pieces will not entirely fill the area). We found a solution to the easy side after only a few days [^1] but nobody could get close to solving the hard side. So five of us began writing our own solvers.
 
 The first question each of us faced was how to represent the positions of the pieces. We were able to lay down a triangular grid on top of each side, but how should the cells be addressed?
 
-Each of us came up with our own answer to this question[^2]. I decided to use a coordinate system that used two perpendicular axes, with the origin at the bottom left.
+Each of us came up with our own answer to this question [^2]. I decided to use a coordinate system that used two perpendicular axes, with the origin at the bottom left.
 
 <img src="/images/triangular-grid.png" alt="The triangular grid" />
 
@@ -28,7 +28,7 @@ Each of us came up with our own answer to this question[^2]. I decided to use a 
 
 I had a problem though. Once I manually input a piece into my coordinate system, I needed to be able to rotate and reflect that piece into 12 different alignments. Reflection was easy, but despite my best efforts, I couldn't figure out how to rotate the pieces once they were placed into my grid.
 
-After smashing my head against the problem for an hour and getting nowhere, I gave up[^3]. I instead decided to manually input each of the three rotations necessary for each piece (all the other alignments could be expressed as reflections of those rotations).
+After smashing my head against the problem for an hour and getting nowhere, I gave up [^3]. I instead decided to manually input each of the three rotations necessary for each piece (all the other alignments could be expressed as reflections of those rotations).
 
 Now I just had to write the logic to try every possible placement of the pieces.
 
@@ -60,7 +60,7 @@ Clearly there was a very evil puzzle master in our ranks.
 
 [Jamie Wong](http://jamie-wong.com/) readily admitted to bringing in the puzzle (though he didn't tell us where he got it). Despite the staggering proof to the contrary though, he was adamant that a solution existed. He said our solvers all shared a fatal flaw.
 
-After a few hints, Emily and I did find the answer[^4]. Which was good, because none of us had gotten any work done for a little while and we were starting to feel guilty.
+After a few hints, Emily and I did find the answer [^4]. Which was good, because none of us had gotten any work done for a little while and we were starting to feel guilty.
 
 [^1]: If you want to spoil it for yourself, here is [a picture of the solved easy side](/images/easy-solved.jpg).
 
