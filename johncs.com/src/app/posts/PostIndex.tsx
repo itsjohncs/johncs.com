@@ -3,6 +3,7 @@
 import { metadata as solvingAWoodenPuzzleMetadata } from "#root/app/posts/(content)/solving-a-wooden-puzzle/page.mdx";
 import { metadata as sqliteTransactionsMetadata } from "#root/app/posts/(content)/transactions-with-pythons-sqlite3-package/page.mdx";
 import { metadata as accountingExpensesMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-expenses-in-quicken-vs-ledger/page.mdx";
+import { metadata as accountingReimbursementsMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-reimbursements/page.mdx";
 import { metadata as pythonImportSystemMetadata } from "#root/app/posts/(content)/the-python-import-system/page.mdx";
 import { metadata as intelligentlyShorteningTextMetadata } from "#root/app/posts/(content)/intelligently-shortening-text/page.mdx";
 import { metadata as localStorageTodayMetadata } from "#root/app/posts/(content)/local-storage-today/page.mdx";
@@ -13,6 +14,7 @@ const postMetadata = [
     solvingAWoodenPuzzleMetadata,
     sqliteTransactionsMetadata,
     accountingExpensesMetadata,
+    accountingReimbursementsMetadata,
     pythonImportSystemMetadata,
     intelligentlyShorteningTextMetadata,
     localStorageTodayMetadata,
