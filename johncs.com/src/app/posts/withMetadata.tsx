@@ -1,12 +1,12 @@
 import PostMetadata from "./PostMetadata";
-import NavBar from "#root/app/NavBar";
+import { PostNavBar } from "#root/app/NavBar";
 import { ReactNode } from "react";
 
 export default function withMetadata(metadata: PostMetadata) {
   return function post({ children }: { children: ReactNode }) {
     return (
       <>
-        <NavBar />
+        <PostNavBar title={metadata.title} />
         {children}
       </>
     );
