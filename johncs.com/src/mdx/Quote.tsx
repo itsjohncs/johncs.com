@@ -5,7 +5,7 @@ export default function PostSnippet({ children }: { children: ReactNode }) {
   return (
     <div className={styles.quoteContainer}>
       <div className={styles.quoteGutter} aria-hidden="true">
-        &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+        {">".repeat(20)}
       </div>
       <div className={styles.quoteSnippet}>{children}</div>
     </div>
