@@ -1,54 +1,28 @@
-import React, { ReactElement } from "react";
+import React, { HTMLAttributes } from "react";
+import classNames from "classnames";
 import styles from "./headings.module.scss";
 
-interface HeadingProps {
-  children: React.ReactNode;
+function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
+  return function Heading({
+    children,
+    className,
+    ...props
+  }: HTMLAttributes<HTMLHeadingElement>) {
+    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+    const prefix = "#".repeat(level);
+    return React.createElement(
+      Tag,
+      { className: classNames(styles.heading, className), ...props },
+      <React.Fragment>
+        <span aria-hidden="true">{prefix}</span> {children}
+      </React.Fragment>,
+    );
+  };
 }
 
-export function Heading1({ children }: HeadingProps): ReactElement {
-  return (
-    <h1 className={styles.heading}>
-      <span aria-hidden="true">#</span> {children}
-    </h1>
-  );
-}
-
-export function Heading2({ children }: HeadingProps): ReactElement {
-  return (
-    <h2 className={styles.heading}>
-      <span aria-hidden="true">##</span> {children}
-    </h2>
-  );
-}
-
-export function Heading3({ children }: HeadingProps): ReactElement {
-  return (
-    <h3 className={styles.heading}>
-      <span aria-hidden="true">###</span> {children}
-    </h3>
-  );
-}
-
-export function Heading4({ children }: HeadingProps): ReactElement {
-  return (
-    <h4 className={styles.heading}>
-      <span aria-hidden="true">####</span> {children}
-    </h4>
-  );
-}
-
-export function Heading5({ children }: HeadingProps): ReactElement {
-  return (
-    <h5 className={styles.heading}>
-      <span aria-hidden="true">#####</span> {children}
-    </h5>
-  );
-}
-
-export function Heading6({ children }: HeadingProps): ReactElement {
-  return (
-    <h6 className={styles.heading}>
-      <span aria-hidden="true">######</span> {children}
-    </h6>
-  );
-}
+export const Heading1 = createHeading(1);
+export const Heading2 = createHeading(2);
+export const Heading3 = createHeading(3);
+export const Heading4 = createHeading(4);
+export const Heading5 = createHeading(5);
+export const Heading6 = createHeading(6);

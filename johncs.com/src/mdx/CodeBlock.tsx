@@ -1,21 +1,11 @@
 import React, { ReactNode } from "react";
 import { Highlight } from "prism-react-renderer";
 import styles from "./CodeBlock.module.scss";
+import except from "../utils/except";
 
 interface CodeBlockProps {
   children?: ReactNode;
   className?: string;
-}
-
-function except<T extends object, K extends keyof T>(
-  obj: T,
-  keys: K[],
-): Omit<T, K> {
-  const result = { ...obj };
-  keys.forEach(function (key) {
-    delete result[key];
-  });
-  return result;
 }
 
 export function CodeBlock({ children }: CodeBlockProps) {

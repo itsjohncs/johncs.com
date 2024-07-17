@@ -10,6 +10,7 @@
     "lint-fix": "prettier --write . && tsc --noEmit && next lint --fix"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "next": "14.2.5",
     "prettier": "^3.3.3",
     "prism-react-renderer": "^2.3.1",
