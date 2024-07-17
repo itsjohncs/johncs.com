@@ -4,6 +4,7 @@ import { metadata as solvingAWoodenPuzzleMetadata } from "#root/app/posts/(conte
 import { metadata as sqliteTransactionsMetadata } from "#root/app/posts/(content)/transactions-with-pythons-sqlite3-package/page.mdx";
 import { metadata as accountingExpensesMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-expenses-in-quicken-vs-ledger/page.mdx";
 import { metadata as pythonImportSystemMetadata } from "#root/app/posts/(content)/the-python-import-system/page.mdx";
+import { metadata as intelligentlyShorteningTextMetadata } from "#root/app/posts/(content)/intelligently-shortening-text/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -23,6 +24,10 @@ const postMetadata = [
   {
     ...pythonImportSystemMetadata,
     href: "/posts/the-python-import-system",
+  },
+  {
+    ...intelligentlyShorteningTextMetadata,
+    href: "/posts/intelligently-shortening-text",
   },
 ];
 
