@@ -3,21 +3,21 @@ import classNames from "classnames";
 import styles from "./headings.module.scss";
 
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
-  return function Heading({
-    children,
-    className,
-    ...props
-  }: HTMLAttributes<HTMLHeadingElement>) {
-    const Tag = `h${level}` as keyof JSX.IntrinsicElements;
-    const prefix = "#".repeat(level);
-    return React.createElement(
-      Tag,
-      { className: classNames(styles.heading, className), ...props },
-      <React.Fragment>
-        <span aria-hidden="true">{prefix}</span> {children}
-      </React.Fragment>,
-    );
-  };
+    return function Heading({
+        children,
+        className,
+        ...props
+    }: HTMLAttributes<HTMLHeadingElement>) {
+        const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+        const prefix = "#".repeat(level);
+        return React.createElement(
+            Tag,
+            { className: classNames(styles.heading, className), ...props },
+            <React.Fragment>
+                <span aria-hidden="true">{prefix}</span> {children}
+            </React.Fragment>,
+        );
+    };
 }
 
 export const Heading1 = createHeading(1);

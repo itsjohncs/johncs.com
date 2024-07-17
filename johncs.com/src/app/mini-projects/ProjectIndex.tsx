@@ -11,26 +11,26 @@ const projects = [simpleFrontmatter, dieSim, differentLogger, tbget];
 
 // Sort projects by date, newest first
 projects.sort(
-  (a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date),
+    (a, b) => Date.parse(b.metadata.date) - Date.parse(a.metadata.date),
 );
 
 export default function ProjectIndex() {
-  return (
-    <div className="all-posts">
-      <Heading1>All Mini Projects</Heading1>
-      {projects.map((project, index: number) => (
-        <article key={index} className="post">
-          <PostHeading
-            url={project.metadata.url}
-            title={project.metadata.title}
-            date={project.metadata.date}
-            anchorDate={true}
-          />
-          <div className="post-body">
-            <project.default />
-          </div>
-        </article>
-      ))}
-    </div>
-  );
+    return (
+        <div className="all-posts">
+            <Heading1>All Mini Projects</Heading1>
+            {projects.map((project, index: number) => (
+                <article key={index} className="post">
+                    <PostHeading
+                        url={project.metadata.url}
+                        title={project.metadata.title}
+                        date={project.metadata.date}
+                        anchorDate={true}
+                    />
+                    <div className="post-body">
+                        <project.default />
+                    </div>
+                </article>
+            ))}
+        </div>
+    );
 }

@@ -1,17 +1,17 @@
 @import "#root/app/solarized.scss";
 
 .table {
-  border-collapse: collapse;
-  margin: var(--line-height) 0;
-  td,
-  th {
-    text-align: left;
-    padding: 0 3ch 0 0;
-  }
+    border-collapse: collapse;
+    margin: var(--line-height) 0;
+    td,
+    th {
+        text-align: left;
+        padding: 0 3ch 0 0;
+    }
 
-  &,
-  td,
-  th {
-    border: 0;
-  }
+    &,
+    td,
+    th {
+        border: 0;
+    }
 }

@@ -4,8 +4,8 @@ import { HTMLAttributes } from "react";
 import styles from "./UnorderedList.module.scss";
 
 export default function UnorderedList({
-  className,
-  ...rest
+    className,
+    ...rest
 }: HTMLAttributes<HTMLUListElement>) {
-  return <ul className={classNames(styles.list, className)} {...rest} />;
+    return <ul className={classNames(styles.list, className)} {...rest} />;
 }

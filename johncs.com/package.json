@@ -1,35 +1,35 @@
 {
-  "name": "johncs.com",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "tsc --noEmit && next lint && prettier --list-different .",
-    "lint-fix": "prettier --write . && tsc --noEmit && next lint --fix"
-  },
-  "dependencies": {
-    "classnames": "^2.5.1",
-    "next": "14.2.5",
-    "prettier": "^3.3.3",
-    "prettify": "^0.1.7",
-    "prism-react-renderer": "^2.3.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "remark-gfm": "^4.0.0"
-  },
-  "devDependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.5",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
-    "sass": "^1.77.8",
-    "typescript": "^5"
-  }
+    "name": "johncs.com",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "tsc --noEmit && next lint && prettier --list-different .",
+        "lint-fix": "prettier --write . && tsc --noEmit && next lint --fix"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1",
+        "next": "14.2.5",
+        "prettier": "^3.3.3",
+        "prettify": "^0.1.7",
+        "prism-react-renderer": "^2.3.1",
+        "react": "^18",
+        "react-dom": "^18",
+        "remark-gfm": "^4.0.0"
+    },
+    "devDependencies": {
+        "@mdx-js/loader": "^3.0.1",
+        "@mdx-js/react": "^3.0.1",
+        "@next/mdx": "^14.2.5",
+        "@types/mdx": "^2.0.13",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.5",
+        "sass": "^1.77.8",
+        "typescript": "^5"
+    }
 }

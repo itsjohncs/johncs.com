@@ -1,13 +1,13 @@
 export const metadata = {
-  title: "Solving a wooden puzzle",
-  date: "April 27, 2015",
-  href: "/posts/solving-a-wooden-puzzle",
-  description: (
-    <>
-      Last week a mysterious double-sided puzzle appeared next to the kitchen at{" "}
-      <a href="https://www.khanacademy.org/">Khan Academy</a>.
-    </>
-  ),
+    title: "Solving a wooden puzzle",
+    date: "April 27, 2015",
+    href: "/posts/solving-a-wooden-puzzle",
+    description: (
+        <>
+            Last week a mysterious double-sided puzzle appeared next to the
+            kitchen at <a href="https://www.khanacademy.org/">Khan Academy</a>.
+        </>
+    ),
 };
 
 import withMetadata from "../../withMetadata";
@@ -16,8 +16,8 @@ export default withMetadata(metadata);
 Last week a mysterious double-sided puzzle appeared at [Khan Academy](https://www.khanacademy.org/).
 
 <img
-  src="/images/mysterious-puzzle.jpg"
-  alt="A picture of the mysterious puzzle"
+    src="/images/mysterious-puzzle.jpg"
+    alt="A picture of the mysterious puzzle"
 />
 
 To solve the puzzle you must fit all four pieces inside the recessed area (the pieces will not entirely fill the area). We found a solution to the easy side after only a few days [^1] but nobody could get close to solving the hard side. So five of us began writing our own solvers.
@@ -39,9 +39,9 @@ Now I just had to write the logic to try every possible placement of the pieces.
 By this time, Ben Eater's solver was done and ticking away. [His solver](https://www.khanacademy.org/computer-programming/spin-off-of-puzzle/4900481558249472) didn't do any pruning of the search space though (and took some time to check each placement), so he estimated that the solver would finish in around 2 years. I felt good about my chances of finding a solution before then.
 
 <img
-  src="/images/eaters-solver.gif"
-  alt="Ben Eater's solver"
-  className="small-image"
+    src="/images/eaters-solver.gif"
+    alt="Ben Eater's solver"
+    className="small-image"
 />
 
 To try and be a little faster I added in some logic to prune large parts of the search space where possible. This worked by laying down a piece at a time, and only trying the other ones if there were no collisions.
@@ -57,9 +57,9 @@ Emily finished [her solver](https://github.com/xymostech/wood-puzzle/blob/master
 Clearly there was a very evil puzzle master in our ranks.
 
 <img
-  src="/images/evil-kitty.gif"
-  alt="An evil kitten"
-  className="small-image"
+    src="/images/evil-kitty.gif"
+    alt="An evil kitten"
+    className="small-image"
 />
 
 [Jamie Wong](http://jamie-wong.com/) readily admitted to bringing in the puzzle (though he didn't tell us where he got it). Despite the staggering proof to the contrary though, he was adamant that a solution existed. He said our solvers all shared a fatal flaw.

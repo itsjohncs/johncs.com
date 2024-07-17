@@ -1,71 +1,71 @@
 @import "#root/app/solarized.scss";
 
 :root {
-  --line-height: 20px;
-  --text-color: #{$base00};
-  --page-background-color: #{$base3};
-  --max-banner-width: 46ch;
-  --feature-background-color: #{$base2};
+    --line-height: 20px;
+    --text-color: #{$base00};
+    --page-background-color: #{$base3};
+    --max-banner-width: 46ch;
+    --feature-background-color: #{$base2};
 }
 
 * {
-  font-family: inherit;
-  font-size: 14px;
-  letter-spacing: 0;
-  line-height: var(--line-height);
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: var(--line-height);
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background-color: var(--page-background-color);
-  color: var(--text-color);
-  padding: var(--line-height) 2ch calc(var(--line-height) * 10) 2ch;
-  max-width: 72ch;
-  margin-left: auto;
-  margin-right: auto;
+    background-color: var(--page-background-color);
+    color: var(--text-color);
+    padding: var(--line-height) 2ch calc(var(--line-height) * 10) 2ch;
+    max-width: 72ch;
+    margin-left: auto;
+    margin-right: auto;
 
-  @media (max-width: var(--max-banner-width)) {
-    padding-bottom: calc(var(--line-height) * 5);
-  }
+    @media (max-width: var(--max-banner-width)) {
+        padding-bottom: calc(var(--line-height) * 5);
+    }
 }
 
 a {
-  text-decoration: none;
-  color: $yellow;
+    text-decoration: none;
+    color: $yellow;
 
-  &:hover {
-    text-decoration: underline;
-  }
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 img,
 video {
-  background-color: var(--feature-background-color);
-  border-color: var(--feature-background-color);
-  border-style: solid;
-  border-width: var(--line-height) 2ch;
-  box-sizing: border-box;
-  display: block;
-  margin-bottom: var(--line-height);
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60ch;
-  width: 100%;
+    background-color: var(--feature-background-color);
+    border-color: var(--feature-background-color);
+    border-style: solid;
+    border-width: var(--line-height) 2ch;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: var(--line-height);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60ch;
+    width: 100%;
 
-  &.small-image {
-    max-width: 40ch;
-  }
+    &.small-image {
+        max-width: 40ch;
+    }
 
-  &.tiny-image {
-    max-width: 30ch;
-  }
+    &.tiny-image {
+        max-width: 30ch;
+    }
 }
 
 p,
 ol,
 ul {
-  margin: 0 0 var(--line-height) 0;
+    margin: 0 0 var(--line-height) 0;
 }

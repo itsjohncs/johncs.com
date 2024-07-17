@@ -10,28 +10,28 @@ import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
 const postMetadata = [
-  solvingAWoodenPuzzleMetadata,
-  sqliteTransactionsMetadata,
-  accountingExpensesMetadata,
-  pythonImportSystemMetadata,
-  intelligentlyShorteningTextMetadata,
-  localStorageTodayMetadata,
+    solvingAWoodenPuzzleMetadata,
+    sqliteTransactionsMetadata,
+    accountingExpensesMetadata,
+    pythonImportSystemMetadata,
+    intelligentlyShorteningTextMetadata,
+    localStorageTodayMetadata,
 ];
 
 // Sort posts by date, newest first
 postMetadata.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
 export default function PostIndex() {
-  return postMetadata.map(function (metadata) {
-    return (
-      <article key={metadata.href}>
-        <PostHeading
-          url={metadata.href}
-          title={metadata.title}
-          date={metadata.date}
-        />
-        <Quote>{metadata.description}</Quote>
-      </article>
-    );
-  });
+    return postMetadata.map(function (metadata) {
+        return (
+            <article key={metadata.href}>
+                <PostHeading
+                    url={metadata.href}
+                    title={metadata.title}
+                    date={metadata.date}
+                />
+                <Quote>{metadata.description}</Quote>
+            </article>
+        );
+    });
 }

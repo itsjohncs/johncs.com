@@ -1,23 +1,23 @@
 @import "#root/app/solarized.scss";
 
 .quoteContainer {
-  position: relative;
-  overflow-y: hidden;
-  margin: 0 0 var(--line-height) 0;
+    position: relative;
+    overflow-y: hidden;
+    margin: 0 0 var(--line-height) 0;
 
-  .quoteGutter {
-    word-wrap: break-word;
-    color: $green;
-    width: 1ch;
-    position: absolute;
-    user-select: none;
-  }
-
-  .quoteSnippet {
-    margin-left: 2ch;
-
-    & > *:last-child {
-      margin-bottom: 0;
+    .quoteGutter {
+        word-wrap: break-word;
+        color: $green;
+        width: 1ch;
+        position: absolute;
+        user-select: none;
     }
-  }
+
+    .quoteSnippet {
+        margin-left: 2ch;
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
 }

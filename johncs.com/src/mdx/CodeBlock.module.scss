@@ -1,94 +1,94 @@
 @import "#root/app/solarized.scss";
 
 .codeBlockBody {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 .codeBlock .codeBlockBody {
-  font-weight: inherit;
-  display: block;
-  white-space: pre-wrap;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  overflow-wrap: anywhere;
-  tab-size: 4;
-  hyphens: none;
-  padding: 0 4ch var(--line-height) 4ch;
-  max-width: 100%;
-  box-sizing: border-box;
+    font-weight: inherit;
+    display: block;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    overflow-wrap: anywhere;
+    tab-size: 4;
+    hyphens: none;
+    padding: 0 4ch var(--line-height) 4ch;
+    max-width: 100%;
+    box-sizing: border-box;
 
-  // These class names are built into prism-react-renderer so we need to
-  // prevent mangling them, thus :global.
-  :global .token {
-    &.comment,
-    &.prolog,
-    &.doctype,
-    &.cdata {
-      color: $base1;
-    }
+    // These class names are built into prism-react-renderer so we need to
+    // prevent mangling them, thus :global.
+    :global .token {
+        &.comment,
+        &.prolog,
+        &.doctype,
+        &.cdata {
+            color: $base1;
+        }
 
-    &.punctuation {
-      color: $base01;
-    }
+        &.punctuation {
+            color: $base01;
+        }
 
-    &.namespace {
-      opacity: 0.7;
-    }
+        &.namespace {
+            opacity: 0.7;
+        }
 
-    &.property,
-    &.tag,
-    &.boolean,
-    &.number,
-    &.constant,
-    &.symbol,
-    &.deleted {
-      color: $blue;
-    }
+        &.property,
+        &.tag,
+        &.boolean,
+        &.number,
+        &.constant,
+        &.symbol,
+        &.deleted {
+            color: $blue;
+        }
 
-    &.selector,
-    &.attr-name,
-    &.string,
-    &.char,
-    &.builtin,
-    &.url,
-    &.inserted {
-      color: $cyan;
-    }
+        &.selector,
+        &.attr-name,
+        &.string,
+        &.char,
+        &.builtin,
+        &.url,
+        &.inserted {
+            color: $cyan;
+        }
 
-    &.entity {
-      color: $base00;
-      background: var(--feature-background-color);
-    }
+        &.entity {
+            color: $base00;
+            background: var(--feature-background-color);
+        }
 
-    &.atrule,
-    &.attr-value,
-    &.keyword {
-      color: $green;
-    }
+        &.atrule,
+        &.attr-value,
+        &.keyword {
+            color: $green;
+        }
 
-    &.function,
-    &.class-name {
-      color: $yellow;
-    }
+        &.function,
+        &.class-name {
+            color: $yellow;
+        }
 
-    &.regex,
-    &.important,
-    &.variable {
-      color: $orange;
-    }
+        &.regex,
+        &.important,
+        &.variable {
+            color: $orange;
+        }
 
-    &.important,
-    &.bold {
-      font-weight: bold;
-    }
+        &.important,
+        &.bold {
+            font-weight: bold;
+        }
 
-    &.italic {
-      font-style: italic;
-    }
+        &.italic {
+            font-style: italic;
+        }
 
-    &.entity {
-      cursor: help;
+        &.entity {
+            cursor: help;
+        }
     }
-  }
 }
