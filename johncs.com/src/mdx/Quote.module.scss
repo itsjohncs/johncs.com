@@ -3,6 +3,7 @@
 .quoteContainer {
   position: relative;
   overflow-y: hidden;
+  margin-bottom: var(--line-height);
 
   .quoteGutter {
     word-wrap: break-word;
@@ -14,5 +15,9 @@
 
   .quoteSnippet {
     margin-left: 2ch;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
   }
 }
