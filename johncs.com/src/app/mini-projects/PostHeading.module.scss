@@ -1,7 +1,9 @@
+@import "#root/app/solarized.scss";
+
 .postHeading {
   font-weight: normal;
   margin-bottom: var(--line-height);
-  background-color: #eee8d5;
+  background-color: $base2;
 }
 
 .postTitle {
@@ -10,7 +12,7 @@
 
 .postDate {
   font-weight: 300;
-  color: var(--date-time-color);
+  color: $violet;
 }
 
 .timestampAnchor {

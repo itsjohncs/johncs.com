@@ -1,10 +1,12 @@
+@import "#root/app/solarized.scss";
+
 :root {
   --line-height: 20px;
-  --text-color: #657b83;
-  --page-background-color: #fdf6e3;
+  --text-color: #{$base00};
+  --page-background-color: #{$base3};
   --max-banner-width: 46ch;
-  --date-time-color: #6c71c4;
-  --gutter-color: #859900;
+  --date-time-color: #{$violet};
+  --gutter-color: #{$green};
 }
 
 * {
@@ -33,7 +35,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #b58900;
+  color: $yellow;
 
   &:hover {
     text-decoration: underline;
@@ -42,8 +44,8 @@ a {
 
 img,
 video {
-  background-color: #eee8d5;
-  border-color: #eee8d5;
+  background-color: $base2;
+  border-color: $base2;
   border-style: solid;
   border-width: var(--line-height) 2ch;
   box-sizing: border-box;

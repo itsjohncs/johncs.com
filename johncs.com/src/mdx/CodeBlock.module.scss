@@ -1,3 +1,5 @@
+@import "#root/app/solarized.scss";
+
 .codeBlockBody {
   font-weight: 300;
 }
@@ -5,7 +7,7 @@
 .codeBlock .codeBlockBody {
   font-weight: inherit;
   display: block;
-  color: #657b83;
+  color: $base00;
   white-space: pre-wrap;
   word-spacing: normal;
   word-break: normal;
@@ -24,11 +26,11 @@
     &.prolog,
     &.doctype,
     &.cdata {
-      color: #93a1a1;
+      color: $base1;
     }
 
     &.punctuation {
-      color: #586e75;
+      color: $base01;
     }
 
     &.namespace {
@@ -42,7 +44,7 @@
     &.constant,
     &.symbol,
     &.deleted {
-      color: #268bd2;
+      color: $blue;
     }
 
     &.selector,
@@ -52,29 +54,29 @@
     &.builtin,
     &.url,
     &.inserted {
-      color: #2aa198;
+      color: $cyan;
     }
 
     &.entity {
-      color: #657b83;
-      background: #eee8d5;
+      color: $base00;
+      background: $base2;
     }
 
     &.atrule,
     &.attr-value,
     &.keyword {
-      color: #859900;
+      color: $green;
     }
 
     &.function,
     &.class-name {
-      color: #b58900;
+      color: $yellow;
     }
 
     &.regex,
     &.important,
     &.variable {
-      color: #cb4b16;
+      color: $orange;
     }
 
     &.important,
