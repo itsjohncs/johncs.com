@@ -2,6 +2,7 @@
 
 import { metadata as solvingAWoodenPuzzleMetadata } from "#root/app/posts/(content)/solving-a-wooden-puzzle/page.mdx";
 import { metadata as sqliteTransactionsMetadata } from "#root/app/posts/(content)/transactions-with-pythons-sqlite3-package/page.mdx";
+import { metadata as accountingExpensesMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-expenses-in-quicken-vs-ledger/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
 import PostSnippet from "./PostSnippet";
 
@@ -13,6 +14,10 @@ const postMetadata = [
   {
     ...sqliteTransactionsMetadata,
     href: "/posts/transactions-with-pythons-sqlite3-package",
+  },
+  {
+    ...accountingExpensesMetadata,
+    href: "/posts/answering-questions-with-accounting-expenses-in-quicken-vs-ledger",
   },
 ];
 
