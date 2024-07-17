@@ -10,6 +10,7 @@ import {
   Heading5,
   Heading6,
 } from "./mdx/headings";
+import Quote from "./mdx/Quote";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -30,6 +31,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       }
     },
     table: Table,
+    blockquote: Quote as any,
     ...components,
   };
 }

@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
-import styles from "./PostSnippet.module.scss";
+import styles from "./Quote.module.scss";
 
 export default function PostSnippet({ children }: { children: ReactNode }) {
   return (
-    <div className={styles.postSnippetContainer}>
+    <div className={styles.quoteContainer}>
       <div className={styles.quoteGutter} aria-hidden="true">
         &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
       </div>
-      <div className={styles.postSnippet}>{children}</div>
+      <div className={styles.quoteSnippet}>{children}</div>
     </div>
   );
 }

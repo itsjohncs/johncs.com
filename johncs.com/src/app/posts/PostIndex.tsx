@@ -4,7 +4,7 @@ import { metadata as solvingAWoodenPuzzleMetadata } from "#root/app/posts/(conte
 import { metadata as sqliteTransactionsMetadata } from "#root/app/posts/(content)/transactions-with-pythons-sqlite3-package/page.mdx";
 import { metadata as accountingExpensesMetadata } from "#root/app/posts/(content)/answering-questions-with-accounting-expenses-in-quicken-vs-ledger/page.mdx";
 import PostHeading from "../mini-projects/PostHeading";
-import PostSnippet from "./PostSnippet";
+import Quote from "#root/mdx/Quote";
 
 const postMetadata = [
   {
@@ -30,7 +30,7 @@ export default function PostIndex() {
           title={metadata.title}
           date={metadata.date}
         />
-        <PostSnippet>{metadata.description}</PostSnippet>
+        <Quote>{metadata.description}</Quote>
       </article>
     );
   });

@@ -1,6 +1,6 @@
 @import "#root/app/solarized.scss";
 
-.postSnippetContainer {
+.quoteContainer {
   position: relative;
   overflow-y: hidden;
 
@@ -12,7 +12,7 @@
     user-select: none;
   }
 
-  .postSnippet {
+  .quoteSnippet {
     margin-left: 2ch;
   }
 }
