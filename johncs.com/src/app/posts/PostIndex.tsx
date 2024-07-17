@@ -10,30 +10,12 @@ import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
 const postMetadata = [
-  {
-    ...solvingAWoodenPuzzleMetadata,
-    href: "/posts/solving-a-wooden-puzzle",
-  },
-  {
-    ...sqliteTransactionsMetadata,
-    href: "/posts/transactions-with-pythons-sqlite3-package",
-  },
-  {
-    ...accountingExpensesMetadata,
-    href: "/posts/answering-questions-with-accounting-expenses-in-quicken-vs-ledger",
-  },
-  {
-    ...pythonImportSystemMetadata,
-    href: "/posts/the-python-import-system",
-  },
-  {
-    ...intelligentlyShorteningTextMetadata,
-    href: "/posts/intelligently-shortening-text",
-  },
-  {
-    ...localStorageTodayMetadata,
-    href: "/posts/local-storage-today",
-  },
+  solvingAWoodenPuzzleMetadata,
+  sqliteTransactionsMetadata,
+  accountingExpensesMetadata,
+  pythonImportSystemMetadata,
+  intelligentlyShorteningTextMetadata,
+  localStorageTodayMetadata,
 ];
 
 // Sort posts by date, newest first

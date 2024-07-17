@@ -1,4 +1,4 @@
-import PostMetadata from "./PostMetadata";
+import PostMetadata from "./(content)/PostMetadata";
 import { PostNavBar } from "#root/shared-components/NavBar";
 import { ReactNode } from "react";
 
