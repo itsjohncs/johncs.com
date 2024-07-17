@@ -3,4 +3,8 @@
 .postDate {
   font-weight: 300;
   color: $violet;
+
+  a {
+    color: inherit;
+  }
 }

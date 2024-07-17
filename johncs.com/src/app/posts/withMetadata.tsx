@@ -6,7 +6,7 @@ export default function withMetadata(metadata: PostMetadata) {
   return function post({ children }: { children: ReactNode }) {
     return (
       <>
-        <PostNavBar title={metadata.title} />
+        <PostNavBar title={metadata.title} date={metadata.date} path="/" />
         {children}
       </>
     );
