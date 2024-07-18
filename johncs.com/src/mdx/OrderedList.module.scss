@@ -24,3 +24,7 @@
         font-size: 0;
     }
 }
+
+section[data-footnotes] .list li:before {
+    content: "^" counter(item);
+}
