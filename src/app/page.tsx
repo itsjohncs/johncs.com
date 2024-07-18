@@ -20,13 +20,11 @@ export default function Home() {
             <NavBar path="/" />
             <main className={styles.main}>
                 <div className={styles.selfieCell}>
-                    <Link href="/me.jpg">
-                        <img
-                            src="/me.jpg"
-                            alt="John Sullivan"
-                            className={styles.selfie}
-                        />
-                    </Link>
+                    <img
+                        src="/me.jpg"
+                        alt="John Sullivan"
+                        className={styles.selfie}
+                    />
                 </div>
                 <div className={styles.aboutMe}>
                     <ul className={styles.flatList}>
