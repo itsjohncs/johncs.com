@@ -53,10 +53,10 @@ export default function NavBar({ path }: NavBarProps): ReactElement {
             <ul>
                 <li>
                     {path === "/posts" ? (
-                        <span>Posts</span>
+                        <span>Blog Posts</span>
                     ) : (
                         <Link className={styles.pageLink} href="/posts">
-                            Posts
+                            Blog Posts
                         </Link>
                     )}
                 </li>
