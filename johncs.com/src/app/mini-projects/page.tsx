@@ -8,8 +8,9 @@ export default function MiniProjects() {
             <NavBar path="/mini-projects" />
             <main>
                 <p>
-                    Here are some of the (roughly) one-night projects I&apos;ve
-                    made. Quality not at all guaranteed.
+                    Subscribe to new posts via <Link href="/rss.xml">RSS</Link>{" "}
+                    or by following me on{" "}
+                    <a href="https://twitter.com/itsjohncs">Twitter</a>.
                 </p>
                 <ProjectIndex />
             </main>

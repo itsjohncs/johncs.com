@@ -8,13 +8,8 @@ export default function Posts() {
             <NavBar path="/posts" />
             <main>
                 <p>
-                    I blog sometimes! I&apos;ve covered topics including
-                    software engineering, polyamory, tabletop RPGs, and random
-                    other things.
-                </p>
-                <p>
-                    You can be alerted to new posts by subscribing through{" "}
-                    <Link href="/rss.xml">RSS</Link> or following me on{" "}
+                    Subscribe to new posts via <Link href="/rss.xml">RSS</Link>{" "}
+                    or by following me on{" "}
                     <a href="https://twitter.com/itsjohncs">Twitter</a>.
                 </p>
                 <PostIndex />
