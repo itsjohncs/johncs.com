@@ -43,10 +43,10 @@ export default function NavBar({ path }: NavBarProps): ReactElement {
     return (
         <nav className={styles.navBar}>
             {path === "/" ? (
-                <span>blog.johncs.com</span>
+                <span>johncs.com</span>
             ) : (
                 <Link className={styles.pageLink} href="/">
-                    blog.johncs.com
+                    johncs.com
                 </Link>
             )}
             :{" "}
