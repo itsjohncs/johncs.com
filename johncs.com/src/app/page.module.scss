@@ -1,12 +1,43 @@
 @import "./solarized.scss";
 
-.selfie {
-    width: 25ch;
+.main {
+    display: grid;
+    grid-template: "selfie lists" / min-content 1fr;
+    justify-items: start;
+    gap: 0 2ch;
 }
 
-@media (min-width: 80ch) {
-    .floatingHead {
-        float: left;
-        margin-right: 2ch;
+.flatList {
+    list-style: none;
+    padding: 0;
+}
+
+.aboutMe {
+    grid-area: lists;
+}
+
+.selfieCell {
+    grid-area: selfie;
+
+    .selfie {
+        width: 20ch;
+    }
+}
+
+.linkList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .bullet {
+        color: $green;
+        white-space: pre;
+    }
+}
+
+@media (max-width: 72ch) {
+    .main {
+        grid-template:
+            "selfie"
+            "lists" / 1fr;
     }
 }
