@@ -50,6 +50,9 @@ Best of all, it works.
 />
 
 [^1]: I found that the 28% of the least frequent 16,000 queries and 18% of the most frequent 16,000 queries had typos within edit distance 2 of a known common word. I defined "common word" by creating a single dictionary from some freely licensed english dictionaries and all of Khan Academy's content. This was part of my preliminary research and was done to check that a autocorrecter was a useful feature.
+
 [^2]: I came to this conclusion by auditing the code, which is (of course) not nearly as accurate as actually running benchmarks. If you're familiar with Whoosh and think I came to the wrong conclusion, please let me know.
+
 [^3]: Once I got something working at all, I invested time into making a script that would give me metrics on our speed, memory usage, and accuracy. [Pympler](https://github.com/pympler/pympler) was used to get the size of the dictionary implementations as well as the max memory usage when running the algorithm.
+
 [^4]: 18 MB is a lot of space for our frontend instances, but we could've spared it. I never ended up adding support for other languages, so I think it would have been reasonable to just ship with the native `dict`. The time to optimize should have been when I was adding support for other languages.
