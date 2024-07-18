@@ -17,7 +17,7 @@ export const metadata = {
     ),
 };
 
-import withMetadata from "../../withMetadata";
+import withMetadata from "../withMetadata";
 export default withMetadata(metadata);
 
 Python's `sqlite3` package tries to take care of the tricky business of properly executing `BEGIN` and `COMMIT` statements. The rules of when and how this automatic transactioning is done has confounded a number of developers, many of whom have jumped ship and chosen to use the [aspw](https://github.com/rogerbinns/apsw) package or similar.
