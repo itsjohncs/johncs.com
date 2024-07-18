@@ -8,6 +8,7 @@ import { metadata as accountingSharedReimbursementsMetadata } from "#root/app/po
 import { metadata as pythonImportSystemMetadata } from "#root/app/posts/(content)/the-python-import-system/page.mdx";
 import { metadata as intelligentlyShorteningTextMetadata } from "#root/app/posts/(content)/intelligently-shortening-text/page.mdx";
 import { metadata as localStorageTodayMetadata } from "#root/app/posts/(content)/local-storage-today/page.mdx";
+import { metadata as buildingSimpleSiteMetadata } from "#root/app/posts/(content)/principles-of-building-a-simple-site/page.mdx";
 import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -20,6 +21,7 @@ const postMetadata = [
     pythonImportSystemMetadata,
     intelligentlyShorteningTextMetadata,
     localStorageTodayMetadata,
+    buildingSimpleSiteMetadata,
 ];
 
 // Sort posts by date, newest first
