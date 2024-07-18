@@ -12,6 +12,7 @@ import { metadata as buildingSimpleSiteMetadata } from "#root/app/posts/(content
 import { metadata as dndSeesawRoomMetadata } from "#root/app/posts/(content)/the-seesaw-a-dnd-5e-encounter/page.mdx";
 import { metadata as loopTerminationMetadata } from "#root/app/posts/(content)/a-very-practical-piece-of-pure-cs/page.mdx";
 import { metadata as haskellMonadsMetadata } from "#root/app/posts/(content)/haskell-monads-and-the-nest-of-lies/page.mdx";
+import { metadata as productFeedbackMetadata } from "#root/app/posts/(content)/passing-through-advice-to-actual-user-experiences/page.mdx";
 import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -28,6 +29,7 @@ const postMetadata = [
     dndSeesawRoomMetadata,
     loopTerminationMetadata,
     haskellMonadsMetadata,
+    productFeedbackMetadata,
 ];
 
 // Sort posts by date, newest first
