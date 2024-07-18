@@ -10,7 +10,7 @@
         position: relative;
 
         &:before {
-            color: $yellow;
+            color: $green;
             content: counter(item) ".";
             right: 100%;
             padding-right: 1ch;
