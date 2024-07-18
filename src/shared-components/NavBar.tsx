@@ -16,7 +16,7 @@ export function PostNavBar({ title, href, date }: Props): ReactElement {
             <ul>
                 <li>
                     <Link className={styles.pageLink} href="/">
-                        blog.johncs.com
+                        johncs.com
                     </Link>
                 </li>
                 <li>

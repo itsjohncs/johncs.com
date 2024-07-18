@@ -5,8 +5,8 @@ import "./globals.scss";
 const sourceCodePro = Source_Code_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "blog.johncs.com",
-    description: "John Sullivan's blog and mini projects",
+    title: "johncs.com",
+    description: "John Sullivan's personal website and blog.",
 };
 
 export default function RootLayout({
