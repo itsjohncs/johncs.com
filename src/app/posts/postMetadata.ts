@@ -31,6 +31,6 @@ const postMetadata = [
 ];
 
 // Sort posts by date, newest first
-postMetadata.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+postMetadata.sort((a, b) => Date.parse(b.post.date) - Date.parse(a.post.date));
 
 export default postMetadata;

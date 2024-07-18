@@ -7,9 +7,9 @@ export default function withMetadata(metadata: PostMetadata) {
         return (
             <>
                 <PostNavBar
-                    title={metadata.title}
-                    date={metadata.date}
-                    href={metadata.href}
+                    title={metadata.post.title}
+                    date={metadata.post.date}
+                    href={metadata.post.href}
                 />
                 {children}
             </>

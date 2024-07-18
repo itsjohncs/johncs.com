@@ -1,4 +1,5 @@
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "The Python Import System",
     date: "March 31, 2014",
     href: "/posts/the-python-import-system",
@@ -9,7 +10,7 @@ export const metadata = {
             (this is written mostly as a reference, sorry for the dryness).
         </>
     ),
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

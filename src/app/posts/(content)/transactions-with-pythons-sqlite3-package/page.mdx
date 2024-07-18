@@ -1,6 +1,7 @@
 import { CodeBlockBody as Code } from "#root/mdx/CodeBlock";
 
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Transactions with Python's sqlite3 Package",
     date: "March 5, 2014",
     href: "/posts/transactions-with-pythons-sqlite3-package",
@@ -15,7 +16,7 @@ export const metadata = {
             similar.
         </>
     ),
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

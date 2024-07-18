@@ -17,7 +17,7 @@ export async function GET() {
     });
 
     const allItems = [
-        ...postMetadata.map((post) => ({
+        ...postMetadata.map(({ post }) => ({
             title: post.title,
             link: new URL(post.href, baseUrl).toString(),
             description: post.description,

@@ -1,10 +1,11 @@
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "The Seesaw - A D&D 5E Encounter",
     date: "April 19, 2017",
     description:
         "I've been DMing a Dungeons and Dragons (fifth edition) game every other week for awhile. During this last session on Monday they found themselves in the center of a room with a rectangular floor.",
     href: "/posts/the-seesaw-a-dnd-5e-encounter",
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

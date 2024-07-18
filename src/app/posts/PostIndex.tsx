@@ -5,15 +5,15 @@ import Quote from "#root/mdx/Quote";
 import postMetadata from "./postMetadata";
 
 export default function PostIndex() {
-    return postMetadata.map(function (metadata) {
+    return postMetadata.map(function ({ post }) {
         return (
-            <article key={metadata.href}>
+            <article key={post.href}>
                 <PostHeading
-                    url={metadata.href}
-                    title={metadata.title}
-                    date={metadata.date}
+                    url={post.href}
+                    title={post.title}
+                    date={post.date}
                 />
-                <Quote>{metadata.description}</Quote>
+                <Quote>{post.description}</Quote>
             </article>
         );
     });

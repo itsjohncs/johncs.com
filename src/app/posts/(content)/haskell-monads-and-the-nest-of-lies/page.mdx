@@ -1,6 +1,7 @@
 import { CodeBlockBody as Code } from "#root/mdx/CodeBlock";
 
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Haskell monads and the nest of lies",
     date: "May 3, 2019",
     description: (
@@ -11,7 +12,7 @@ export const metadata = {
         </>
     ),
     href: "/posts/haskell-monads-and-the-nest-of-lies",
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

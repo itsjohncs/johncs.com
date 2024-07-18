@@ -1,7 +1,8 @@
 import RedBold from "./RedBold";
 import Quote from "#root/mdx/Quote";
 
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
   title: "Intelligently Shortening Text",
   date: "May 18, 2014",
   href: "/posts/intelligently-shortening-text",
@@ -13,7 +14,7 @@ export const metadata = {
       length of the text. The end result can be undesirable.
     </>
   ),
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

@@ -1,10 +1,11 @@
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Passing through the advice and getting to the actual user experiences",
     date: "February 11, 2019",
     description:
         "When a user gives me advice on a product, I ask them what experience they had that prompted them to give that advice.",
     href: "/posts/passing-through-advice-to-actual-user-experiences",
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

@@ -1,6 +1,7 @@
 import Table from "#root/mdx/Table";
 
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Answering questions with accounting: Expenses in Quicken vs Ledger",
     date: "February 8, 2019",
     href: "/posts/answering-questions-with-accounting-expenses-in-quicken-vs-ledger",
@@ -11,7 +12,7 @@ export const metadata = {
             you believe…
         </>
     ),
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

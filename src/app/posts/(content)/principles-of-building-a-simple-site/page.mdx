@@ -1,10 +1,11 @@
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Principles of Building a Simple Site",
     date: "July 30, 2016",
     description:
         "I've made a bunch of simple websites over the years, and from my endless failures I've built up some principles I now follow.",
     href: "/posts/principles-of-building-a-simple-site",
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);

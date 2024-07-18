@@ -1,10 +1,11 @@
-export const metadata = {
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
     title: "Typos in search queries at Khan Academy",
     date: "April 11, 2015",
     description:
         "One year ago, searching for polinomials on Khan Academy's search page would give you no results. If you typed the same thing into Google you'd be efficiently and politely corrected.",
     href: "/posts/typos-in-search-queries-at-khan-academy",
-};
+});
 
 import withMetadata from "../withMetadata";
 export default withMetadata(metadata);
