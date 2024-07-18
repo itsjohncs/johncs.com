@@ -1,6 +1,9 @@
 @import "./solarized.scss";
 
-// TODO: move to index.scss or something
+.selfie {
+    width: 25ch;
+}
+
 @media (min-width: 80ch) {
     .floatingHead {
         float: left;

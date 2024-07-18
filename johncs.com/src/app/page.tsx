@@ -9,7 +9,11 @@ export default function Home() {
             <main className={styles.main}>
                 <div className={styles.floatingHead}>
                     <Link href="/me.jpg">
-                        <img src="/me.jpg" alt="John Sullivan" />
+                        <img
+                            src="/me.jpg"
+                            alt="John Sullivan"
+                            className={styles.selfie}
+                        />
                     </Link>
                 </div>
                 <div>
