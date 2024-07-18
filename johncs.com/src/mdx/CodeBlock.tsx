@@ -25,7 +25,7 @@ export function CodeBlockBody({ children, className }: CodeBlockProps) {
     const language = className.replace(/language-/gm, "");
 
     return (
-        <Highlight code={children} language={language}>
+        <Highlight code={children.trimEnd()} language={language}>
             {function ({ tokens, getLineProps, getTokenProps }) {
                 return (
                     <code className={styles.codeBlockBody}>
