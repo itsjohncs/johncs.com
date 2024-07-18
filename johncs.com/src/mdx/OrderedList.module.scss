@@ -1,7 +1,6 @@
 @import "../app/solarized.scss";
 
 .list {
-    list-style: none;
     padding: 0;
 
     li {
@@ -16,5 +15,12 @@
             padding-right: 1ch;
             position: absolute;
         }
+    }
+
+    ::marker {
+        // Allows the list to retain its status in the accessibility tree on
+        // safari (whereas it wouldn't if we used list-style: none).
+        // https://medium.com/@havard.brynjulfsen/removing-list-style-on-lists-and-the-accessibility-implications-that-follow-2392f5ddb332
+        font-size: 0;
     }
 }
