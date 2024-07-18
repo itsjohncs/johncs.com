@@ -13,6 +13,7 @@ import { metadata as dndSeesawRoomMetadata } from "#root/app/posts/(content)/the
 import { metadata as loopTerminationMetadata } from "#root/app/posts/(content)/a-very-practical-piece-of-pure-cs/page.mdx";
 import { metadata as haskellMonadsMetadata } from "#root/app/posts/(content)/haskell-monads-and-the-nest-of-lies/page.mdx";
 import { metadata as productFeedbackMetadata } from "#root/app/posts/(content)/passing-through-advice-to-actual-user-experiences/page.mdx";
+import { metadata as typosInSearchQueriesMetadata } from "#root/app/posts/(content)/typos-in-search-queries-at-khan-academy/page.mdx";
 import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -30,6 +31,7 @@ const postMetadata = [
     loopTerminationMetadata,
     haskellMonadsMetadata,
     productFeedbackMetadata,
+    typosInSearchQueriesMetadata,
 ];
 
 // Sort posts by date, newest first
