@@ -11,6 +11,7 @@ import { metadata as localStorageTodayMetadata } from "#root/app/posts/(content)
 import { metadata as buildingSimpleSiteMetadata } from "#root/app/posts/(content)/principles-of-building-a-simple-site/page.mdx";
 import { metadata as dndSeesawRoomMetadata } from "#root/app/posts/(content)/the-seesaw-a-dnd-5e-encounter/page.mdx";
 import { metadata as loopTerminationMetadata } from "#root/app/posts/(content)/a-very-practical-piece-of-pure-cs/page.mdx";
+import { metadata as haskellMonadsMetadata } from "#root/app/posts/(content)/haskell-monads-and-the-nest-of-lies/page.mdx";
 import PostHeading from "#root/shared-components/PostHeading";
 import Quote from "#root/mdx/Quote";
 
@@ -26,6 +27,7 @@ const postMetadata = [
     buildingSimpleSiteMetadata,
     dndSeesawRoomMetadata,
     loopTerminationMetadata,
+    haskellMonadsMetadata,
 ];
 
 // Sort posts by date, newest first
