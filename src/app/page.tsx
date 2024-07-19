@@ -1,3 +1,5 @@
+import { Heading1 } from "#root/mdx/headings";
+import UnorderedList from "#root/mdx/UnorderedList";
 import NavBar from "#root/shared-components/NavBar";
 import styles from "./page.module.scss";
 import Link from "next/link";
@@ -31,15 +33,7 @@ export default function Home() {
                         <li>
                             <b>John C Sullivan</b>
                         </li>
-                        <li>
-                            Lead SWE & Founder @{" "}
-                            <a href="https://shmeppy.com">Shmeppy</a>
-                        </li>
-                        <li>
-                            Senior SWE @{" "}
-                            <a href="https://khanacademy.org">Khan Academy</a>{" "}
-                            (Former)
-                        </li>
+                        <li>Full-Stack Software Engineer</li>
                     </ul>
                     <div className={styles.linkList} role="list">
                         <LinkListItem>
@@ -72,6 +66,55 @@ export default function Home() {
                             <a href="https://lichess.org/@/johncs">Lichess</a>
                         </LinkListItem>
                     </div>
+                </div>
+                <div className={styles.bio}>
+                    <p>
+                        As a child back in 2004 I found{" "}
+                        <a href="https://www.oreilly.com/library/view/visual-basic-2015/9780134191874/">
+                            an old Visual Basic 5 book
+                        </a>{" "}
+                        and was captured by the fascinating world of coding.
+                        Fast-forward to today, and I&apos;ve had the privilege
+                        of building software for{" "}
+                        <a href="https://khanacademy.org">an ed-tech startup</a>
+                        ,{" "}
+                        <a href="https://www.shmeppy.com/">
+                            my own bootstrapped startup
+                        </a>
+                        ,{" "}
+                        <a href="https://www.mozilla.org/">
+                            an open-source browser
+                        </a>
+                        ,{" "}
+                        <a href="https://www.jetheaddev.com/">
+                            a set-top box manufacturer
+                        </a>
+                        ,{" "}
+                        <a href="https://www.youtube.com/c/PrimerLearning">
+                            an independent YouTuber
+                        </a>
+                        ,{" "}
+                        <a href="https://www.color-track.com/">a QA startup</a>,
+                        and more.
+                    </p>
+                    <p>
+                        Now I&apos;m on the job market! I&apos;m looking for
+                        senior/staff+ level software engineering roles,
+                        especially those that:
+                    </p>
+                    <UnorderedList>
+                        <li>Have diverse, kind, and hyper-competent teams.</li>
+                        <li>Pay well.</li>
+                        <li>Are remote or based in Portland, Oregon.</li>
+                        <li>Have an outsized impact on many users.</li>
+                    </UnorderedList>
+                    <p>
+                        Please{" "}
+                        <a href="mailto:johnsullivan.pem@gmail.com">
+                            reach out
+                        </a>{" "}
+                        if you have a role in mind for me.
+                    </p>
                 </div>
             </main>
         </>

@@ -2,9 +2,11 @@
 
 .main {
     display: grid;
-    grid-template: "selfie lists" / min-content 1fr;
+    grid-template:
+        "selfie lists"
+        "bio bio" / min-content 1fr;
     justify-items: start;
-    gap: 0 2ch;
+    gap: var(--line-height) 2ch;
 }
 
 .flatList {
@@ -16,11 +18,16 @@
     grid-area: lists;
 }
 
+.bio {
+    grid-area: bio;
+}
+
 .selfieCell {
     grid-area: selfie;
 
     .selfie {
         width: 20ch;
+        margin: 0;
     }
 }
 
@@ -38,6 +45,7 @@
     .main {
         grid-template:
             "selfie"
-            "lists" / 1fr;
+            "lists"
+            "bio" / 1fr;
     }
 }
