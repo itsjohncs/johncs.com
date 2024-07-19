@@ -10,7 +10,7 @@ export default function MiniProjects() {
                 <p>
                     Subscribe to new posts via <Link href="/rss.xml">RSS</Link>{" "}
                     or by following me on{" "}
-                    <a href="https://twitter.com/itsjohncs">Twitter</a>.
+                    <a href="https://x.com/itsjohncs">X</a>.
                 </p>
                 <ProjectIndex />
             </main>

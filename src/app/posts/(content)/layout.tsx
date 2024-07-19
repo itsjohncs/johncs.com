@@ -8,7 +8,7 @@ export default function PostLayout({ children }: { children: ReactNode }) {
             <footer>
                 <div aria-hidden={true}>--</div>
                 <Link href="/posts">« more posts</Link> | follow me via{" "}
-                <a href="https://twitter.com/itsjohncs">twitter</a> or{" "}
+                <a href="https://x.com/itsjohncs">X</a> or{" "}
                 <Link href="/rss.xml">RSS</Link>
             </footer>
         </>
