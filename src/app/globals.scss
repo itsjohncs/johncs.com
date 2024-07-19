@@ -5,11 +5,13 @@
     --line-height: 22px;
 
     --text-color: #{$base00};
+    --soft-text-color: #{$base1};
     --page-background-color: #{$base3};
     --feature-background-color: #{$base2};
 
     @media (prefers-color-scheme: dark) {
         --text-color: #{$base0};
+        --soft-text-color: #{$base01};
         --page-background-color: #{$base03};
         --feature-background-color: #{$base02};
     }

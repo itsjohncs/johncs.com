@@ -18,6 +18,7 @@
             display: inline;
 
             &:after {
+                color: var(--soft-text-color);
                 content: ", ";
             }
 
@@ -34,5 +35,9 @@
 
 .post ul li:after {
     content: " > ";
-    color: $base1;
+    color: var(--soft-text-color);
+}
+
+.colon {
+    color: var(--soft-text-color);
 }

@@ -49,7 +49,7 @@ export default function NavBar({ path }: NavBarProps): ReactElement {
                     johncs.com
                 </Link>
             )}
-            :{" "}
+            <span className={styles.colon}>:</span>{" "}
             <ul>
                 <li>
                     {path === "/posts" ? (

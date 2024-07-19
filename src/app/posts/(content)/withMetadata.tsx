@@ -2,6 +2,7 @@ import PostMetadata from "./PostMetadata";
 import { PostNavBar } from "#root/shared-components/NavBar";
 import { ReactNode } from "react";
 import Link from "next/link";
+import styles from "./withMetadata.module.scss";
 
 function generateGitHubUrl(partialUrl: string): string {
     // Extracts `slug` out of `/posts/slug`
@@ -26,10 +27,14 @@ export default function withMetadata(metadata: PostMetadata) {
                 />
                 <main>{children}</main>
                 <footer>
-                    <div aria-hidden={true}>--</div>
-                    <Link href="/posts">« more posts</Link> | follow me via{" "}
+                    <div aria-hidden={true} className={styles.separator}>
+                        --
+                    </div>
+                    <Link href="/posts">« more posts</Link>{" "}
+                    <span className={styles.separator}>|</span> follow me via{" "}
                     <a href="https://x.com/itsjohncs">X</a> or{" "}
-                    <Link href="/rss.xml">RSS</Link> |{" "}
+                    <Link href="/rss.xml">RSS</Link>{" "}
+                    <span className={styles.separator}>|</span>{" "}
                     <a href={generateGitHubUrl(metadata.post.href)}>source</a>
                 </footer>
             </>
