@@ -32,8 +32,8 @@ export default function withMetadata(metadata: PostMetadata) {
                     </div>
                     <Link href="/posts">« more posts</Link>{" "}
                     <span className={styles.separator}>|</span> follow me via{" "}
-                    <a href="https://x.com/itsjohncs">X</a> or{" "}
-                    <Link href="/rss.xml">RSS</Link>{" "}
+                    <Link href="/rss.xml">RSS</Link> or{" "}
+                    <a href="https://x.com/itsjohncs">X</a>{" "}
                     <span className={styles.separator}>|</span>{" "}
                     <a href={generateGitHubUrl(metadata.post.href)}>source</a>
                 </footer>
