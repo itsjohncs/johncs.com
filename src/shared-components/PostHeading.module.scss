@@ -1,6 +1,7 @@
 @import "#root/app/solarized.scss";
 
 .postHeading {
+    font-size: inherit;
     font-weight: normal;
     margin-bottom: var(--line-height);
     background-color: var(--feature-background-color);

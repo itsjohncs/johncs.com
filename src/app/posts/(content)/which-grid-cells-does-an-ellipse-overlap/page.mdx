@@ -1,0 +1,71 @@
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
+    title: "Which grid cells does an ellipse overlap?",
+    date: "February 6, 2024",
+    description:
+        "This week I needed to figure out which grid cells an ellipse overlaps with…",
+    href: "/posts/which-grid-cells-does-an-ellipse-overlap",
+});
+
+import withMetadata from "../withMetadata";
+export default withMetadata(metadata);
+
+This week I needed to figure out which grid cells an ellipse overlaps with. In other words I needed an algorithm to find these yellow colored cells:
+
+![Ellipse overlapping grid cells](/images/ellipses-overlapping-grid-cells.webp)
+
+An obvious approach that works well enough is to look at every cell within the bounding box of the ellipse and check if it collides with the ellipse. A rectangle-to-ellipse collision algorithm is tricky to implement, and expensive computationally, but that's probably fine.
+
+[Shmeppy](https://shmeppy.com) users tend to push the platform as much as they can however so I was hesitant to implement a naive algorithm without at least spending a walk with my dog thinking about a more efficient one. Fortunately my dog's rectangular head quickly inspired me.
+
+![Dog with rectangular head](/images/hambo-square-head.webp)
+
+I'll cut the ellipse into four parts using a rectangle! But first things first: I'll need to transform my ellipse into something easier to work with. My standard ellipse will have a width of _2a_ and height _2b_, it will be centered at the origin, and it will be defined by the equation:
+
+```math
+\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1
+```
+
+Now that we've got it in this form, many calculations become very easy. Namely the cells that the center of this transformed ellipse overlaps can be easily determined by looking at the cells under the largest rectangle that can fit inside it. That rectangle is given by:
+
+```math
+(-\frac{a}{\sqrt{2}}, -\frac{b}{\sqrt{2}}), (\frac{a}{\sqrt{2}}, \frac{b}{\sqrt{2}})
+```
+
+You can play with the math yourself [in this interactive graph](https://www.desmos.com/calculator/hanft04h8e), and this image shows the cells in the same image as before that we've detected using our rectangle trick:
+
+![Cells detected by rectangle trick](/images/cell-detected-by-rectangle-trick.webp)
+
+You can see that for the smaller token we're already done. But in the general case, we have four more parts of the ellipse to consider: the arcs on each of the four sides of the rectangle.
+
+Let's just consider the top/northern part to begin with. My idea is to go column by column and find the highest cell that the ellipse reaches in that column. Then I'll know all cells in that column between there and the top of the center rectangle are within the ellipse.
+
+So how do we find the highest cell that the ellipse reaches in a column? Solving the standard eclipse equation for _y_ gives:
+
+```math
+y=\frac{b\sqrt{a^{2}-x^{2}}}{a}
+```
+
+A column is 1 unit wide. So given a column defined by its leftmost edge _x_ we need to find the largest value of this equation between _[x, x+1]_. Since _b_ and _a_ are constant, it looks like _y_ will be largest when the absolute value of _x_ is smallest.
+
+So for a given column _x_, the smallest absolute value of _x_ will be where _x_ is:
+
+```math
+\begin{aligned}
+x_{minimized}=\begin{cases}
+          0 \quad &\text{if} \, {-}1<x<0 \\
+          x \quad &\text{if} \, |x|<|x+1| \\
+          x+1 \quad &\text{otherwise} \\
+     \end{cases}
+\end{aligned}
+```
+
+Now I have all the pieces and I just need to put it together! Here's what it looks like in action. The yellow highlight shows the cells detected by the inner rectangle trick, and the red highlight shows the cells detected by the rest of the algorithm.
+
+![Final algorithm in action](/images/final-algo.gif)
+
+You can peruse [the final TypeScript code on Gist](https://gist.github.com/itsjohncs/e05f1117258162c603991b40acb5bc12) or just enjoy the fruits of my labor in your own map on [Shmeppy](https://shmeppy.com).
+
+For those curious regarding _why_ this algorithm was needed now... Tokens can be hidden directly with a checkbox, but they are also hidden if all the cells they overlap with are behind Fog of War.
+
+Before now I've gotten away with using a rectangle to approximate the bounds of a Token because they have always been aligned to the grid, so only quite large tokens would be poorly approximated. But that changed a few days ago when I allowed tokens to move outside the grid ([mastodon post](https://mastodon.social/@shmeppy/111865286908923880)).

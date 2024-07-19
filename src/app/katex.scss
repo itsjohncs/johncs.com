@@ -1,0 +1,15 @@
+@import "katex/dist/katex.min.css";
+
+.katex-display {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 var(--line-height) 0;
+
+    & > .katex {
+        // border-color: var(--feature-background-color);
+        // border-style: solid;
+        // border-width: var(--line-height) 2ch;
+        background-color: var(--feature-background-color);
+        padding: var(--line-height) 2ch;
+    }
+}

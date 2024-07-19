@@ -12,6 +12,7 @@ import { metadata as loopTerminationMetadata } from "#root/app/posts/(content)/a
 import { metadata as haskellMonadsMetadata } from "#root/app/posts/(content)/haskell-monads-and-the-nest-of-lies/page.mdx";
 import { metadata as productFeedbackMetadata } from "#root/app/posts/(content)/passing-through-advice-to-actual-user-experiences/page.mdx";
 import { metadata as typosInSearchQueriesMetadata } from "#root/app/posts/(content)/typos-in-search-queries-at-khan-academy/page.mdx";
+import { metadata as ellipseOverlapMetadata } from "#root/app/posts/(content)/which-grid-cells-does-an-ellipse-overlap/page.mdx";
 
 const postMetadata = [
     solvingAWoodenPuzzleMetadata,
@@ -28,6 +29,7 @@ const postMetadata = [
     haskellMonadsMetadata,
     productFeedbackMetadata,
     typosInSearchQueriesMetadata,
+    ellipseOverlapMetadata,
 ];
 
 // Sort posts by date, newest first
