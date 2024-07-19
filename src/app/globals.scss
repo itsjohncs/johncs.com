@@ -2,9 +2,16 @@
 
 :root {
     --line-height: 22px;
+
     --text-color: #{$base00};
     --page-background-color: #{$base3};
     --feature-background-color: #{$base2};
+
+    @media (prefers-color-scheme: dark) {
+        --text-color: #{$base0};
+        --page-background-color: #{$base03};
+        --feature-background-color: #{$base02};
+    }
 }
 
 * {

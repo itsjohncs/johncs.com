@@ -57,7 +57,7 @@
         }
 
         &.entity {
-            color: $base00;
+            cursor: help;
             background: var(--feature-background-color);
         }
 
@@ -85,10 +85,6 @@
 
         &.italic {
             font-style: italic;
-        }
-
-        &.entity {
-            cursor: help;
         }
     }
 }
