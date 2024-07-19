@@ -1,4 +1,3 @@
-import * as simpleFrontmatter from "#root/app/mini-projects/projects/simple-frontmatter.mdx";
 import * as dieSim from "#root/app/mini-projects/projects/die-sim.mdx";
 import * as differentLogger from "#root/app/mini-projects/projects/different-logger.mdx";
 import * as tbget from "#root/app/mini-projects/projects/tbget.mdx";
@@ -7,7 +6,6 @@ import * as timcol from "#root/app/mini-projects/projects/timcol.mdx";
 import * as grassyKnight from "#root/app/mini-projects/projects/grassy-knight.mdx";
 
 const allProjects = [
-    simpleFrontmatter,
     dieSim,
     differentLogger,
     tbget,
