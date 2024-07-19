@@ -1,0 +1,11 @@
+export const metadata = {
+    title: "superzippy",
+    date: "June 22, 2013",
+    url: "https://github.com/itsjohncs/superzippy",
+};
+
+I want to distribute some command line scripts to instructors using [Galah](https://github.com/ucrcsedept/galah). They're all on Unixy systems so I can trust that they have Python installed but I've had trouble giving them instructions involving `pip` before.
+
+Interestingly if you say `python file.zip` Python will try and execute the `__main__.py` file in the zip archive. **And** since the ZIP format places all of its metadata at the end of the file, rather than the start, I can even add a `#!/usr/bin/env python\n` to the archive and the zip file becomes executable like a normal binary!
+
+Doing it by hand isn't too hard, but to make the process even easier I've created `superzippy`! It handles it all for me.

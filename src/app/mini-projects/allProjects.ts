@@ -4,6 +4,7 @@ import * as tbget from "#root/app/mini-projects/projects/tbget.mdx";
 import * as vite from "#root/app/mini-projects/projects/vite-prebundle-workers.mdx";
 import * as timcol from "#root/app/mini-projects/projects/timcol.mdx";
 import * as grassyKnight from "#root/app/mini-projects/projects/grassy-knight.mdx";
+import * as superzippy from "#root/app/mini-projects/projects/superzippy.mdx";
 
 const allProjects = [
     dieSim,
@@ -12,6 +13,7 @@ const allProjects = [
     vite,
     timcol,
     grassyKnight,
+    superzippy,
 ];
 
 // Sort projects by date, newest first
