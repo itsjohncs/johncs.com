@@ -1,0 +1,15 @@
+export const metadata = {
+    title: "vite-plugin-prebundle-workers",
+    date: "June 10, 2024",
+    url: "https://github.com/itsjohncs/vite-plugin-prebundle-workers",
+};
+
+Vite's basic premise (send down individual ES modules to the browser) works well in most cases but sometimes it really isn't great.
+
+In my case I really wanted to use both `importScripts` and ES imports in a Web Worker. This works in the built app [^1] but it won't work in dev [^2]. (I had some old code using [OpenCV.js](https://docs.opencv.org/3.4/d5/d10/tutorial_js_root.html) that would've been very cumbersome to change to using ES imports exclusively because I'd have to modify OpenCV.js's distribution).
+
+So instead I made a quick Vite plugin so I could just use `importScripts` _and_ ES imports! Now my web worker is bundled in dev and on prod. Problem solved.
+
+[^1]: Because all of the ES imports will be compiled away by the bundler and it'll be run as a classic Web Worker.
+
+[^2]: An ES module loaded by the browser in a Web Worker can't call `importScripts`. An error is immediately raised.

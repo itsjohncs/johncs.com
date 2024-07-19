@@ -2,8 +2,9 @@ import * as simpleFrontmatter from "#root/app/mini-projects/projects/simple-fron
 import * as dieSim from "#root/app/mini-projects/projects/die-sim.mdx";
 import * as differentLogger from "#root/app/mini-projects/projects/different-logger.mdx";
 import * as tbget from "#root/app/mini-projects/projects/tbget.mdx";
+import * as vite from "#root/app/mini-projects/projects/vite-prebundle-workers.mdx";
 
-const allProjects = [simpleFrontmatter, dieSim, differentLogger, tbget];
+const allProjects = [simpleFrontmatter, dieSim, differentLogger, tbget, vite];
 
 // Sort projects by date, newest first
 allProjects.sort(
