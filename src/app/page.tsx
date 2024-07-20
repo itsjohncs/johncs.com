@@ -70,7 +70,7 @@ export default function Home() {
                 <div className={styles.bio}>
                     <p>
                         As a child back in 2004 I found{" "}
-                        <a href="https://www.oreilly.com/library/view/visual-basic-2015/9780134191874/">
+                        <a href="https://books.google.com/books/about/Teach_Yourself_Visual_Basic_5_in_24_Hour.html?id=xCLwe6CY6zwC">
                             an old Visual Basic 5 book
                         </a>{" "}
                         and was captured by the fascinating world of coding.
