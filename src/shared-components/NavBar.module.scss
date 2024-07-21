@@ -1,6 +1,9 @@
 @import "#root/app/solarized.scss";
 
 .navBar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     background-color: var(--feature-background-color);
     border-left: 1ch solid $blue;
     border-right: 1ch solid $blue;
@@ -26,6 +29,30 @@
                 content: "";
             }
         }
+    }
+}
+
+.left {
+    flex-grow: 1;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: min-content;
+    flex-grow: 1;
+    max-width: max-content;
+    margin-left: 1ch;
+}
+
+.rssIconContainer {
+    display: flex;
+    height: var(--line-height);
+    align-items: center;
+
+    .rssIcon {
+        width: 2ch;
     }
 }
 

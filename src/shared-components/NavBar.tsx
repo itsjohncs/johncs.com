@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "./NavBar.module.scss";
 import classNames from "classnames";
 import PostDate from "./PostDate";
+import LightDarkModeToggle from "./LightDarkModeToggle";
+import { PiRssSimpleBold as RssIcon } from "react-icons/pi";
 
 interface Props {
     title: string;
@@ -10,10 +12,24 @@ interface Props {
     date: string;
 }
 
+function Right() {
+    return (
+        <div className={styles.right}>
+            <LightDarkModeToggle />
+            <Link
+                className={classNames(styles.pageLink, styles.rssIconContainer)}
+                href="/rss.xml"
+            >
+                <RssIcon className={styles.rssIcon} />
+            </Link>
+        </div>
+    );
+}
+
 export function PostNavBar({ title, href, date }: Props): ReactElement {
     return (
         <nav className={classNames(styles.navBar, styles.post)}>
-            <ul>
+            <ul className={styles.left}>
                 <li>
                     <Link className={styles.pageLink} href="/">
                         johncs.com
@@ -31,6 +47,7 @@ export function PostNavBar({ title, href, date }: Props): ReactElement {
                     </PostDate>
                 </li>
             </ul>
+            <Right />
         </nav>
     );
 }
@@ -42,34 +59,40 @@ interface NavBarProps {
 export default function NavBar({ path }: NavBarProps): ReactElement {
     return (
         <nav className={styles.navBar}>
-            {path === "/" ? (
-                <span>johncs.com</span>
-            ) : (
-                <Link className={styles.pageLink} href="/">
-                    johncs.com
-                </Link>
-            )}
-            <span className={styles.colon}>:</span>{" "}
-            <ul>
-                <li>
-                    {path === "/posts" ? (
-                        <span>Blog Posts</span>
-                    ) : (
-                        <Link className={styles.pageLink} href="/posts">
-                            Blog Posts
-                        </Link>
-                    )}
-                </li>
-                <li>
-                    {path === "/mini-projects" ? (
-                        <span>Mini Projects</span>
-                    ) : (
-                        <Link className={styles.pageLink} href="/mini-projects">
-                            Mini Projects
-                        </Link>
-                    )}
-                </li>
-            </ul>
+            <div className={styles.left}>
+                {path === "/" ? (
+                    <span>johncs.com</span>
+                ) : (
+                    <Link className={styles.pageLink} href="/">
+                        johncs.com
+                    </Link>
+                )}
+                <span className={styles.colon}>:</span>{" "}
+                <ul>
+                    <li>
+                        {path === "/posts" ? (
+                            <span>Blog Posts</span>
+                        ) : (
+                            <Link className={styles.pageLink} href="/posts">
+                                Blog Posts
+                            </Link>
+                        )}
+                    </li>
+                    <li>
+                        {path === "/mini-projects" ? (
+                            <span>Mini Projects</span>
+                        ) : (
+                            <Link
+                                className={styles.pageLink}
+                                href="/mini-projects"
+                            >
+                                Mini Projects
+                            </Link>
+                        )}
+                    </li>
+                </ul>
+            </div>
+            <Right />
         </nav>
     );
 }

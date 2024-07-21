@@ -1,0 +1,33 @@
+@mixin body-color-mode($mode) {
+    @if $mode == "light" {
+        @content;
+
+        &.force-light-mode {
+            @content;
+        }
+    } @else if $mode == "dark" {
+        @media (prefers-color-scheme: dark) {
+            @content;
+        }
+
+        &.force-dark-mode {
+            @content;
+        }
+    } @else {
+        @error "Invalid mode #{$mode} passed to color-mode mixin. Use 'light' or 'dark'.";
+    }
+}
+
+@mixin color-mode($mode) {
+    @if $mode == "dark" or $mode == "light" {
+        @media (prefers-color-scheme: #{$mode}) {
+            @content;
+        }
+
+        :global(body.force-#{$mode}-mode) & {
+            @content;
+        }
+    } @else {
+        @error "Invalid mode #{$mode} passed to color-mode mixin. Use 'light' or 'dark'.";
+    }
+}
