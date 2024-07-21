@@ -76,7 +76,9 @@ export default function Home() {
                         and was captured by the fascinating world of coding.
                         Fast-forward to today, and I&apos;ve had the privilege
                         of building software for{" "}
-                        <a href="https://khanacademy.org">an ed-tech startup</a>
+                        <a href="https://khanacademy.org">
+                            an ed-tech non-profit
+                        </a>
                         ,{" "}
                         <a href="https://www.shmeppy.com/">
                             my own bootstrapped startup
@@ -91,11 +93,13 @@ export default function Home() {
                         </a>
                         ,{" "}
                         <a href="https://www.youtube.com/c/PrimerLearning">
-                            an independent YouTuber
+                            an educational YouTuber
                         </a>
                         ,{" "}
-                        <a href="https://www.color-track.com/">a QA startup</a>,
-                        and more.
+                        <a href="https://www.color-track.com/">
+                            a quality-control hardware company
+                        </a>
+                        , and more.
                     </p>
                     <p>
                         Now I&apos;m on the job market! I&apos;m looking for
