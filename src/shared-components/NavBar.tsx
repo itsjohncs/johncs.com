@@ -20,7 +20,7 @@ function Right() {
                 className={classNames(styles.pageLink, styles.rssIconContainer)}
                 href="/rss.xml"
             >
-                <RssIcon className={styles.rssIcon} />
+                <RssIcon className={styles.rssIcon} title="RSS Feed" />
             </Link>
         </div>
     );

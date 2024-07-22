@@ -37,8 +37,8 @@ export default function LightDarkModeToggle() {
             className={`${styles.container} ${isDarkMode ? styles.darkMode : styles.lightMode}`}
             onClick={() => setDarkMode(!isDarkMode)}
         >
-            <Sun className={styles.sunIcon} />
-            <Moon className={styles.moonIcon} />
+            <Sun className={styles.sunIcon} title="Activate Light Mode" />
+            <Moon className={styles.moonIcon} title="Activate Dark Mode" />
         </button>
     );
 }
