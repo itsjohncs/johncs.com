@@ -7,11 +7,6 @@ export default function Posts() {
         <>
             <NavBar path="/posts" />
             <main>
-                <p>
-                    Subscribe to new posts via <Link href="/rss.xml">RSS</Link>{" "}
-                    or by following me on{" "}
-                    <a href="https://x.com/itsjohncs">X</a>.
-                </p>
                 <PostIndex />
             </main>
         </>
