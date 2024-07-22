@@ -69,11 +69,11 @@ export default function Home() {
                 </div>
                 <div className={styles.bio}>
                     <p>
-                        As a child back in 2004 I found{" "}
+                        In 2004 I tried some exercises out of{" "}
                         <a href="https://books.google.com/books/about/Teach_Yourself_Visual_Basic_5_in_24_Hour.html?id=xCLwe6CY6zwC">
                             an old Visual Basic 5 book
                         </a>{" "}
-                        and was captured by the fascinating world of coding.
+                        and was amazed at what I could create through coding.
                         Fast-forward to today, and I&apos;ve had the privilege
                         of building software for{" "}
                         <a href="https://khanacademy.org">
