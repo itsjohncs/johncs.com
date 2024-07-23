@@ -1,0 +1,74 @@
+import createMetadata from "../createMetadata";
+export const metadata = createMetadata({
+    title: "Iterating on an HTML resume with GPT-4o via cURL",
+    date: "July 23, 2024",
+    description:
+        "This week I needed to figure out which grid cells an ellipse overlaps with…",
+    href: "/posts/gpt-assisted-html-resume",
+});
+
+import withMetadata from "../withMetadata";
+export default withMetadata(metadata);
+
+My resume is written with vanilla HTML and CSS and compiled to PDF using headless chrome ([web version](https://resume.johncs.com), [PDF version](https://resume.johncs.com/resume.pdf)). The [repo is on GitHub](https://github.com/itsjohncs/resume).
+
+The design and build are fun to hack on but writing is still hard so I wrote a script that helps me iterate on it quickly with GPT-4o. It extracts the body of my resume, sends it to OpenAI alongside my prompt, and prints out the feedback.
+
+Here's an example of some feedback it's given me:
+
+> # Under the job Primer Learning
+>
+>     Built Unity editor extensions and physics simulations for Primer Learning's popular YouTube channel.
+>
+>     Clarity Issue: "Popular" is subjective. Consider providing a specific metric (e.g., "Primer Learning's YouTube channel with over X million views/subscribers").
+
+# The Script
+
+I wrote the script in Bash ([source](https://github.com/itsjohncs/resume/blob/main/scripts/wording-check.sh)) but there's [a number of libraries](https://platform.openai.com/docs/libraries) you can use to call out to OpenAI's API in various languages.
+
+I'll go through a few lines of the script so you can get a sense of what it does…
+
+In [the system prompt](https://github.com/itsjohncs/resume/blob/main/scripts/openai/broad-prompt.md?plain=1) I tell the model to expect the resume as the only input from the user. This means creating the request can be done completely by the handy JSON manipulation tool [jq](https://jqlang.github.io/jq/):
+
+```bash
+OPEN_AI_REQUEST_BODY=$(jq -n \
+    --argjson temperature "$TEMPERATURE" \
+    --arg prompt "$PROMPT" \
+    --arg html "$ADJUSTED_HTML_CONTENT" \
+    '{
+      "model": "gpt-4o",
+      "messages": [
+        {"role": "system", "content": $prompt},
+        {"role": "user", "content": $html}
+      ],
+      "temperature": $temperature
+    }')
+```
+
+Extracting the response can also be done with `jq`.
+
+```bash
+RESPONSE=$(curl https://api.openai.com/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPEN_AI_RESUME_PROJECT_KEY" \
+    -d "$OPEN_AI_REQUEST_BODY" \
+    --no-progress-meter)
+
+RESPONSE_CONTENT=$(jq --raw-output .choices[0].message.content <<< "$RESPONSE")
+```
+
+Finally I pretty-print the response to the terminal using [glow](https://github.com/charmbracelet/glow).
+
+```bash
+glow <<< "$RESPONSE_CONTENT"
+```
+
+`glow` makes ChatGPT's output a little more readable (and more visually interesting).
+
+![A screenshot of pretty-printed markdown in the terminal.](/images/glow-example.png)
+
+If your resume exists in a textual format (ex: LaTeX, Typst, or JSON) you could set up a similar script very quickly. Even if your resume is stuck in Word or a similar tool, you can probably convert it to text in a script to pass to ChatGPT.
+
+This script helped me work through quite a bit of awkward wording but I'm not sure how effective it's really been yet. Hopefully I'll have a follow-up post soon about how GPT helped me find a good role.
+
+If you have real-human feedback for my resume, please reach out! My email and socials are on [the frontpage of this site](/).

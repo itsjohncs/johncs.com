@@ -13,6 +13,7 @@ import { metadata as haskellMonadsMetadata } from "#root/app/posts/(content)/has
 import { metadata as productFeedbackMetadata } from "#root/app/posts/(content)/passing-through-advice-to-actual-user-experiences/page.mdx";
 import { metadata as typosInSearchQueriesMetadata } from "#root/app/posts/(content)/typos-in-search-queries-at-khan-academy/page.mdx";
 import { metadata as ellipseOverlapMetadata } from "#root/app/posts/(content)/which-grid-cells-does-an-ellipse-overlap/page.mdx";
+import { metadata as gptAssistedHtmlResume } from "#root/app/posts/(content)/gpt-assisted-html-resume/page.mdx";
 
 const postMetadata = [
     solvingAWoodenPuzzleMetadata,
@@ -30,6 +31,7 @@ const postMetadata = [
     productFeedbackMetadata,
     typosInSearchQueriesMetadata,
     ellipseOverlapMetadata,
+    gptAssistedHtmlResume,
 ];
 
 // Sort posts by date, newest first

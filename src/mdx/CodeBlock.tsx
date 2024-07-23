@@ -1,7 +1,11 @@
 "use client";
 
 import React, { ReactNode } from "react";
-import { Highlight } from "prism-react-renderer";
+import { Highlight, Prism } from "prism-react-renderer";
+
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+require("prismjs/components/prism-bash");
+
 import styles from "./CodeBlock.module.scss";
 import except from "../utils/except";
 
